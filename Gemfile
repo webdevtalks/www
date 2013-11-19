@@ -6,6 +6,7 @@ gem 'rails', '4.0.0'
 gem 'pg'
 gem 'puma', '~> 2.6.0'
 
+gem 'bootstrap-sass', '~> 3.0.2.1'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'haml-rails', '~> 0.4'
 gem 'jquery-rails'
