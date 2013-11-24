@@ -14,8 +14,12 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'awesome_print'
+
 group :development, :test do
+  gem 'debugger'
   gem 'dotenv',      '~> 0.9.0'
+  gem 'pry-rails'
   gem 'rspec-rails', '~> 2.14.0'
 end
 
@@ -29,6 +33,8 @@ end
 
 group :test do
   gem 'capybara',    '~> 2.1.0'
+  gem 'fabrication', '~> 2.9.3'
+  gem 'faker',       '~> 1.2.0'
   gem 'poltergeist', '~> 1.4.1'
   gem 'simplecov',   '~> 0.8.2'
 end
