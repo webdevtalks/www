@@ -4,7 +4,7 @@ This is the source code of the official WebDevTalks [website](http://webdevtalks
 
 ## Build Status
 
-[![Build Status](https://travis-ci.org/webdevtalks/webdevtalks.mx.png)](https://travis-ci.org/webdevtalks/webdevtalks.mx)
+[![Build Status](https://travis-ci.org/webdevtalks/www.webdevtalks.mx.png)](https://travis-ci.org/webdevtalks/www.webdevtalks.mx)
 
 
 ## Other things to document:
