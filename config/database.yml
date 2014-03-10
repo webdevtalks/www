@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  host: 127.0.0.1
+  encoding: utf8
+  user:
+  password:
+
+development:
+  <<: *default
+  database: wdt_dev
+
+test:
+  <<: *default
+  database: wdt_test
