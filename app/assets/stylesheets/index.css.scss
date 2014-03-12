@@ -1,0 +1,160 @@
+/***************
+ * Home Panel *
+ ***************/
+
+#story-home {
+  color: #666;
+  #logo {
+    margin: 20px 0 50px 0;
+  }
+  h2 {
+    font-family: "Caecilia-Roman", Verdana, sans-serif;
+  }
+  .story {
+    width: 850px;
+    padding-right: 0px;
+  }
+  p {
+    width: 800px;
+    font-size: 16px;
+  }
+  u { padding: 0px; }
+  ul li {
+    font-size: 16px;
+    margin: 16px 0;
+  }
+  .twitter-redirect {
+    img { float: left; }
+    p {
+      padding: 17px;
+      width: 177px;
+    }
+  }
+}
+
+/***************
+ * Topic Panel *
+ ***************/
+
+#story-topics {
+  color: #FFF;
+  background: #022639;
+}
+
+/*********************
+ * About panel *
+ *********************/
+
+#story-about {
+  color: #CCC;
+  background: #000;
+  .bg {
+    left: auto;
+    right: 0px;
+  }
+}
+
+/**************
+ * Cfp Panel *
+ **************/
+
+#story-cfp {
+  color: #FFF;
+  text-shadow: 1px 1px 1px #000;
+  background: #C9BC33;
+  .logo {
+    position: absolute;
+    right: 20%;
+    bottom: 50%;
+    &.start {
+      bottom: 190%;
+    }
+    &.end {
+      bottom: -90%;
+    }
+  }
+}
+
+/**************
+ * Speakers Panel *
+ **************/
+
+#story-speakers {
+  color: #CCC;
+  background: #000;
+  .logo {
+    position: absolute;
+    right: 0%;
+    bottom: 30%;
+    &.start {
+      bottom: 170%;
+    }
+    &.end {
+      bottom: -210%;
+    }
+  }
+  .box {
+    background: #000;
+    opacity: .7;
+    border-radius: 10px;
+    position: absolute;
+    top: -10px;
+    right: 440px;
+    bottom: -10px;
+    left: -10px;
+    z-index: -1;
+  }
+  ul {
+    &.slide {
+      display: block;
+      position: absolute;
+      white-space: nowrap;
+      left: -1426px;
+      &.start {
+        left: -1425px;
+      }
+      li {
+        display: inline;
+      }
+    }
+    &.slide-1.start, &.slide-2.start, &.slide-3.start {
+      opacity: 0;
+    }
+    &.slide-1 {
+      bottom: 0px;
+    }
+    &.slide-2 {
+      bottom: 176px;
+      left: -1425px;
+      &.to {
+        bottom: 176px;
+        left: -1425px;
+      }
+      &.start {
+        left: -1426px;
+      }
+    }
+    &.slide-3 {
+      bottom: 352px;
+    }
+    &.slide-1.to, &.slide-3.to {
+      left: -1425px;
+    }
+    &.slide-1.end {
+      right: 0px;
+      left: auto;
+    }
+    &.slide-3.end {
+      right: 1200px;
+      left: auto;
+    }
+    &.slide-2 {
+      &.to {
+        right: 0px;
+      }
+      &.end {
+        left: 200px;
+      }
+    }
+  }
+}
