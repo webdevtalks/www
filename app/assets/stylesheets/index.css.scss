@@ -152,6 +152,11 @@
     bottom: -10px;
     left: -10px;
     z-index: -1;
+    width: 960px;
+    height: 300px;
+  }
+  .speakers {
+    width: 900px;
   }
   .border-box-big {
     background: #4A4343;
@@ -159,15 +164,17 @@
     -moz-border-radius: 9px;
     border-radius: 9px;
     float: left;
-    height: 120px;
+    height: 175px;
     margin-right: 15px;
-    width: 110px;
+    width: 170px;
+    margin-left: 40px;
     p {
       font-weight: bold;
-      left: 10px;
+      left: 6px;
       position: relative;
       text-shadow: 2px 2px 2px #474747;
-      top: 50px;
+      top: 75px;
+      font-size: 22px;
     }
   }
   ul {
