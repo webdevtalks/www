@@ -24,8 +24,8 @@
   margin-left: -5em;
   background: #111;
   opacity: .7;
-  width: 10em;
-  height: 6em;
+  width: 6em;
+  height: 2em;
   padding: 4em 2em;
   border-radius: 50%;
   font-size: 0.5em;
@@ -41,8 +41,6 @@
   border-width: 3em 3em 0 3em;
   border-color: #ffffff transparent transparent transparent;
   -webkit-transform: rotate(360deg);
-  top: 22px;
-  left: 18px;
   &:after {
     content: '';
     position: absolute;
