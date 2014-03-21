@@ -15,7 +15,15 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
+  gem "capybara", '~> 2.0.3'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
+  gem 'fabrication', '~> 2.8.0'
+  gem 'launchy'
+  gem 'pry', '~> 0.9.12.6'
+  gem 'pry-debugger', '~> 0.2.2'
   gem 'rspec-rails', '~> 2.14.0'
+  gem 'selenium-webdriver', '~> 2.40.0'
 end
 
 group :doc do
