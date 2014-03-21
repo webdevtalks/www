@@ -2,4 +2,7 @@
 .story
   %div
     %h2 Convocatoria.
-    %p Envia tu platica a contacto@webdevtalks.mx
+    %h3 Envía tu propuesta...
+    .flash-notice{ style: 'display: none;'}
+      %p Su propuesta ha sido enviada correctamente.
+    =render 'shared/form'
