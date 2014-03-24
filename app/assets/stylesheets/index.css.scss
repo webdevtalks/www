@@ -188,6 +188,7 @@
       position: absolute;
       white-space: nowrap;
       left: -1426px;
+      height: 230px;
       &.start {
         left: -1425px;
       }
@@ -200,10 +201,12 @@
     }
     &.slide-1 {
       bottom: 0px;
+      img { height: 172px; }
     }
     &.slide-2 {
       bottom: 176px;
       left: -1425px;
+      img { height: 172px; }
       &.to {
         bottom: 176px;
         left: -1425px;
@@ -214,6 +217,7 @@
     }
     &.slide-3 {
       bottom: 352px;
+      img { height: 172px; }
     }
     &.slide-1.to, &.slide-3.to {
       left: -1425px;
