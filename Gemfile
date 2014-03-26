@@ -25,7 +25,6 @@ group :development, :test do
   gem 'pry-debugger', '~> 0.2.2'
   gem 'rails_best_practices'
   gem 'rspec-rails', '~> 2.14.0'
-  gem 'selenium-webdriver', '~> 2.40.0'
 end
 
 group :doc do
