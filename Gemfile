@@ -15,6 +15,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
+  gem 'dotenv',      '~> 0.9.0'
   gem 'rspec-rails', '~> 2.14.0'
 end
 
