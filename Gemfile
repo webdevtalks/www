@@ -33,6 +33,8 @@ end
 
 group :test do
   gem 'capybara',    '~> 2.1.0'
+  gem 'fabrication', '~> 2.9.3'
+  gem 'faker',       '~> 1.2.0'
   gem 'poltergeist', '~> 1.4.1'
   gem 'simplecov',   '~> 0.8.2'
 end
