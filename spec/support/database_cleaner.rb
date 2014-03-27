@@ -1,4 +1,3 @@
-require "selenium-webdriver"
 DatabaseCleaner.strategy = :truncation
 
 RSpec.configure do |config|

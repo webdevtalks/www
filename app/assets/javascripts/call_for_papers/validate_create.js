@@ -3,33 +3,34 @@ $(function(){
     debug: true,
     success: "valid"
   });
+
   $( "#cfp-form" ).validate({
     rules: {
-      "call_for_papers[topic]": {
+      "paper[topic]": {
         required: true
       },
-      "call_for_papers[name]": {
+      "paper[name]": {
         required: true
       },
-      "call_for_papers[email]": {
+      "paper[email]": {
         required: true
       },
-      "call_for_papers[description]": {
+      "paper[description]": {
         required: true
       }
     },
      messages : {
-        "call_for_papers[topic]": {
+        "paper[topic]": {
           required : "Debe ingresar el nombre de la platica"
         },
-        "call_for_papers[name]": {
+        "paper[name]": {
           required : "Debe ingresar su nombre"
         },
-        "call_for_papers[email]": {
+        "paper[email]": {
           required : "Debe ingresar el email",
           email    : "Debe ingresar un email valido"
         },
-        "call_for_papers[description]": {
+        "paper[description]": {
           required : "Debe ingresar una descripcion"
         }
       }

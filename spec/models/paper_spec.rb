@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe CallForPapers do
+describe Paper do
   before do
-    subject { Fabricate :call_for_papers }
+    subject { Fabricate :paper }
   end
 
   it 'is invalid without topic name' do 

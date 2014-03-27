@@ -1,4 +1,4 @@
-Fabricator :call_for_papers  do
+Fabricator :paper do
   topic 'Topic Name x'
   name 'Name x'
   email 'test@test.com'
