@@ -30,4 +30,5 @@ end
 group :test do
   gem 'capybara',    '~> 2.1.0'
   gem 'poltergeist', '~> 1.4.1'
+  gem 'simplecov',   '~> 0.8.2'
 end
