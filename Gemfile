@@ -14,8 +14,12 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'awesome_print'
+
 group :development, :test do
+  gem 'debugger'
   gem 'dotenv',      '~> 0.9.0'
+  gem 'pry-rails'
   gem 'rspec-rails', '~> 2.14.0'
 end
 
