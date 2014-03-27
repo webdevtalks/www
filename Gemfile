@@ -1,26 +1,26 @@
-ruby   '2.0.0'
 source 'https://rubygems.org'
+ruby   '2.1.1'
 
-gem 'rails', '4.0.0'
+gem 'rails', '~> 4.0.4'
+gem 'pg',    '~> 0.17.1'
+gem 'puma',  '~> 2.8.1'
 
-gem 'pg'
-gem 'puma', '~> 2.6.0'
+gem 'coffee-rails',   '~> 4.0.1'
+gem 'haml-rails',     '~> 0.5.3'
+gem 'sass-rails',     '~> 4.0.2'
 
-gem 'bootstrap-sass', '~> 3.0.2.1'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'haml-rails', '~> 0.4'
-gem 'jquery-rails'
-gem 'sass-rails', '~> 4.0.0'
-gem 'turbolinks'
-gem 'uglifier', '>= 1.3.0'
+gem 'bootstrap-sass', '~> 3.1.1.0'
+gem 'jquery-rails',   '~> 3.1.0'
+gem 'turbolinks',     '~> 2.2.1'
+gem 'uglifier',       '>= 2.5.0'
 
-gem 'awesome_print'
+gem 'awesome_print',  '~> 1.2.0', require: 'ap'
 
 group :development, :test do
-  gem 'debugger'
+  gem 'debugger',    '>= 1.6.6'
   gem 'dotenv',      '~> 0.9.0'
-  gem 'pry-rails'
-  gem 'rspec-rails', '~> 2.14.0'
+  gem 'pry-rails',   '~> 0.3.2',  require: false
+  gem 'rspec-rails', '~> 2.14.2'
 end
 
 group :doc do
@@ -28,7 +28,7 @@ group :doc do
 end
 
 group :production do
-  gem 'rails_12factor'
+  gem 'rails_12factor', '~> 0.0.2'
 end
 
 group :test do
