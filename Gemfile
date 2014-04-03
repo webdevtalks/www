@@ -10,10 +10,10 @@ gem 'haml-rails',     '~> 0.5.3'
 gem 'sass-rails',     '~> 4.0.2'
 
 gem 'bootstrap-sass', '~> 3.1.1.0'
-gem 'jquery-rails'
-gem 'turbolinks'
+gem 'jquery-rails',   '~> 3.1.0'
+gem 'turbolinks',     '~> 2.2.1'
+gem 'uglifier',       '>= 2.5.0'
 gem 'jquery-validation-rails'
-gem 'uglifier', '>= 1.3.0'
 
 gem 'awesome_print',  '~> 1.2.0', require: 'ap'
 
