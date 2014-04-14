@@ -20,7 +20,6 @@ gem 'awesome_print',  '~> 1.2.0', require: 'ap'
 group :development, :test do
   gem 'capybara',    '~> 2.1.0'
   gem 'capybara-webkit'
-  gem 'database_cleaner'
   gem 'launchy'
   gem 'rails_best_practices'
   gem 'debugger',    '>= 1.6.6'
