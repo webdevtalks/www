@@ -13,10 +13,15 @@ gem 'bootstrap-sass', '~> 3.1.1.0'
 gem 'jquery-rails',   '~> 3.1.0'
 gem 'turbolinks',     '~> 2.2.1'
 gem 'uglifier',       '>= 2.5.0'
+gem 'jquery-validation-rails'
 
 gem 'awesome_print',  '~> 1.2.0', require: 'ap'
 
 group :development, :test do
+  gem 'capybara',    '~> 2.1.0'
+  gem 'capybara-webkit'
+  gem 'launchy'
+  gem 'rails_best_practices'
   gem 'debugger',    '>= 1.6.6'
   gem 'dotenv',      '~> 0.9.0'
   gem 'pry-rails',   '~> 0.3.2',  require: false
@@ -32,7 +37,6 @@ group :production do
 end
 
 group :test do
-  gem 'capybara',    '~> 2.1.0'
   gem 'fabrication', '~> 2.9.3'
   gem 'faker',       '~> 1.2.0'
   gem 'poltergeist', '~> 1.4.1'

@@ -1,0 +1,29 @@
+#story-contact {
+  h2 {
+    font-family: "Caecilia-Roman", Verdana, sans-serif;
+    font-size: 2em;
+    float: left;
+  }
+  .story {
+    width: 850px;
+    padding-right: 0px;
+  }
+  p {
+    float: left;
+    font-size: 30px;
+    position: relative;
+    text-align: center;
+    top: 255px;
+    width: 800px;
+  }
+  .copyright {
+    margin-left: 240px;
+    position: relative;
+    top: 200px;
+  }
+  a {
+    font-size: 40px;
+    position: relative;
+    top: 18px;
+  }
+}

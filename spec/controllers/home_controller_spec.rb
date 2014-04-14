@@ -6,5 +6,4 @@ describe HomeController do
     before { get :index }
     its(:response) { should be_success }
   end
-
 end

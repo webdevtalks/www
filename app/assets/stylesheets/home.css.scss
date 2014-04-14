@@ -1,10 +1,30 @@
-body {
-  margin: 0 auto;
-
+#story-home {
+  color: #666;
   #logo {
-    margin: 15% auto;
-    height: 140px;
-    width: 320px;
-    background: url(wdt-logo.png);
+    margin: 20px 0 50px 0;
+  }
+  h2 {
+    font-family: "Caecilia-Roman", Verdana, sans-serif;
+    font-size: 2em;
+  }
+  .story {
+    width: 850px;
+    padding-right: 0px;
+  }
+  p {
+    width: 800px;
+    font-size: 16px;
+  }
+  ul { padding: 0px; }
+  ul li {
+    font-size: 16px;
+    margin: 16px 0;
+  }
+  .twitter-redirect {
+    img { float: left; }
+    p {
+      padding: 17px;
+      width: 177px;
+    }
   }
 }

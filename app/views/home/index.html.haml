@@ -1,1 +1,15 @@
-#logo
+#mock-scroller
+=render 'shared/menu_nav'
+#content
+  %section#story-home
+    =render 'home'
+  %section#story-topics{"anim-pause" => "1000"}
+    =render 'topics'
+  %section#story-about
+    =render 'about'
+  %section#story-cfp
+    =render 'cfp'
+  %section#story-speakers{"data-nav" => "Speakers"}
+    =render 'speakers'
+  %section#story-contact{"anim-pause" => "500"}
+    =render 'contact'
