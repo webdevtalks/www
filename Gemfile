@@ -22,7 +22,7 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'launchy'
   gem 'rails_best_practices'
-  gem 'debugger',    '>= 1.6.6'
+  gem 'pry-nav'
   gem 'dotenv',      '~> 0.9.0'
   gem 'pry-rails',   '~> 0.3.2',  require: false
   gem 'rspec-rails', '~> 2.14.2'
