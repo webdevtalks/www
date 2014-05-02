@@ -20,11 +20,12 @@ gem 'awesome_print',  '~> 1.2.0', require: 'ap'
 group :development, :test do
   gem 'capybara',    '~> 2.1.0'
   gem 'capybara-webkit'
-  gem 'launchy'
-  gem 'rails_best_practices'
   gem 'pry-nav'
   gem 'dotenv',      '~> 0.9.0'
+  gem 'launchy'
+  gem 'nyan-cat-formatter'
   gem 'pry-rails',   '~> 0.3.2',  require: false
+  gem 'rails_best_practices'
   gem 'rspec-rails', '~> 2.14.2'
 end
 
