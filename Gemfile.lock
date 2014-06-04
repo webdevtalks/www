@@ -215,7 +215,7 @@ DEPENDENCIES
   faker (~> 1.2.0)
   haml-rails (~> 0.5.3)
   jquery-rails (~> 3.1.0)
-  jquery-validation-rails
+  jquery-validation-rails (~> 1.11.1.1)
   launchy
   nyan-cat-formatter
   pg (~> 0.17.1)

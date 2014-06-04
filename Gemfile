@@ -9,11 +9,11 @@ gem 'coffee-rails',   '~> 4.0.1'
 gem 'haml-rails',     '~> 0.5.3'
 gem 'sass-rails',     '~> 4.0.2'
 
-gem 'bootstrap-sass', '~> 3.1.1.0'
-gem 'jquery-rails',   '~> 3.1.0'
-gem 'turbolinks',     '~> 2.2.1'
-gem 'uglifier',       '>= 2.5.0'
-gem 'jquery-validation-rails'
+gem 'bootstrap-sass',          '~> 3.1.1.0'
+gem 'jquery-rails',            '~> 3.1.0'
+gem 'jquery-validation-rails', '~> 1.11.1.1'
+gem 'turbolinks',              '~> 2.2.1'
+gem 'uglifier',                '>= 2.5.0'
 
 gem 'awesome_print',  '~> 1.2.0', require: 'ap'
 
@@ -25,8 +25,11 @@ group :development, :test do
   gem 'launchy'
   gem 'nyan-cat-formatter'
   gem 'pry-rails',   '~> 0.3.2',  require: false
-  gem 'rails_best_practices'
   gem 'rspec-rails', '~> 2.14.2'
+end
+
+group :development do
+  gem 'rails_best_practices'
 end
 
 group :doc do
