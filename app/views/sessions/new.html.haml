@@ -1,0 +1,4 @@
+- flash.each do |type, message|
+  = content_tag :div, message, class: type
+
+= link_to 'Login with GitHub.', '/auth/github'

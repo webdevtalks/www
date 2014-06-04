@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe LoginsController do
+describe SessionsController do
 
   describe :new do
     before { get :new }

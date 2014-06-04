@@ -1,6 +1,6 @@
 WDT::Application.routes.draw do
 
-  get 'login', to: 'logins#new'
+  get 'login', to: 'sessions#new'
 
   root to: 'home#index'
 
