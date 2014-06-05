@@ -36,8 +36,8 @@
 .arrow-wrap {
   position: absolute;
   z-index: 1;
-  left: 50%;
-  top: 64em;
+  left: 90%;
+  top: 35em;
   margin-left: -5em;
   background: #111;
   opacity: 0.7;
