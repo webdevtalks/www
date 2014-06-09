@@ -24,7 +24,10 @@ ActiveRecord::Schema.define(version: 20140326222439) do
     t.text     "extra"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "authorizations", ["user_id"], name: "index_authorizations_on_user_id", using: :btree
 
   create_table "papers", force: true do |t|
     t.string   "topic"
