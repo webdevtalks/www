@@ -7,8 +7,11 @@ require 'rspec/autorun'
 require 'capybara/rspec'
 require 'capybara/rails'
 require 'capybara/poltergeist'
+require 'fakeweb'
 
 SimpleCov.start 'rails' if ENV['COVERAGE']
+
+FakeWeb.allow_net_connect = false
 
 # Change default javascript driver
 Capybara.javascript_driver = :poltergeist

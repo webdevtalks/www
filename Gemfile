@@ -43,6 +43,7 @@ end
 group :test do
   gem 'fabrication', '~> 2.9.3'
   gem 'faker',       '~> 1.2.0'
+  gem 'fakeweb',     '~> 1.3.0'
   gem 'poltergeist', '~> 1.4.1'
   gem 'simplecov',   '~> 0.8.2'
 end
