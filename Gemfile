@@ -15,7 +15,13 @@ gem 'jquery-validation-rails', '~> 1.11.1.1'
 gem 'turbolinks',              '~> 2.2.1'
 gem 'uglifier',                '>= 2.5.0'
 
-gem 'awesome_print',  '~> 1.2.0', require: 'ap'
+gem 'activevalidators',              '~> 2.1.0'
+gem 'activerecord-humanized_errors', '~> 2.0.0'
+
+gem 'httparty',        '~> 0.13.1'
+gem 'omniauth-github', '~> 1.1.2'
+
+gem 'awesome_print',   '~> 1.2.0', require: 'ap'
 
 group :development, :test do
   gem 'capybara',    '~> 2.1.0'
