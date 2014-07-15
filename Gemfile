@@ -23,11 +23,12 @@ gem 'omniauth-github', '~> 1.1.2'
 
 gem 'awesome_print',   '~> 1.2.0', require: 'ap'
 
+gem 'dotenv',      '~> 0.9.0'
+
 group :development, :test do
   gem 'capybara',    '~> 2.1.0'
   gem 'capybara-webkit'
   gem 'pry-nav'
-  gem 'dotenv',      '~> 0.9.0'
   gem 'launchy'
   gem 'nyan-cat-formatter'
   gem 'pry-rails',   '~> 0.3.2',  require: false
