@@ -32,6 +32,11 @@
       font-size: 16px;
       margin: 100px 0;
       .border-box{
+        img {
+          width: 132px;
+          height: 132px;
+          border-radius: 30px;
+        }
         background: #fff;
         -webkit-border-radius: 9px;
         -moz-border-radius: 9px;
