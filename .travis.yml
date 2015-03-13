@@ -1,9 +1,10 @@
 language: ruby
 rvm:
-  - 2.1.1
-bundler_args: '--without development'
-before_script:
+  - 2.2.0
+bundler_args: '--without development production'
+before_install:
   - "psql -c 'create database wdt_test;' -U postgres"
+before_script:
   - 'cp config/database.yml.example config/database.yml'
   - 'cp .env.example .env'
   - 'RAILS_ENV=test bundle exec rake db:migrate >> /dev/null 2>&1'
