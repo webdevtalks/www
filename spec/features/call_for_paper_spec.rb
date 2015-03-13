@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "call for papers" do
   it "send a proposal successfully" do

@@ -1,38 +1,35 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Authorization do
-  before { Authorization.any_instance.stub(github_authorization: true) }
+  before { allow_any_instance_of(Authorization).to receive(:github_authorization).and_return true }
 
-  describe :validates do
+  describe 'validates' do
 
-    describe :presence_of  do
-
-      context :attributes, attributes: [:provider, :uid] do
-        its "#{metadata[:attributes]} errors" do
-          example.metadata[:attributes].each do |attribute|
-            expect(subject.errors_on(attribute)).to include("can't be blank")
-          end
+    describe 'presence_of', attributes: [:provider, :uid], associations: { :update => [:user] }  do
+      before { subject.valid?  }
+      specify "#{metadata[:attributes]} errors" do |example|
+        example.metadata[:attributes].each do |attribute|
+          expect(subject.errors[attribute]).to include("can't be blank")
         end
       end
 
-      context :associations, associations: { :update => [:user] } do
-        context 'on update' do
-          subject { Fabricate(:authorization) }
+      context 'on update' do
+        subject { Fabricate(:authorization) }
 
-          before { subject.touch }
+        before { subject.touch }
 
-          its "#{metadata[:associations][:update]} errors" do
-            example.metadata[:associations][:update].each do |association|
-              expect(subject.errors_on(association)).to include("can't be blank")
-            end
+        specify "#{metadata[:associations][:update]} errors" do |example|
+          example.metadata[:associations][:update].each do |association|
+            expect(subject.errors[association]).to include("can't be blank")
           end
         end
       end
 
     end
 
-    describe :github_authorization do
-      before { Authorization.any_instance.unstub(:github_authorization) }
+
+    describe 'github_authorization' do
+      before { allow_any_instance_of(Authorization).to receive(:github_authorization).and_call_original }
 
       context 'when GithubAuthorization is invalid' do
 
@@ -41,13 +38,13 @@ describe Authorization do
         end
 
         before do
-          GithubAuthorization.stub new: github_authorization
+          allow(GithubAuthorization).to receive(:new).and_return github_authorization
           subject.send :github_authorization
         end
 
         it 'mimics its errors' do
-          expect(subject.errors_on(:github_authorization)).to be_present
-          expect(subject.errors_on(:github_authorization)).to include('x')
+          expect(subject.errors[:github_authorization]).to be_present
+          expect(subject.errors[:github_authorization]).to include('x')
         end
       end
     end
@@ -57,24 +54,31 @@ describe Authorization do
   describe '.create_by_omniauth_hash' do
     subject { Authorization.create_by_omniauth_hash(omniauth_hash) }
 
-    context 'with hash:', omniauth_hash: { provider: Faker::Internet.domain_word,
+    context 'with hash:', omniauth_hash: {
+                                           provider: Faker::Internet.domain_word,
                                            uid: Faker::Number.number(5),
-                                           info: { name: Faker::Name.name,
-                                                   email: Faker::Internet.email }
+                                           info: {
+                                             name: Faker::Name.name,
+                                             email: Faker::Internet.email
+                                           }
                                          }.with_indifferent_access do
-      let(:omniauth_hash) { example.metadata[:omniauth_hash] }
+
+      let(:omniauth_hash) {|e| e.metadata[:omniauth_hash] }
 
       context "#{metadata[:omniauth_hash]}" do
-        metadata[:omniauth_hash].each {|attr, value| its(attr) { should == value } }
+
+        metadata[:omniauth_hash].each do |attr, value|
+          it{ expect(omniauth_hash[attr]).to eq(value) }
+        end
 
         describe 'its user' do
-          specify { subject.user.should be_present }
-          specify { subject.user.should be_persisted }
+          it { expect(subject.user).to be_present }
+          it { expect(subject.user).to be_persisted }
 
           context 'attributes' do
             metadata[:omniauth_hash][:info].slice(:name, :email).each do |attr, value|
               it "#{attr} == #{value}" do
-                subject.user.send(attr).should == value
+               expect(subject.user.send(attr)).to eq(value)
               end
             end
           end
@@ -89,7 +93,7 @@ describe Authorization do
     context 'with hash:', omniauth_hash: { provider: Faker::Internet.domain_word,
                                            uid: Faker::Number.number(5) } do
       context "#{metadata[:omniauth_hash]}" do
-        let(:omniauth_hash) { example.metadata[:omniauth_hash] }
+        let(:omniauth_hash) {|e| e.metadata[:omniauth_hash] }
         before do
           @authorization = Fabricate(:authorization,
                                      omniauth_hash.merge(user: Fabricate.build(:user)))
@@ -111,7 +115,7 @@ describe Authorization do
                                           with_indifferent_access } do
 
       context "#{metadata[:omniauth_hash]}" do
-        let(:omniauth_hash) { example.metadata[:omniauth_hash] }
+        let(:omniauth_hash) {|e| e.metadata[:omniauth_hash] }
 
         context 'when authorization exists' do
           before { @authorization = Authorization.create_by_omniauth_hash(omniauth_hash) }
@@ -123,10 +127,11 @@ describe Authorization do
 
         context 'when authorization does not exist' do
           before do
-            Authorization.find_by_omniauth_hash(omniauth_hash).should be_nil
+            expect(Authorization.find_by_omniauth_hash(omniauth_hash)).to be_nil
           end
+
           it 'creates a new authorization' do
-            subject.created_at.beginning_of_minute.should === Time.now.beginning_of_minute
+            expect(subject.created_at.beginning_of_minute).to eq(Time.now.beginning_of_minute)
           end
         end
       end
