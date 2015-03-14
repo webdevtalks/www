@@ -6,6 +6,7 @@ class GithubAuthorization
 
   include ActiveModel::Validations
   include HTTParty
+  include ActiveRecord::HumanizedErrors
 
   headers  'User-Agent' => ENV['GITHUB_APP']
   base_uri 'https://api.github.com'

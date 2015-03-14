@@ -1,9 +1,9 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe HomeController do
 
-  describe :index do
+  describe 'index' do
     before { get :index }
-    its(:response) { should be_success }
+    it { expect(response).to be_success }
   end
 end

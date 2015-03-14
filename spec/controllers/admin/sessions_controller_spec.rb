@@ -1,40 +1,34 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Admin::SessionsController do
 
-  before do
-    Authorization.any_instance.stub :github_authorization
-  end
-
-  describe :new do
+  describe 'new' do
     before { get :new }
-    its(:response) { should be_success }
+    it { expect(response).to be_success }
   end
 
-  describe :create do
-    let(:user) { Fabricate(:user_with_authorization) }
+  describe 'create' do
+    let(:user) { Fabricate.build(:user_with_authorization) }
 
     before do
-      Authorization.stub find_or_create_by_omniauth: user.authorization,
-                         github_authorization:       true
+      allow(Authorization).to receive(:find_or_create_by_omniauth) { user.authorization }
+      allow(user.authorization).to receive(:valid?) { authorization_validity }
     end
 
     context 'when authorization is valid' do
-
+      let(:authorization_validity) { true }
+      before { get :create }
       it 'stores user id into session' do
-        get :create
         expect(session[:user_id]).to eq(user.id)
       end
     end
 
     context 'when authorization is invalid' do
-      before do
-        user.authorization.stub invalid?: true
-        get :create
-      end
+      let(:authorization_validity) { false }
+      before { get :create }
 
-      specify { expect(response).to redirect_to(admin_login_path) }
-      specify { expect(session[:user_id]).to be_nil }
+      it { expect(response).to redirect_to(admin_login_path) }
+      it { expect(session[:user_id]).to be_nil }
     end
   end
 
