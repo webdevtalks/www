@@ -1,11 +1,11 @@
 !!!
 %html
   %head
-    %title Web Dev Talks
-    = favicon_link_tag
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
+    = favicon_link_tag
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    %title Web Dev Talks
   %body
     = yield
 
