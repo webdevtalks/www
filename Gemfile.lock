@@ -49,6 +49,7 @@ GEM
     autoprefixer-rails (5.1.7)
       execjs
       json
+    awesome_print (1.6.1)
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -281,6 +282,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-humanized_errors (~> 2.0.0)
   activevalidators (~> 3.2.0)
+  awesome_print (~> 1.6.1)
   bootstrap-sass (~> 3.3.3)
   capybara (~> 2.4.4)
   capybara-webkit (~> 1.4.1)

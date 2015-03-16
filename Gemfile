@@ -25,11 +25,12 @@ group :development, :test do
   gem 'capybara',        '~> 2.4.4'
   gem 'capybara-webkit', '~> 1.4.1'
   gem 'launchy',         '~> 2.4.3'
-  gem 'pry-rails',       '~> 0.3.3',  require: false
+  gem 'pry-rails',       '~> 0.3.3'
   gem 'rspec-rails',     '~> 3.2.1'
 end
 
 group :development do
+  gem 'awesome_print',        '~> 1.6.1'
   gem 'dotenv-rails',         '~> 2.0.0'
   gem 'rails_best_practices', '~> 1.15.7'
 end
