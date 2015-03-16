@@ -11,10 +11,6 @@ describe GithubAuthorization do
     it 'sets token in Authorization header' do
       expect(subject.class.headers['Authorization']).to include("token #{token}")
     end
-
-    it 'sets the github organization' do
-      expect(subject.organization).to eq(ENV['GITHUB_ORGANIZATION'])
-    end
   end
 
   describe 'organization_membership' do

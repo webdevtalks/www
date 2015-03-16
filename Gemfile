@@ -24,14 +24,14 @@ gem 'omniauth-github', '~> 1.1.2'
 group :development, :test do
   gem 'capybara',        '~> 2.4.4'
   gem 'capybara-webkit', '~> 1.4.1'
-  gem 'dotenv',      '~> 2.0.0'
   gem 'launchy',         '~> 2.4.3'
   gem 'pry-rails',       '~> 0.3.3',  require: false
   gem 'rspec-rails',     '~> 3.2.1'
 end
 
 group :development do
-  gem 'rails_best_practices'
+  gem 'dotenv-rails',         '~> 2.0.0'
+  gem 'rails_best_practices', '~> 1.15.7'
 end
 
 group :doc do
