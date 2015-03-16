@@ -5,17 +5,17 @@ class GithubAuthorization
   attr_reader :nickname, :organization
 
   include ActiveModel::Validations
-  include HTTParty
   include ActiveRecord::HumanizedErrors
+  include HTTParty
 
-  headers  'User-Agent' => ENV['GITHUB_APP']
+  headers  'User-Agent' => Rails.application.secrets.github_app
   base_uri 'https://api.github.com'
 
   validate :organization_membership
 
   def initialize(access_token, nickname)
     self.class.headers['Authorization'] = "token #{access_token}"
-    @organization = ENV['GITHUB_ORGANIZATION']
+    @organization = 'webdevtalks'
     @nickname     = nickname
   end
 

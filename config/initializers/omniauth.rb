@@ -5,7 +5,7 @@ WDT::Application.config.middleware.use OmniAuth::Builder do
   end
 
   provider :github,
-           ENV['GITHUB_CLIENT_ID'],
-           ENV['GITHUB_CLIENT_SECRET'],
+           Rails.application.secrets.github_client_id,
+           Rails.application.secrets.github_client_secret,
            scope: 'read:org'
 end
