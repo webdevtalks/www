@@ -66,6 +66,10 @@ GEM
     cliver (0.3.2)
     code_analyzer (0.4.5)
       sexp_processor
+    codecov (0.0.2)
+      json
+      simplecov
+      url
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -270,6 +274,7 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    url (0.3.2)
     websocket-driver (0.5.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -286,6 +291,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.3)
   capybara (~> 2.4.4)
   capybara-webkit (~> 1.4.1)
+  codecov (~> 0.0.2)
   coffee-rails (~> 4.1.0)
   dotenv-rails (~> 2.0.0)
   fabrication (~> 2.12.2)
