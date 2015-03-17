@@ -1,10 +1,13 @@
 language: ruby
 rvm:
-  - 2.2.0
-bundler_args: '--without development production'
+- 2.2.0
+bundler_args: "--without development production"
 before_script:
-  - "psql -c 'create database wdt_test;' -U postgres"
-  - 'cp config/database.yml.example config/database.yml'
-  - 'RAILS_ENV=test bundle exec rake db:migrate >> /dev/null 2>&1'
+- psql -c 'create database wdt_test;' -U postgres
+- cp config/database.yml.example config/database.yml
+- RAILS_ENV=test bundle exec rake db:migrate >> /dev/null 2>&1
 script:
-  - 'RAILS_ENV=test bundle exec rake'
+- RAILS_ENV=test bundle exec rake
+notifications:
+  slack:
+    secure: cLXVrZVOfzC4L0/ufYvYzPiVAJYeMus9CgeggjGSkXd2ZhYXCNly3PRmXr36ZRZ8mgjBh7V/iL5d5bcW86DTbsBfyTjwOltU2w7YkMrBkEeIlUZbq3FK+hOEs73edppqu5oMoa8iwN6nL9Y4uMlkNepxml6bExNRuct8ykgHAvE=
