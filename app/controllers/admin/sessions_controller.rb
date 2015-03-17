@@ -1,24 +1,27 @@
 class Admin::SessionsController < ApplicationController
 
-  before_action :authorize,     only: :create
   before_action :reset_session, only: :create
 
   layout 'admin'
 
-  def new
+  def create
+    @auth = Authorization.find_or_create_by_omniauth(omniauth_params)
+
+    if @auth.valid?
+      session[:user_id] = @auth.user_id
+      redirect_to root_path
+    else
+      redirect_to admin_login_path, alert: @auth.humanized_errors
+    end
   end
 
-  def create
-    session[:user_id] = @auth.user_id
-
-    redirect_to root_path
+  def new
   end
 
   private
 
-  def authorize
-    @auth = Authorization.find_or_create_by_omniauth(request.env['omniauth.auth'])
-    redirect_to admin_login_path, alert: @auth.humanized_errors unless @auth.persisted?
+  def omniauth_params
+    OmniauthHash.new(request.env['omniauth.auth']).permit!
   end
 
 end

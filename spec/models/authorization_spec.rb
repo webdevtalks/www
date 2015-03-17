@@ -51,8 +51,8 @@ describe Authorization do
 
   end
 
-  describe '.create_by_omniauth_hash' do
-    subject { Authorization.create_by_omniauth_hash(omniauth_hash) }
+  describe '.create_by_omniauth' do
+    subject { Authorization.create_by_omniauth(omniauth_hash) }
 
     context 'with hash:', omniauth_hash: {
                                            provider: Faker::Internet.domain_word,
@@ -88,8 +88,8 @@ describe Authorization do
   end
 
 
-  describe '.find_by_onmniauth_hash' do
-    subject { Authorization.find_by_omniauth_hash(omniauth_hash) }
+  describe '.find_by_onmniauth' do
+    subject { Authorization.find_by_omniauth(omniauth_hash) }
     context 'with hash:', omniauth_hash: { provider: Faker::Internet.domain_word,
                                            uid: Faker::Number.number(5) } do
       context "#{metadata[:omniauth_hash]}" do
@@ -118,7 +118,7 @@ describe Authorization do
         let(:omniauth_hash) {|e| e.metadata[:omniauth_hash] }
 
         context 'when authorization exists' do
-          before { @authorization = Authorization.create_by_omniauth_hash(omniauth_hash) }
+          before { @authorization = Authorization.create_by_omniauth(omniauth_hash) }
 
           it 'finds existing authorization' do
             expect(subject).to eq(@authorization)
@@ -127,7 +127,7 @@ describe Authorization do
 
         context 'when authorization does not exist' do
           before do
-            expect(Authorization.find_by_omniauth_hash(omniauth_hash)).to be_nil
+            expect(Authorization.find_by_omniauth(omniauth_hash)).to be_nil
           end
 
           it 'creates a new authorization' do

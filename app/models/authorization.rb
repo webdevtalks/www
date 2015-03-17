@@ -8,17 +8,17 @@ class Authorization < ActiveRecord::Base
   validates_presence_of :provider, :uid
   validates_presence_of :user, on: :update
 
-  def self.create_by_omniauth_hash(hash)
+  def self.create_by_omniauth(hash)
     user = User.new hash[:info].slice(:name, :email)
     create hash.merge(user: user).with_indifferent_access
   end
 
-  def self.find_by_omniauth_hash(hash)
+  def self.find_by_omniauth(hash)
     find_by hash.slice(:provider, :uid)
   end
 
   def self.find_or_create_by_omniauth(hash)
-    find_by_omniauth_hash(hash) || create_by_omniauth_hash(hash)
+    find_by_omniauth(hash) || create_by_omniauth(hash)
   end
 
   private
