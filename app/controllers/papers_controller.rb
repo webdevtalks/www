@@ -1,10 +1,6 @@
 class PapersController < ApplicationController
   before_filter :protect_from_forgery, :except => [:create, :new]
 
-  def new
-    @paper = Paper.new
-  end
-
   def create
     @paper = Paper.create! paper_params
 

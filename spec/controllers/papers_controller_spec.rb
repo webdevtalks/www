@@ -1,19 +1,8 @@
 require 'rails_helper'
 
 describe PapersController do
- describe '#new' do
-    before do
-      get :new
-    end
-
-    it 'responds successfully with an HTTP 200 status code' do
-      expect(response).to be_success
-      expect(response.status).to eq(200)
-    end
-  end
-
   describe '#create' do
-    def valid_attributes
+    let :valid_attributes do
       {
         topic: 'test topic name',
         name: 'test name',

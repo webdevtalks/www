@@ -1,0 +1,12 @@
+= form_tag papers_url, remote: true, id: 'cfp-form' do
+
+  = label_tag 'topic', 'Nombre del Tema:'
+  = text_field :paper, :topic, placeholder: 'Github hooks'
+  = label_tag 'name', 'Nombre del Conferencista:'
+  = text_field :paper, :name, placeholder: 'Arturo Fuentes'
+  = label_tag 'email', 'Correo del Conferencista:'
+  = email_field :paper, :email, placeholder: 'mail@dominio.com'
+  = label_tag 'description', 'Resumen de la Charla:'
+  = text_area_tag :description, '', placeholder: 'Describe tu propuesta...', size: '24x6', name: 'paper[description]'
+
+  = submit_tag 'Enviar', class: 'btn primary', id: 'submit-button'

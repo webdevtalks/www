@@ -1,0 +1,15 @@
+#mock-scroller
+
+= render 'shared/menu_nav'
+
+#content
+  section#story-home
+   = render 'home'
+  section#story-topics anim-pause='1000'
+   = render 'topics'
+  section#story-cfp
+   = render 'cfp'
+  section#story-wdt data-nav='Speakers'
+   = render 'wdt'
+  section#story-location anim-pause='500'
+    = render 'location'

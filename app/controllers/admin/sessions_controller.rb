@@ -1,8 +1,6 @@
-class Admin::SessionsController < ApplicationController
+class Admin::SessionsController < AdministrationController
 
   before_action :reset_session, only: :create
-
-  layout 'admin'
 
   def create
     @auth = Authorization.find_or_create_by_omniauth(omniauth_params)

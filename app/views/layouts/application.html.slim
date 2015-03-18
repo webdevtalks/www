@@ -1,15 +1,16 @@
-!!!
-%html
-  %head
+doctype html
+html
+  head
     = csrf_meta_tags
     = favicon_link_tag
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    %title Web Dev Talks
-  %body
+
+    title Web Dev Talks
+  body
     = yield
 
-    :javascript
+    javascript:
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

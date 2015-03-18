@@ -6,8 +6,8 @@ gem 'pg',    '~> 0.18.1'
 gem 'puma',  '~> 2.11.1'
 
 gem 'coffee-rails',   '~> 4.1.0'
-gem 'haml-rails',     '~> 0.8.2'
 gem 'sass-rails',     '~> 5.0.1'
+gem 'slim-rails',     '~> 3.0.1'
 
 gem 'bootstrap-sass',          '~> 3.3.3'
 gem 'jquery-rails',            '~> 4.0.3'
