@@ -12,7 +12,6 @@ gem 'slim-rails',     '~> 3.0.1'
 gem 'bootstrap-sass',          '~> 3.3.3'
 gem 'jquery-rails',            '~> 4.0.3'
 gem 'jquery-validation-rails', '~> 1.13.1'
-gem 'turbolinks',              '~> 2.5.3'
 gem 'uglifier',                '>= 2.7.1'
 
 gem 'activevalidators',              '~> 3.2.0'
