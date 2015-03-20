@@ -1,4 +1,4 @@
-class Admin::SessionsController < AdministrationController
+class Admin::SessionsController < AdminController
 
   before_action :reset_session, only: :create
 

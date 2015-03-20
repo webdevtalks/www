@@ -1,10 +1,16 @@
 doctype html
-html
+html dir='ltr' lang='es'
   head
     = csrf_meta_tags
+
+    meta http-equiv='Content-Type' content='text/html; charset=utf-8'
+    meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'
+
+    = javascript_include_tag 'application'
+
+    = stylesheet_link_tag    'application', media: 'all'
+
     = favicon_link_tag
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 
     title Web Dev Talks
   body
@@ -18,4 +24,3 @@ html
 
       ga('create', 'UA-50616771-1', 'webdevtalks.mx');
       ga('send', 'pageview');
-

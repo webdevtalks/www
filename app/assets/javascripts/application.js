@@ -12,11 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.validate
-//= require jquery.validate.additional-methods
-//= require call_for_papers/validate_create
-//= require call_for_papers/create
-//= require parallax
-//= require arrow
-//= require turbolinks
-//= require_tree .
+//= require vendors
+//= require base
