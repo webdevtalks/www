@@ -1,0 +1,2 @@
+Fabricator(:location) do
+end

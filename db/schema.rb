@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326222439) do
+ActiveRecord::Schema.define(version: 20150324003211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "authorizations", force: true do |t|
-    t.string   "provider"
-    t.string   "uid"
+  create_table "authorizations", force: :cascade do |t|
+    t.string   "provider",    limit: 255
+    t.string   "uid",         limit: 255
     t.text     "info"
     t.text     "credentials"
     t.text     "extra"
@@ -29,18 +29,25 @@ ActiveRecord::Schema.define(version: 20140326222439) do
 
   add_index "authorizations", ["user_id"], name: "index_authorizations_on_user_id", using: :btree
 
-  create_table "papers", force: true do |t|
-    t.string   "topic"
-    t.string   "name"
-    t.string   "email"
-    t.string   "description"
+  create_table "locations", force: :cascade do |t|
+    t.string   "city"
+    t.string   "country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "papers", force: :cascade do |t|
+    t.string   "topic",       limit: 255
+    t.string   "name",        limit: 255
+    t.string   "email",       limit: 255
+    t.string   "description", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
+  create_table "users", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "email",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
