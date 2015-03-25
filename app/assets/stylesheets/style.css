@@ -214,6 +214,13 @@ body {
   margin-right: 0;
   padding-right: 0;
 }
+
+.banner .event-info p {
+  color: white;
+  margin: 0 auto;
+  text-align: justify;
+  width: 40%;
+}
 .banner h1, .banner h2 {
   font-family: "Lato", sans-serif;
   font-weight: 400;
