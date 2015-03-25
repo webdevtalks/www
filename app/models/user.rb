@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
-  has_one :authorization
+  has_one  :authorization
+  has_many :talks
 
   validates_presence_of :email, :name
   validates_presence_of :authorization, on: :update
