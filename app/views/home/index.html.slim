@@ -1,33 +1,15 @@
-//! Teaser
 #home.banner
   .banner_bg data-stellar-background-ratio='0.2' style='background-image: url("assets/bg_banner.jpg");'
   .row
     .colums.small-12.medium-12-large-12
       .center-content
-        /! Site title
         .logo
           h1#site-title
             img src='assets/logo-curvas.png'
-        /! Site Description
         .sub-logo
           h2#site-description Aprendiendo y compartiendo
-        /! Event Info
-        .event-info
-          ul.small-block-grid-1.medium-block-grid-2.large-block-grid-4
-            li
-              i.fa.fa-map-marker Colima, Mexico
-            li
-              i.fa.fa-calendar 10/12/2014
-            li
-              i.fa.fa-microphone 4 Ponentes
-            li
-              i.fa.fa-ticket 50 tickets
-        h1 1 dia de inspiracion y educacion sobre desarrollo movil.
-        h2
-          | El 10 de Diciembre en Colima, MEX. En el CoCoWorking, La industria esta de regreso con otra interesante seleccion de platicas.
-          br/
-          | Ponentes que proveeran informacion, tips y diferentes caminos para hacer lo que hacemos.
-        /! Social Links
+        = render 'event'
+                  /! Social Links
         .row
           .large-6.small-centered.columns
             .event-social
