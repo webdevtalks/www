@@ -191,7 +191,7 @@ body {
   z-index: -5;
 }
 .banner .logo {
-  margin-top: 6em;
+  margin-top: 1em;
 }
 .banner .event-info ul {
   margin-top: 3.25em;
@@ -4956,6 +4956,10 @@ h1.entry-title a:hover {
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+
+.logo #site-title img {
+  max-width: 75%;
 }
 
 /*	----------------------------------------------------------
