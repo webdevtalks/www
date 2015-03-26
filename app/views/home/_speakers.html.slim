@@ -22,7 +22,8 @@
                 .name
                   a href='#' target='_blank'
                     = speaker.name
-                /.company
+                .company
+                  = speaker.talks.first.title
                   /a href='http://tauziet.com/' target='_blank'  Facebook
         /! View all Speakers Button
         /.view-all-speakers
