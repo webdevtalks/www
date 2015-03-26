@@ -1,88 +1,30 @@
-/! Speakers
-#speakers.speakers.widget-content
+#ponentes.speakers.widget-content
   .row
     .columns.small-12.medium-12.large-12
       .center-content
         h2 Ponentes
         div
-          ul.small-block-grid-1.medium-block-grid-2.large-block-grid-4
-            /! First Speaker
-            li
-              .avatar
-                img alt='Avatar1' height='220' src='assets/avatar1.jpg' width='220' /
-                /! Speaker media links
-                .social
-                  /! Speaker profile / blog url
+          ul.small-block-grid-1.medium-block-grid-2 class="large-block-grid-#{event.speakers.count}"
+            - event.speakers.each do |speaker|
+              li
+                .avatar
+                  img alt='Avatar1' height='220' src="assets/#{speaker.twitter}.jpeg" width='220' /
+                  .social
+                    /! Speaker profile / blog url
+                    /a href='#' target='_blank'
+                      /i.fa.fa-user
+                    /! Speaker Twitter URL
+                    a href="https://twitter.com/#{speaker.twitter}"
+                      i.fa.fa-twitter
+                    /! Speaker Facebook URL
+                    /a href='#'
+                      /i.fa.fa-facebook
+                .name
                   a href='#' target='_blank'
-                    i.fa.fa-user
-                  /! Speaker Twitter URL
-                  a href='https://twitter.com/christauziet'
-                    i.fa.fa-twitter
-                  /! Speaker Facebook URL
-                  a href='#'
-                    i.fa.fa-facebook
-              .name
-                a href='#' target='_blank'  Christophe Tauziet
-              .company
-                a href='http://tauziet.com/' target='_blank'  Facebook
-            /! Second Speaker
-            li
-              .avatar
-                img alt='Avatar1' height='220' src='assets/avatar2.jpg' width='220' /
-                /! Speaker media links
-                .social
-                  /! Speaker profile / blog url
-                  a href='#' target='_blank'
-                    i.fa.fa-user
-                  /! Speaker Twitter URL
-                  a href='#' target='_blank'
-                    i.fa.fa-twitter
-                  /! Speaker Facebook URL
-                  a href='https://www.facebook.com/victor.tihai' target='_blank'
-                    i.fa.fa-facebook
-              .name
-                a href='http://victor.tihai.ca/' target='_blank'  Victor Tihai
-              .company
-                a href='http://bit.ly/14COeuj' target='_blank'  WPlook Studio
-            /! Third Speaker
-            li
-              .avatar
-                img alt='Avatar1' height='220' src='assets/avatar3.jpg' width='220' /
-                /! Speaker media links
-                .social
-                  /! Speaker profile / blog url
-                  a href='#' target='_blank'
-                    i.fa.fa-user
-                  /! Speaker Twitter URL
-                  a href='#' target='_blank'
-                    i.fa.fa-twitter
-                  /! Speaker Facebook URL
-                  a href='#' target='_blank'
-                    i.fa.fa-facebook
-              .name
-                a href='#' target='_blank'  Anthony Garand
-              .company
-                a href='http://gradientcreates.com/' target='_blank'  Garand
-            /! Fourth Speaker
-            li
-              .avatar
-                img alt='Avatar1' height='220' src='assets/avatar4.jpg' width='220' /
-                /! Speaker media links
-                .social
-                  /! Speaker profile / blog url
-                  a href='#' target='_blank'
-                    i.fa.fa-user
-                  /! Speaker Twitter URL
-                  a href='#' target='_blank'
-                    i.fa.fa-twitter
-                  /! Speaker Facebook URL
-                  a href='#' target='_blank'
-                    i.fa.fa-facebook
-              .name
-                a href='#' target='_blank'  Reza Qorbani
-              .company
-                a href='http://www.qorbani.com/' target='_blank'  Qorbani
+                    = speaker.name
+                /.company
+                  /a href='http://tauziet.com/' target='_blank'  Facebook
         /! View all Speakers Button
-        .view-all-speakers
-          a.btn-default href='speakers.html'  VE A TODOS LOS PONENTES
+        /.view-all-speakers
+          /a.btn-default href='speakers.html'  VE A TODOS LOS PONENTES
 

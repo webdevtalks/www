@@ -6,7 +6,8 @@
       li
         i.fa.fa-calendar  #{@event.date}
       li
-        i.fa.fa-microphone  #{@event.speakers.count} Ponentes
+        = link_to '#ponentes' do
+          i.fa.fa-microphone  #{@event.speakers.count} Ponentes
       /li
         /i.fa.fa-ticket 50 tickets
     h1= @event.theme
