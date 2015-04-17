@@ -1,12 +1,13 @@
 .event-info
   - if @event.present?
-    ul.small-block-grid-1.medium-block-grid-2.large-block-grid-2
+    ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3
       li
         i.fa.fa-map-marker  #{@event.location.name}
       li
         i.fa.fa-calendar  #{@event.date}
-      /li
-        /i.fa.fa-microphone 4 Ponentes
+      li
+        = link_to '#ponentes' do
+          i.fa.fa-microphone  #{@event.speakers.count} Ponentes
       /li
         /i.fa.fa-ticket 50 tickets
     h1= @event.theme
