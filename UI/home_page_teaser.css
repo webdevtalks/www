@@ -1,0 +1,99 @@
+.banner {
+  min-height: 670px;
+  background-color: black;
+  position: relative;
+  z-index: 1;
+}
+.banner .banner_bg {
+  opacity: 0.15;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 15 ")";
+  filter: alpha(opacity=15);
+  zoom: 1;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+.banner .logo {
+  margin-top: 6em;
+}
+.banner .event-info ul {
+  margin-top: 3.25em;
+}
+.banner .event-info ul li {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 1.5em;
+  margin: 1em 0;
+  padding-bottom: 0px;
+  border-right: 1px solid #404040;
+}
+.banner .event-info ul li i.fa {
+  color: #3da3e1;
+  display: inline-block;
+  margin-right: 15px;
+}
+.banner .event-info ul li:last-child {
+  border: none;
+  margin-right: 0;
+  padding-right: 0;
+}
+.banner h1, .banner h2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+.banner h1 {
+  color: white;
+  font-size: 2.2em;
+}
+.banner h2 {
+  font-size: 1.3em;
+  color: #bfbfbf;
+}
+.banner .event-social {
+  margin: 3em 0;
+}
+.banner .event-social ul li {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.1em;
+  padding-bottom: 0;
+  border-right: 1px solid #404040;
+}
+.banner .event-social ul li i.fa {
+  margin-right: 10px;
+}
+.banner .event-social ul li a {
+  color: #bfbfbf;
+}
+.banner .event-social ul li a:hover {
+  color: white;
+}
+.banner .event-social ul li:last-child {
+  border: none;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+@media all and (max-width: 480px) {
+  .logo #site-title {
+    font-size: 1.1em;
+  }
+
+  .banner .event-info, .banner .event-social {
+    width: 95%;
+  }
+  .banner .event-info ul li, .banner .event-social ul li {
+    border: none;
+  }
+}

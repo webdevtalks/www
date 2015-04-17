@@ -1,0 +1,42 @@
+.speakers ul li .avatar:hover .social {
+  -webkit-animation-name: rotateIn;
+  -ms-animation-name: rotateIn;
+  animation-name: rotateIn;
+  -webkit-animation-duration: 0.2s;
+  -ms-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+  -webkit-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.speakers ul li .avatar:hover .social a:hover {
+  -webkit-animation-name: pulse;
+  -ms-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 0.3s;
+  -ms-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}

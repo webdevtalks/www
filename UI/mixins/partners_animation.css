@@ -1,0 +1,21 @@
+.partners ul li a:hover img {
+  -webkit-animation-name: fadeIn;
+  -ms-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}

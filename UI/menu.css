@@ -1,0 +1,303 @@
+/*	----------------------------------------------------------
+	Mobile Menu
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+.isStuck {
+  left: 0px;
+  width: 100%;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+}
+
+/*	----------------------------------------------------------
+	Main Menu
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+.main_menu {
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.98);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FA000000,endColorstr=#FA000000);
+  zoom: 1;
+}
+.main_menu ul.nav-menu,
+.main_menu div.nav-menu > ul {
+  margin: 0;
+  padding: 0;
+  /*	----------------------------------------------------------
+  	Register
+  = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+  /*	----------------------------------------------------------
+  	Language
+  = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+}
+.main_menu ul.nav-menu li,
+.main_menu div.nav-menu > ul li {
+  display: inline-block;
+  position: relative;
+}
+.main_menu ul.nav-menu li a,
+.main_menu div.nav-menu > ul li a {
+  color: white;
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 2.5;
+  padding: 10px;
+  text-decoration: none;
+}
+.main_menu ul.nav-menu li a:hover,
+.main_menu div.nav-menu > ul li a:hover {
+  color: #3da3e1;
+}
+.main_menu ul.nav-menu li:hover > a,
+.main_menu div.nav-menu > ul li:hover > a {
+  color: #3da3e1;
+}
+.main_menu ul.nav-menu li:hover > ul,
+.main_menu div.nav-menu > ul li:hover > ul {
+  display: block;
+}
+.main_menu ul.nav-menu li > .sub-menu,
+.main_menu div.nav-menu > ul li > .sub-menu {
+  /*	----------------------------------------------------------
+  	Submeniu
+  = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+}
+.main_menu ul.nav-menu li > .sub-menu li:first-child,
+.main_menu div.nav-menu > ul li > .sub-menu li:first-child {
+  position: relative;
+}
+.main_menu ul.nav-menu li > .sub-menu li:first-child:after,
+.main_menu div.nav-menu > ul li > .sub-menu li:first-child:after {
+  z-index: 9999;
+  bottom: 100%;
+  left: 25%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: transparent;
+  border-bottom-color: #1a1a1a;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 80 ")";
+  filter: alpha(opacity=80);
+  zoom: 1;
+  border-width: 10px;
+  margin-left: -10px;
+}
+.main_menu ul.nav-menu li > .sub-menu .sub-menu li:first-child:after,
+.main_menu div.nav-menu > ul li > .sub-menu .sub-menu li:first-child:after {
+  border: none;
+}
+.main_menu ul.nav-menu ul a,
+.main_menu div.nav-menu > ul ul a {
+  color: white;
+  margin: 0;
+  min-width: 160px;
+  line-height: 1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-transform: capitalize;
+  border-bottom: 1px solid #404040;
+}
+.main_menu ul.nav-menu ul a:hover,
+.main_menu div.nav-menu > ul ul a:hover {
+  color: #fff;
+  border-bottom: 1px solid gray;
+}
+.main_menu ul.nav-menu li.register,
+.main_menu div.nav-menu > ul li.register {
+  display: inline-block;
+  float: right;
+}
+.main_menu ul.nav-menu li.register a,
+.main_menu div.nav-menu > ul li.register a {
+  background-color: #3da3e1;
+  color: white;
+  text-transform: uppercase;
+  display: block;
+  padding: 10px 25px 10px 25px;
+}
+.main_menu ul.nav-menu li.register a:hover,
+.main_menu div.nav-menu > ul li.register a:hover {
+  background-color: #4d86a9;
+}
+.main_menu ul.nav-menu li.language,
+.main_menu div.nav-menu > ul li.language {
+  display: inline-block;
+  padding: 0px;
+  float: right;
+}
+.main_menu ul.nav-menu li.language a,
+.main_menu div.nav-menu > ul li.language a {
+  background: #030303;
+  position: relative;
+  padding: 10px 35px 10px 35px;
+  color: white;
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 2.5;
+  text-decoration: none;
+}
+.main_menu ul.nav-menu li.language a:hover,
+.main_menu div.nav-menu > ul li.language a:hover {
+  background: #1a1a1a;
+}
+.main_menu ul.nav-menu li.language:hover > a,
+.main_menu div.nav-menu > ul li.language:hover > a {
+  color: #fafafa;
+}
+.main_menu ul.nav-menu li.language:hover > ul,
+.main_menu div.nav-menu > ul li.language:hover > ul {
+  display: block;
+}
+.main_menu ul.nav-menu li.language .sub-menu,
+.main_menu div.nav-menu > ul li.language .sub-menu {
+  background: #4d4d4d;
+  list-style-type: none;
+  display: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 10px;
+  color: white;
+  z-index: 99999;
+  text-align: left;
+}
+.main_menu ul.nav-menu li.language .sub-menu li:first-child,
+.main_menu div.nav-menu > ul li.language .sub-menu li:first-child {
+  position: relative;
+}
+.main_menu ul.nav-menu li.language .sub-menu li:first-child:after,
+.main_menu div.nav-menu > ul li.language .sub-menu li:first-child:after {
+  z-index: 9999;
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: transparent;
+  border-bottom-color: #1a1a1a;
+  border-width: 10px;
+  margin-left: -10px;
+}
+.main_menu ul.nav-menu li.language .sub-menu a,
+.main_menu div.nav-menu > ul li.language .sub-menu a {
+  color: white;
+  margin: 0;
+  min-width: 160px;
+  line-height: 1;
+  text-transform: capitalize;
+  border-bottom: 1px solid #1a1a1a;
+}
+.main_menu ul.nav-menu li.language .sub-menu a:hover,
+.main_menu div.nav-menu > ul li.language .sub-menu a:hover {
+  color: #fff;
+  border-bottom: 1px solid #e6e6e6;
+}
+.main_menu .nav-menu .sub-menu,
+.main_menu .nav-menu .children {
+  background: #1a1a1a;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 80 ")";
+  filter: alpha(opacity=80);
+  zoom: 1;
+  display: none;
+  padding: 0;
+  position: absolute;
+  left: -50%;
+  color: white;
+  z-index: 99999;
+  text-align: left;
+}
+.main_menu .nav-menu .sub-menu ul,
+.main_menu .nav-menu .children ul {
+  border-left: 0;
+  left: 140px;
+  top: 0;
+}
+
+/*	----------------------------------------------------------
+	Menu
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+.menuItem.active a {
+  color: #3da3e1 !important;
+}
+
+.mean-container .mean-bar {
+  background: black;
+}
+.mean-container .mean-nav {
+  background: black;
+}
+
+@media all and (max-width: 950px) {
+  .mb .navmobile {
+    display: block;
+    height: 50px;
+  }
+  .mb .navmobile a {
+    width: 30px;
+    height: 30px;
+    font-size: 2em;
+    float: right;
+  }
+  .mb .navmobile a::before {
+    content: "\f039";
+    font-family: "FontAwesome";
+    color: white;
+  }
+  .mb .navmobile a.close::before {
+    content: "\f00d";
+    font-family: "FontAwesome";
+    width: 30px;
+    height: 30px;
+    color: white;
+  }
+
+  .main_menu ul.nav-menu, .main_menu div.nav-menu > ul {
+    display: none;
+  }
+  .main_menu ul.nav-menu li, .main_menu div.nav-menu > ul li {
+    display: block;
+  }
+  .main_menu ul.nav-menu li.register, .main_menu ul.nav-menu li.language, .main_menu div.nav-menu > ul li.register, .main_menu div.nav-menu > ul li.language {
+    display: block;
+    float: left;
+    width: 100%;
+  }
+  .main_menu ul.nav-menu.showme, .main_menu div.nav-menu > ul.showme {
+    display: block;
+  }
+
+  .main_menu .nav-menu .sub-menu,
+  .main_menu .nav-menu .children {
+    background-color: transparent;
+    background-color: rgba(26, 26, 26, 0.98);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FA1A1A1A,endColorstr=#FA1A1A1A);
+    zoom: 1;
+    display: block;
+    padding: 0;
+    position: inherit;
+    left: 0%;
+    color: white;
+    z-index: 99999;
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .main_menu ul.nav-menu ul a, .main_menu div.nav-menu > ul ul a {
+    line-height: 1.8em;
+  }
+
+  .main_menu ul.nav-menu li > .sub-menu li:first-child:after, .main_menu div.nav-menu > ul li > .sub-menu li:first-child:after {
+    border: none;
+  }
+}
