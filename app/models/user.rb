@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   validates :email, email: { strict: true, message: 'is invalid' }
 
+  def avatar_url
+    profile_photo_url || "assets/#{twitter}.jpeg"
+  end
+
 end

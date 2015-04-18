@@ -1,5 +1,7 @@
 class Location < ActiveRecord::Base
-  has_one :event
+  has_many :events
+
+  validates_presence_of :city, :country, :state
 
   def name
     if city == state
