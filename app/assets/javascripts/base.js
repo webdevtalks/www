@@ -12,7 +12,7 @@
 			wplook.AnimateCssWpl();
 			wplook.OwlSliderWpl();
 			wplook.MainMenuWpl();
-			wplook.GoogleMapsWpl();
+			//wplook.GoogleMapsWpl(); Until maps get back!
 			wplook.DetectiOSWpl();
 		},
 
