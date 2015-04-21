@@ -20,17 +20,21 @@ gem 'activerecord-humanized_errors', '~> 2.0.0'
 gem 'httparty',        '~> 0.13.3'
 gem 'omniauth-github', '~> 1.1.2'
 
+gem 'awesome_print', '~> 1.6.1'
+
 group :development, :test do
   gem 'capybara',        '~> 2.4.4'
   gem 'capybara-webkit', '~> 1.4.1'
-  gem 'faker',           '~> 1.4.3'
   gem 'launchy',         '~> 2.4.3'
   gem 'pry-rails',       '~> 0.3.3'
   gem 'rspec-rails',     '~> 3.2.1'
 end
 
+group :development, :staging, :test do
+  gem 'faker', '~> 1.4.3'
+end
+
 group :development do
-  gem 'awesome_print',        '~> 1.6.1'
   gem 'dotenv-rails',         '~> 2.0.0'
   gem 'rails_best_practices', '~> 1.15.7'
 end
@@ -39,7 +43,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :production do
+group :production, :staging do
   gem 'rails_12factor', '~> 0.0.2'
 end
 
