@@ -1,6 +1,7 @@
 /*	----------------------------------------------------------
 	Animate CSS
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
 .widget-content h2.animate_title {
   -webkit-animation-name: fadeInDown;
   -ms-animation-name: fadeInDown;
@@ -23,31 +24,34 @@
   backface-visibility: hidden;
 }
 
-.btn-default:hover, .btn-default:focus {
-  -webkit-animation-name: pulse;
-  -ms-animation-name: pulse;
-  animation-name: pulse;
-  -webkit-animation-duration: 0.3s;
-  -ms-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  -webkit-animation-delay: 0s;
-  -ms-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation-timing-function: ease;
-  -ms-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
+.btn-default {
+  &:hover, &:focus {
+    -webkit-animation-name: pulse;
+    -ms-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-duration: 0.3s;
+    -ms-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
 }
 
 /*	----------------------------------------------------------
 	Site title Animation
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
 .logo #site-title {
   -webkit-animation-name: fadeInDown;
   -ms-animation-name: fadeInDown;
@@ -68,15 +72,15 @@
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
-}
-
-.logo #site-title img {
-  max-width: 50%;
+  img {
+    max-width: 50%;
+  }
 }
 
 /*	----------------------------------------------------------
 	Site description Animation
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
 .sub-logo #site-description {
   -webkit-animation-name: fadeInDown;
   -ms-animation-name: fadeInDown;
@@ -124,52 +128,56 @@
 /*	----------------------------------------------------------
 	Teaser Animation
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
-.banner .event-info ul {
-  -webkit-animation-name: zoomIn;
-  -ms-animation-name: zoomIn;
-  animation-name: zoomIn;
-  -webkit-animation-duration: 1s;
-  -ms-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 0.9s;
-  -ms-animation-delay: 0.9s;
-  animation-delay: 0.9s;
-  -webkit-animation-timing-function: ease;
-  -ms-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-.banner .event-social ul {
-  -webkit-animation-name: bounceInUp;
-  -ms-animation-name: bounceInUp;
-  animation-name: bounceInUp;
-  -webkit-animation-duration: 1s;
-  -ms-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 1.2s;
-  -ms-animation-delay: 1.2s;
-  animation-delay: 1.2s;
-  -webkit-animation-timing-function: ease;
-  -ms-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
+
+.banner {
+  .event-info ul {
+    -webkit-animation-name: zoomIn;
+    -ms-animation-name: zoomIn;
+    animation-name: zoomIn;
+    -webkit-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0.9s;
+    -ms-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+    -webkit-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .event-social ul {
+    -webkit-animation-name: bounceInUp;
+    -ms-animation-name: bounceInUp;
+    animation-name: bounceInUp;
+    -webkit-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 1.2s;
+    -ms-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+    -webkit-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
 }
 
 /*	----------------------------------------------------------
 	Speakers Animation
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
 .speakers ul li .avatar:hover .social {
   -webkit-animation-name: rotateIn;
   -ms-animation-name: rotateIn;
@@ -190,32 +198,33 @@
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
-}
-.speakers ul li .avatar:hover .social a:hover {
-  -webkit-animation-name: pulse;
-  -ms-animation-name: pulse;
-  animation-name: pulse;
-  -webkit-animation-duration: 0.3s;
-  -ms-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  -webkit-animation-delay: 0s;
-  -ms-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation-timing-function: ease;
-  -ms-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
+  a:hover {
+    -webkit-animation-name: pulse;
+    -ms-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-duration: 0.3s;
+    -ms-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
 }
 
 /*	----------------------------------------------------------
 	Partners Animation
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
 .partners ul li a:hover img {
   -webkit-animation-name: fadeIn;
   -ms-animation-name: fadeIn;
@@ -241,6 +250,7 @@
 /*	----------------------------------------------------------
 	Buy Tickets Animation
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
 .animateBuyTicketsBoxes-0 {
   -webkit-animation-name: zoomInUp;
   -ms-animation-name: zoomInUp;
@@ -376,6 +386,7 @@
 /*	----------------------------------------------------------
 	Latest posts Animation
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
 .widget_latestpost_homepage-0 {
   -webkit-animation-name: flipInY;
   -ms-animation-name: flipInY;

@@ -1,0 +1,36 @@
+/*	----------------------------------------------------------
+	Breadcrumbs
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.breadcrumbs {
+  padding: 2em 0 .2em 0;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 0;
+  > * {
+    font-size: .8em;
+    line-height: 1.7em;
+    text-transform: capitalize;
+    color: #666666;
+    &:before {
+      content: ">";
+    }
+    a {
+      color: #666666;
+      &:hover {
+        color: #3da3e1;
+        text-decoration: none;
+      }
+    }
+    &.current {
+      color: #b3b3b3;
+      a {
+        color: #b3b3b3;
+        &:hover {
+          color: #999999;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

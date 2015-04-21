@@ -1,0 +1,151 @@
+.footer {
+  background-color: black;
+  position: relative;
+  z-index: 1;
+  .footer_bg {
+    opacity: 0.75;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 75 ")";
+    filter: alpha(opacity = 75);
+    zoom: 1;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+  }
+  .footer_widgets {
+    background-color: transparent;
+    background-color: rgba(128, 128, 128, 0.1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#1A808080,endColorstr=#1A808080);
+    zoom: 1;
+    padding: 3em 0;
+    aside {
+      h3 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.2em;
+        color: white;
+        font-weight: 400;
+        position: relative;
+        margin-bottom: 2em;
+        &:after {
+          background: #666666;
+          height: 3px;
+          width: 20%;
+          content: " ";
+          position: absolute;
+          left: 0;
+          bottom: -1em;
+        }
+      }
+      ul {
+        list-style-type: none;
+        margin-left: 0;
+      }
+      li, a, p {
+        color: white;
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+      }
+      a:hover {
+        color: #3da3e1;
+      }
+      li {
+        border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+      .post_meta {
+        span {
+          font-weight: 400;
+          font-size: .85em;
+          color: #cccccc;
+        }
+        .date:after {
+          content: " \2022";
+        }
+      }
+    }
+    .gallery_slider {
+      position: relative;
+      .customNavigation {
+        /*	----------------------------------------------------------
+        	Next Preview Buttons
+        = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+        .navpositiongalextent {
+          position: absolute;
+          top: 0%;
+          padding: 25% 5px 0 5px;
+          font-size: 2em;
+          color: #e6e6e6;
+          background-color: transparent;
+          background-color: rgba(0, 0, 0, 0.3);
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+          zoom: 1;
+          height: 100%;
+        }
+        .btn {
+          &.prev-gallery, &.next-gallery {
+            position: absolute;
+            top: 0%;
+            padding: 25% 5px 0 5px;
+            font-size: 2em;
+            color: #e6e6e6;
+            background-color: transparent;
+            background-color: rgba(0, 0, 0, 0.3);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+            zoom: 1;
+            height: 100%;
+          }
+        }
+        .navpositiongalextent:hover {
+          color: #b3b3b3;
+          background-color: transparent;
+          background-color: rgba(0, 0, 0, 0.6);
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+          zoom: 1;
+        }
+        .btn {
+          &.prev-gallery:hover, &.next-gallery:hover {
+            color: #b3b3b3;
+            background-color: transparent;
+            background-color: rgba(0, 0, 0, 0.6);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+            zoom: 1;
+          }
+          &.prev-gallery {
+            left: 0;
+          }
+          &.next-gallery {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+  .footer_copyright {
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+    zoom: 1;
+    padding: 3em 0 2em 0;
+    color: #cccccc;
+    font-weight: 400;
+    a {
+      color: #d9d9d9;
+      &:hover {
+        color: #3da3e1;
+      }
+    }
+  }
+}

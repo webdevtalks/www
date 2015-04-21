@@ -1,0 +1,399 @@
+/*	----------------------------------------------------------
+	Sidebar Widgets
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.sidebar_widgets {
+  aside {
+    h3 {
+      font-family: "Lato", sans-serif;
+      font-size: 1.1em;
+      color: #666666;
+      font-weight: 700;
+      position: relative;
+      margin-bottom: 1.8em;
+      margin-top: 2.5em;
+      &:after {
+        background: #e6e6e6;
+        height: 2px;
+        width: 30%;
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: -.8em;
+      }
+    }
+    ul {
+      list-style-type: none;
+      margin-left: 0;
+      li {
+        border-bottom: 1px solid #e6e6e6;
+        padding: 10px 0;
+        a {
+          font-weight: 400;
+          color: #666666;
+          &:hover {
+            color: #3da3e1;
+          }
+        }
+      }
+    }
+  }
+  .widget_search {
+    label {
+      dispaly: none;
+    }
+    input {
+      &[type="submit"] {
+        dispaly: none;
+      }
+      &[type="text"] {
+        background: white url(images/search-btn.png) no-repeat 97% 12px;
+        border: 1px solid #e6e6e6;
+        -webkit-background-clip: padding-box;
+        -webkit-border-radius: 5px;
+        -moz-background-clip: padding-box;
+        border-radius: 5px;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        width: 100%;
+        padding: 10px 5px;
+      }
+    }
+  }
+}
+
+/*	----------------------------------------------------------
+	Widget Speakers
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.speakers {
+  ul {
+    li .avatar {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 40px;
+      img {
+        -webkit-background-clip: padding-box;
+        -webkit-border-radius: 215px;
+        -moz-background-clip: padding-box;
+        border-radius: 215px;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+      }
+      .social {
+        display: none;
+      }
+      &:hover .social {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-background-clip: padding-box;
+        -webkit-border-radius: 215px;
+        -moz-background-clip: padding-box;
+        border-radius: 215px;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0.9);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6000000,endColorstr=#E6000000);
+        zoom: 1;
+        a {
+          color: #bfbfbf;
+          margin: 0 10px;
+          &:hover {
+            color: white;
+          }
+          i.fa {
+            margin-top: 48%;
+            font-size: 1.4em;
+          }
+        }
+      }
+    }
+    .name a, .company a {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+    }
+    .name a {
+      color: #1a1a1a;
+      &:hover {
+        color: black;
+      }
+    }
+    .company a {
+      color: #b3b3b3;
+      text-transform: uppercase;
+      &:hover {
+        color: #666666;
+      }
+    }
+  }
+  .view-all-speakers {
+    padding: 3em 0;
+  }
+}
+
+/*	----------------------------------------------------------
+	Widget Schedule
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.schedule ul li {
+  -webkit-background-clip: padding-box;
+  -webkit-border-radius: 5px;
+  -moz-background-clip: padding-box;
+  border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  .schedule-body {
+    margin-top: 20px;
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.5);
+    .event-header {
+      background: #fbfbfb;
+      padding: 20px 10px;
+    }
+  }
+  .day {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    text-align: center;
+  }
+  .title {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    color: #1a1a1a;
+    text-align: center;
+  }
+  .content {
+    font-family: "Lato", sans-serif;
+    color: #666666;
+    p {
+      font-size: 1.025em;
+      margin-right: 20px;
+    }
+    .accordion {
+      .accordion-navigation > a {
+        background: #fff;
+        border-top: 1px solid #e6e6e6;
+        &:hover {
+          background: #fafafa;
+          border-top: 1px solid #e6e6e6;
+        }
+      }
+      dd > a:hover {
+        background: #fafafa;
+        border-top: 1px solid #e6e6e6;
+      }
+    }
+    img {
+      width: 60px;
+      height: 60px;
+      -webkit-background-clip: padding-box;
+      -webkit-border-radius: 60px;
+      -moz-background-clip: padding-box;
+      border-radius: 60px;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box;
+    }
+    .event-time {
+      font-size: 14px;
+      i {
+        margin-right: 8px;
+      }
+    }
+    .event-title {
+      font-size: 20px;
+      font-weight: 400;
+      color: #3da3e1;
+      font-weight: 300;
+    }
+  }
+}
+
+/*	----------------------------------------------------------
+	Widget Mailing List
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.mailinglist {
+  min-height: 160px;
+  background-color: black;
+  position: relative;
+  z-index: 1;
+  .mailinglist_bg {
+    opacity: 0.15;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 15 ")";
+    filter: alpha(opacity = 15);
+    zoom: 1;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+  }
+  .join {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
+    position: relative;
+    padding-left: 70px;
+    margin-top: 15px;
+    &:before {
+      color: #404040;
+      font-size: 1.9em;
+      content: "\f0e0";
+      position: absolute;
+      font-family: "FontAwesome";
+      left: 0;
+      top: -15px;
+    }
+  }
+  input {
+    -webkit-background-clip: padding-box;
+    -webkit-border-radius: 5px;
+    -moz-background-clip: padding-box;
+    border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #e6e6e6;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    color: #333333;
+    padding: 10px 25px;
+    margin-right: 15px;
+    width: 37%;
+    display: inline-block;
+    margin-top: 15px;
+  }
+  .envelope.medium-12 {
+    margin-bottom: 1em;
+  }
+  .small-12 {
+    input, button {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+@media all and (max-width: 1035px) {
+  .mailinglist input {
+    width: 36%;
+  }
+}
+
+@media all and (max-width: 820px) {
+  .mailinglist input {
+    width: 98%;
+  }
+}
+
+/*	----------------------------------------------------------
+	Widget Partners
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.partners {
+  ul li a {
+    border: 1px solid #e6e6e6;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 3em 0;
+    img {
+      -webkit-filter: grayscale(100%);
+      /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+      -moz-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+      /* Firefox 10+, Firefox on Android */
+      -webkit-filter: gray;
+      filter: gray;
+      /* IE6-9 */
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+    &:hover {
+      border: 1px solid #cccccc;
+      -webkit-box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.1);
+      img {
+        -webkit-filter: grayscale(0%);
+        /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+        -moz-filter: grayscale(0%);
+        -o-filter: grayscale(0%);
+        -ms-filter: grayscale(0%);
+        filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+        /* Firefox 10+, Firefox on Android */
+        -webkit-filter: gray;
+        filter: gray;
+        /* IE6-9 */
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+      }
+    }
+  }
+  .view-all-partners {
+    padding: 3em 0;
+  }
+}
+
+/*	----------------------------------------------------------
+	Widget Maps
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.maps {
+  position: relative;
+  #js-map {
+    min-height: 375px;
+    width: 100%;
+  }
+  .map-location {
+    display: inline-block;
+    min-width: 300px;
+    background-color: white;
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    h2 {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-size: 1.5em;
+      margin-left: 1.1rem;
+    }
+    ul {
+      list-style-type: none;
+    }
+    .title {
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+    a {
+      color: #3da3e1;
+      &:hover {
+        color: #3da3e1;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .maps .map-location {
+    left: 5%;
+    min-width: 280px;
+  }
+}
