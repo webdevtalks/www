@@ -1,0 +1,30 @@
+.mini_header {
+  background-color: black;
+  position: relative;
+  z-index: 1;
+}
+.mini_header .mini_header_bg {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 20 ")";
+  filter: alpha(opacity=20);
+  zoom: 1;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+.mini_header .logo {
+  margin-top: 1.5em;
+}
+.mini_header .sub-logo {
+  margin-bottom: 4em;
+}

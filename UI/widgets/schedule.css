@@ -1,0 +1,69 @@
+.schedule ul li {
+  -webkit-background-clip: padding-box;
+  -webkit-border-radius: 5px;
+  -moz-background-clip: padding-box;
+  border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.schedule ul li .schedule-body {
+  margin-top: 20px;
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.5);
+  box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.5);
+}
+.schedule ul li .schedule-body .event-header {
+  background: #fbfbfb;
+  padding: 20px 10px;
+}
+.schedule ul li .day {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  text-align: center;
+}
+.schedule ul li .title {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 1.5em;
+  color: #1a1a1a;
+  text-align: center;
+}
+.schedule ul li .content {
+  font-family: "Lato", sans-serif;
+  color: #666666;
+}
+.schedule ul li .content p {
+  font-size: 1.025em;
+  margin-right: 20px;
+}
+.schedule ul li .content .accordion .accordion-navigation > a {
+  background: #fff;
+  border-top: 1px solid #e6e6e6;
+}
+.schedule ul li .content .accordion .accordion-navigation > a:hover, .schedule ul li .content .accordion dd > a:hover {
+  background: #fafafa;
+  border-top: 1px solid #e6e6e6;
+}
+.schedule ul li .content img {
+  width: 60px;
+  height: 60px;
+  -webkit-background-clip: padding-box;
+  -webkit-border-radius: 60px;
+  -moz-background-clip: padding-box;
+  border-radius: 60px;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.schedule ul li .content .event-time {
+  font-size: 14px;
+}
+.schedule ul li .content .event-time i {
+  margin-right: 8px;
+}
+.schedule ul li .content .event-title {
+  font-size: 20px;
+  font-weight: 400;
+  color: #3da3e1;
+  font-weight: 300;
+}

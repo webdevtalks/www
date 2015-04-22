@@ -1,0 +1,237 @@
+/*	----------------------------------------------------------
+	Index widget Content
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.widget-content {
+  padding: 3em 0;
+  border-bottom: 1px solid #e6e6e6;
+  h2 {
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    margin-bottom: 3em;
+    display: inline-block;
+    &:after {
+      background: #e6e6e6;
+      height: 3px;
+      width: 100%;
+      content: " ";
+      position: absolute;
+      left: 0;
+      bottom: -1.5em;
+    }
+  }
+}
+
+/*	----------------------------------------------------------
+	Default btn
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.btn-default {
+  background-color: #3da3e1;
+  text-transform: uppercase;
+  color: #f2f2f2;
+  font-family: "Lato", sans-serif;
+  padding: 11px 45px;
+  -webkit-background-clip: padding-box;
+  -webkit-border-radius: 30px;
+  -moz-background-clip: padding-box;
+  border-radius: 30px;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  &:hover, &:focus {
+    background: #4d86a9;
+    color: #f2f2f2;
+  }
+  &:active {
+    background: #4d86a9;
+    color: #cccccc;
+  }
+}
+
+/*	----------------------------------------------------------
+	Logo
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.logo #site-title {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  padding: .5em;
+  font-size: 2em;
+  letter-spacing: 8px;
+}
+
+#site-title .small {
+  margin-left: -44px;
+}
+
+.sub-logo #site-description {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: .7em;
+  color: white;
+  margin-top: 2em;
+}
+
+/*	----------------------------------------------------------
+	Mobile Menu
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.isStuck {
+  left: 0px;
+  width: 100%;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+}
+
+/*	----------------------------------------------------------
+	Home Page Teaser
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.banner {
+  min-height: 670px;
+  background-color: black;
+  position: relative;
+  z-index: 1;
+  .banner_bg {
+    opacity: 0.15;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 15 ")";
+    filter: alpha(opacity = 15);
+    zoom: 1;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+  }
+  .logo {
+    margin-top: 1em;
+  }
+  .event-info {
+    ul {
+      margin-top: 3.25em;
+      li {
+        color: white;
+        font-family: "Lato", sans-serif;
+        font-size: 1.5em;
+        margin: 1em 0;
+        padding-bottom: 0px;
+        border-right: 1px solid #404040;
+        i.fa {
+          color: #3da3e1;
+          display: inline-block;
+          margin-right: 15px;
+        }
+        &:last-child {
+          border: none;
+          margin-right: 0;
+          padding-right: 0;
+        }
+      }
+    }
+    p {
+      color: white;
+      margin: 0 auto;
+      text-align: justify;
+      width: 40%;
+    }
+  }
+  h1, h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+  }
+  h1 {
+    color: white;
+    font-size: 2.2em;
+  }
+  h2 {
+    font-size: 1.3em;
+    color: #bfbfbf;
+  }
+  .event-social {
+    margin: 3em 0;
+    ul li {
+      color: white;
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-size: 1.1em;
+      padding-bottom: 0;
+      border-right: 1px solid #404040;
+      i.fa {
+        margin-right: 10px;
+      }
+      a {
+        color: #bfbfbf;
+        &:hover {
+          color: white;
+        }
+      }
+      &:last-child {
+        border: none;
+        margin-right: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .logo #site-title {
+    font-size: 1.1em;
+  }
+  .banner {
+    .event-info, .event-social {
+      width: 95%;
+    }
+    .event-info ul li, .event-social ul li {
+      border: none;
+    }
+  }
+}
+
+/* ----------------------------------------------------------
+	Mini Header
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.mini_header {
+  background-color: black;
+  position: relative;
+  z-index: 1;
+  .mini_header_bg {
+    opacity: 0.2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 20 ")";
+    filter: alpha(opacity = 20);
+    zoom: 1;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+  }
+  .logo {
+    margin-top: 1.5em;
+  }
+  .sub-logo {
+    margin-bottom: 4em;
+  }
+}
