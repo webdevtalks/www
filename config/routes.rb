@@ -11,6 +11,7 @@ WDT::Application.routes.draw do
     get '/',      to: 'dashboard#show'
     get '/login', to: 'sessions#new'
 
+    resources :locations
   end
 
   resources 'papers', only: [:create, :new]
