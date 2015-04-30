@@ -13,6 +13,14 @@ class Admin::LocationsController < AdminController
     end
   end
 
+  def destroy
+    if Location.destroy(params[:id])
+      redirect_to admin_locations_path, notice: 'Location destroyed'
+    else
+      redirect_to admin_locations_path, error: 'Location could not be destroyed'
+    end
+  end
+
   def edit
   end
 
