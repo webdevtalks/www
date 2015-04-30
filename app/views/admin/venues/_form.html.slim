@@ -1,0 +1,21 @@
+= form_for [:admin, venue], html: { class: 'form-horizontal' } do |f|
+
+  .form-group
+    = f.label :name, 'Nombre', class: 'col-sm-1'
+    .col-sm-2
+      = f.text_field :name, class: 'form-control'
+
+  .form-group
+    = f.label :description, 'Descripción', class: 'col-sm-1'
+    .col-sm-2
+      = f.text_area :description, class: 'form-control'
+
+  = f.hidden_field :latitude
+  = f.hidden_field :longitude
+
+  .form-group
+    = f.label :location_id, 'Ubicación', class: 'col-sm-1'
+    .col-sm-2
+      = f.collection_select :location_id, Location.all, :id, :name, { include_blank: true }, class: 'form-control'
+
+  = f.submit "#{venue.new_record? ? 'Crear' : 'Guardar'} lugar", class: 'btn btn-primary'
