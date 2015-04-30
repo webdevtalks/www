@@ -2,3 +2,6 @@ tr
   td= location.city
   td= location.state
   td= location.country
+  td
+    = link_to edit_admin_location_path(location) do
+      i.glyphicon.glyphicon-edit
