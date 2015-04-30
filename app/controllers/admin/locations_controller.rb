@@ -6,7 +6,7 @@ class Admin::LocationsController < AdminController
     @location = Location.create location_params
 
     if @location.persisted?
-      redirect_to admin_locations_path
+      redirect_to admin_locations_path, notice: 'Ubicación creada con éxito.'
     else
       flash[:error] = @location.humanized_errors
       render :new
@@ -15,9 +15,9 @@ class Admin::LocationsController < AdminController
 
   def destroy
     if Location.destroy(params[:id])
-      redirect_to admin_locations_path, notice: 'Location destroyed'
+      redirect_to admin_locations_path, notice: 'Ubicación destruída con éxito.'
     else
-      redirect_to admin_locations_path, error: 'Location could not be destroyed'
+      redirect_to admin_locations_path, error: 'Ubicación no pudo ser destruída.'
     end
   end
 
@@ -36,7 +36,7 @@ class Admin::LocationsController < AdminController
     @location.update_attributes location_params
 
     if @location.valid?
-      redirect_to admin_locations_path, notice: 'Location has been updated'
+      redirect_to admin_locations_path, notice: 'Ubicación actualizada con éxito.'
     else
       flash[:error] = @location.humanized_errors
       render :edit
