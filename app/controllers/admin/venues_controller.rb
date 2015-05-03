@@ -14,7 +14,7 @@ class Admin::VenuesController < AdminController
   end
 
   def index
-    @venues = Venue.all
+    @venues = Venue.includes(:location).all
   end
 
   def new
