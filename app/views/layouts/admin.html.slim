@@ -17,8 +17,12 @@ html lang='es'
         .navbar-header
           = link_to admin_path, class: 'navbar-brand' do
             = image_tag 'favicon.png', height: '30'
+          button.navbar-toggle.collapsed type='button' data-toggle='collapse' data-target='#menu'
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
 
-        .collapse.navbar-collapse
+        #menu.collapse.navbar-collapse
           ul.nav.navbar-nav
            li= link_to 'Lugares', admin_venues_path
            li= link_to 'Ubicaciones', admin_locations_path
