@@ -1,14 +1,18 @@
 unless Rails.env.production?
+  Faker::Config.locale = 'es'
 
-  puts 'Create location'
-  location = Location.create! city:    'Colima',
-                              state:   'Colima',
-                              country: 'México'
+  puts 'Creating location'
+  location = Location.create! city: 'Colima', state: 'Colima', country: 'México'
+
+  puts 'Creating venue'
+  venue = Venue.create! location:    location,
+                        name:        Faker::Company.name,
+                        description: "#{Faker::Address.street_suffix} #{Faker::Address.street_address}\n#{Faker::Address.postcode}"
 
   puts 'Creating event'
-  event    = Event.create!    location: location,
-                              date:     15.days.from_now,
-                              theme:    "#{Faker::Hacker.adjective.titleize} #{Faker::Hacker.noun}"
+  event = Event.create! venue: venue,
+                        date:  15.days.from_now,
+                        theme: "#{Faker::Hacker.adjective.titleize} #{Faker::Hacker.noun}"
 
   puts 'Creating speakers'
   speakers = []
@@ -23,8 +27,8 @@ unless Rails.env.production?
 
   puts 'Creating talks'
   speakers.each do |speaker|
-    speaker.talks.create!     event:       event,
-                              title:       "#{Faker::Hacker.ingverb.titleize} #{Faker::Hacker.adjective} #{Faker::Hacker.noun}",
-                              description: Faker::Lorem.paragraphs.join
+    speaker.talks.create! event:       event,
+                          title:       "#{Faker::Hacker.ingverb.titleize} #{Faker::Hacker.adjective} #{Faker::Hacker.noun}",
+                          description: Faker::Lorem.paragraphs.join
   end
 end

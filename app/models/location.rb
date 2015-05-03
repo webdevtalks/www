@@ -1,5 +1,4 @@
 class Location < ActiveRecord::Base
-  has_many :events
 
   validates_presence_of :city, :country, :state
 
@@ -10,4 +9,5 @@ class Location < ActiveRecord::Base
       [city, state, country].join(', ')
     end
   end
+
 end

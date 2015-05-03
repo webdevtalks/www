@@ -1,5 +1,6 @@
 class Venue < ActiveRecord::Base
 
+  has_many   :events
   belongs_to :location
 
   validates_presence_of :name, :description, :location
