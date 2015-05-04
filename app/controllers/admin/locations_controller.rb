@@ -33,9 +33,7 @@ class Admin::LocationsController < AdminController
   end
 
   def update
-    @location.update_attributes location_params
-
-    if @location.valid?
+    if @location.update_attributes location_params
       redirect_to admin_locations_path, notice: 'Ubicación actualizada con éxito.'
     else
       flash[:error] = @location.humanized_errors
