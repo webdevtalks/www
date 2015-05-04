@@ -1,0 +1,15 @@
+h2 Eventos
+
+table.table.table-hover.table-stripped
+  thead
+    tr
+      th Fecha
+      th Ubicación
+      th Tema
+      th Descripción
+      th
+      th
+  tbody
+    = render @events
+
+= link_to 'Nuevo evento', new_admin_event_path, class: 'btn btn-default'
