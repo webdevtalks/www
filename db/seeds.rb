@@ -20,7 +20,7 @@ unless Rails.env.production?
   4.times do
     u = User.create! name:              Faker::Name.name,
                      email:             Faker::Internet.email,
-                     profile_photo_url: Faker::Avatar.image(nil, '200x200', 'jpg'),
+                     profile_photo_url: Faker::Avatar.image(nil, '200x200', 'jpg').gsub('http', 'https'),
                      twitter:           Faker::Internet.user_name
     speakers << u
   end
