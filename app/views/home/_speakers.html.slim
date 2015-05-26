@@ -5,25 +5,25 @@
         h2 Ponentes
         div
           ul.small-block-grid-1.medium-block-grid-2 class="large-block-grid-#{event.speakers.count}"
-            - event.speakers.each do |speaker|
+            - event.talks.each do |talk|
               li
                 .avatar
-                  img alt='Avatar1' height='220' src="#{speaker.avatar_url}" width='220' /
+                  img alt='Avatar1' height='220' src="#{talk.speaker.avatar_url}" width='220' /
                   .social
                     /! Speaker profile / blog url
                     /a href='#' target='_blank'
                       /i.fa.fa-user
                     /! Speaker Twitter URL
-                    a href="https://twitter.com/#{speaker.twitter}"
+                    a href="https://twitter.com/#{talk.speaker.twitter}"
                       i.fa.fa-twitter
                     /! Speaker Facebook URL
                     /a href='#'
                       /i.fa.fa-facebook
                 .name
                   a href='#' target='_blank'
-                    = speaker.name
+                    = talk.speaker.name
                 .company
-                  = speaker.talks.first.title
+                  = talk.title
                   /a href='http://tauziet.com/' target='_blank'  Facebook
         /! View all Speakers Button
         /.view-all-speakers
