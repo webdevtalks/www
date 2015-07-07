@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150506144220) do
+ActiveRecord::Schema.define(version: 20150617072649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20150506144220) do
     t.datetime "updated_at"
     t.string   "twitter"
     t.string   "profile_photo_url"
+    t.boolean  "is_speaker",        default: false
   end
 
   create_table "venues", force: :cascade do |t|
