@@ -14,6 +14,7 @@ WDT::Application.routes.draw do
     resources :events
     resources :locations
     resources :speakers, only: :show
+    resources :talks
     resources :venues
 
   end
