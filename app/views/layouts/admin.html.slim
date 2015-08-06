@@ -12,22 +12,24 @@ html lang='es'
 
     title Web Dev Talks
   body
-    nav.navbar.navbar-default
-      .container-fluid
-        .navbar-header
-          = link_to admin_path, class: 'navbar-brand' do
-            = image_tag 'favicon.png', height: '30'
-          button.navbar-toggle.collapsed type='button' data-toggle='collapse' data-target='#menu'
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
 
-        #menu.collapse.navbar-collapse
-          ul.nav.navbar-nav
-           li= link_to 'Charlas', admin_talks_path
-           li= link_to 'Eventos', admin_events_path
-           li= link_to 'Lugares', admin_venues_path
-           li= link_to 'Ubicaciones', admin_locations_path
+    - if authorized?
+      nav.navbar.navbar-default
+        .container-fluid
+          .navbar-header
+            = link_to admin_path, class: 'navbar-brand' do
+              = image_tag 'favicon.png', height: '30'
+            button.navbar-toggle.collapsed type='button' data-toggle='collapse' data-target='#menu'
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+
+          #menu.collapse.navbar-collapse
+            ul.nav.navbar-nav
+             li= link_to 'Charlas', admin_talks_path
+             li= link_to 'Eventos', admin_events_path
+             li= link_to 'Lugares', admin_venues_path
+             li= link_to 'Ubicaciones', admin_locations_path
 
     = render_bootstrap_alerts
 

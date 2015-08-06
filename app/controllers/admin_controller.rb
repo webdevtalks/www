@@ -1,8 +1,14 @@
 class AdminController < ActionController::Base
 
+  before_action :authorize!
+
+  helper_method :authorized?
+
   protect_from_forgery with: :exception
 
-  before_action :authorize!
+  def authorized?
+    @current_user != nil
+  end
 
   private
 
