@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def render_map_available?(object)
+    object.address.present? || (object.latitude.present? && object.longitude.present?)
+  end
+
   def render_map(object, options = {})
     tag :iframe, width:       options[:width]  || 420,
                  height:      options[:height] || 280,
