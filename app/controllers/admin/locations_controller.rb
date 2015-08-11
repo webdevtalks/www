@@ -1,6 +1,6 @@
 class Admin::LocationsController < AdminController
 
-  before_action :find_location, only: [:edit, :update]
+  before_action :find_location, only: [:destroy, :edit, :update]
 
   def create
     @location = Location.create location_params
@@ -14,10 +14,11 @@ class Admin::LocationsController < AdminController
   end
 
   def destroy
-    if Location.destroy(params[:id])
+    if @location.destroy
       redirect_to admin_locations_path, notice: 'Ubicación destruída con éxito.'
     else
-      redirect_to admin_locations_path, error: 'Ubicación no pudo ser destruída.'
+      flash[:error] = @location.errors.full_messages.join ', '
+      redirect_to admin_locations_path
     end
   end
 

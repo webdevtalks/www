@@ -2,8 +2,8 @@ class Event < ActiveRecord::Base
 
   belongs_to :venue
 
-  has_many   :talks
-  has_many   :speakers, ->{ order 'name asc' }, through: :talks, source: :speaker
+  has_many   :talks, dependent: :nullify
+  has_many   :speakers, ->{ order 'name asc' }, dependent: :nullify, source: :speaker, through: :talks
 
   validates_presence_of :venue, :date
 

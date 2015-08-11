@@ -1,6 +1,6 @@
 class Admin::VenuesController < AdminController
 
-  before_action :find_venue, only: [:edit, :update]
+  before_action :find_venue, only: [:destroy, :edit, :update]
 
   def create
     @venue = Venue.create(venue_params)
@@ -33,9 +33,10 @@ class Admin::VenuesController < AdminController
   end
 
   def destroy
-    if Venue.destroy(params[:id])
+    if @venue.destroy
       redirect_to admin_venues_path, notice: 'Lugar destruído con éxito.'
     else
+      flash[:error] = @venue.errors.full_messages.join ', '
       redirect_to admin_venues_path, error: 'Lugar no pudo ser destruído.'
     end
   end

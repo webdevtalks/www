@@ -1,7 +1,8 @@
 class Venue < ActiveRecord::Base
 
-  has_many   :events
   belongs_to :location
+
+  has_many   :events, dependent: :restrict_with_error
 
   validates_presence_of :name, :description, :location
   validates_numericality_of :latitude, :longitude, allow_nil: true
