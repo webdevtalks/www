@@ -13,6 +13,12 @@ class Admin::SessionsController < AdminController
     end
   end
 
+  def destroy
+    session[:user_id] = nil
+    @current_user = nil
+    redirect_to admin_login_path
+  end
+
   def new
   end
 

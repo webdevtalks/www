@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :email, email: { strict: true, message: 'is invalid' }
 
   def avatar_url
-    profile_photo_url || "assets/#{twitter}.jpeg"
+    profile_photo_url || authorization.photo_url || "assets/#{twitter}.jpeg"
   end
 
 end

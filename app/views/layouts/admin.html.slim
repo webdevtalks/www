@@ -31,6 +31,20 @@ html lang='es'
              li= link_to 'Lugares', admin_venues_path
              li= link_to 'Ubicaciones', admin_locations_path
 
+            ul.nav.navbar-nav.pull-right
+              li.dropdown
+                a.dropdown-toggle data-toggle='dropdown' style='cursor: pointer; padding: 10px;'
+                  = image_tag current_user.avatar_url, alt: current_user.name, size: '30', style: 'margin-right: 10px'
+                  span style='margin-right: 10px'
+                    = current_user.name
+                  span.caret
+                ul.dropdown-menu role='menu'
+                  li
+                    = link_to admin_logout_path, method: :delete do
+                      i.fa.fa-sign-out
+                      | Cerrar sesión
+
     = render_bootstrap_alerts
 
-    = yield
+    .container-fluid
+      = yield

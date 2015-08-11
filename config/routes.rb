@@ -8,8 +8,9 @@ WDT::Application.routes.draw do
       get 'github/callback', to: 'sessions#create'
     end
 
-    get '/',      to: 'dashboard#show'
-    get '/login', to: 'sessions#new'
+    get    '/',       to: 'dashboard#show'
+    get    '/login',  to: 'sessions#new'
+    delete '/logout', to: 'sessions#destroy'
 
     resources :events
     resources :locations
