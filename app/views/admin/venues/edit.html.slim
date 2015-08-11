@@ -1,3 +1,8 @@
-h1 Editar lugar
+.row
+  .col-md-6
+    h2 Editar lugar
+    = render partial: 'form', locals: { venue: @venue }
 
-= render partial: 'form', locals: { venue: @venue }
+  .col-md-6
+    h2 Mapa
+    = render_map @venue, height: 250 if @venue.address.present?
