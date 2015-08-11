@@ -7,7 +7,8 @@ unless Rails.env.production?
   puts 'Creating venue'
   venue = Venue.create! location:    location,
                         name:        Faker::Company.name,
-                        description: "#{Faker::Address.street_suffix} #{Faker::Address.street_address}\n#{Faker::Address.postcode}"
+                        address:     "#{Faker::Address.street_suffix} #{Faker::Address.street_address}, #{location.name}, #{Faker::Address.postcode}",
+                        description: Faker::Lorem.paragraphs.join
 
   puts 'Creating event'
   event = Event.create! venue: venue,

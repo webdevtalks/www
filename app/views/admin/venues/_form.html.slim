@@ -15,8 +15,24 @@
     .col-md-8
       = f.text_field :address, class: 'form-control'
 
-  = f.hidden_field :latitude
-  = f.hidden_field :longitude
+  .form-group
+    .col-md-offset-2.col-md-10
+      .checkbox
+        = f.label :override_map_with_coordinates do
+          = f.check_box :override_map_with_coordinates
+          | Override map with coordinates
+
+  #venue_coordinates class="#{ venue.override_map_with_coordinates? ? '' : 'hidden' }"
+    .form-group
+      .col-md-offset-2
+        = f.label :latitude, class: 'col-md-2'
+      .col-md-2
+        = f.number_field :latitude, class: 'form-control'
+
+      .col-md-offset-2
+        = f.label :longitude, class: 'col-md-2'
+      .col-md-2
+        = f.number_field :longitude, class: 'form-control'
 
   .form-group
     = f.label :location_id, 'Ubicación', class: 'col-md-2'

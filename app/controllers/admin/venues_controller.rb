@@ -48,6 +48,6 @@ class Admin::VenuesController < AdminController
   end
 
   def venue_params
-    params.require(:venue).permit :name, :description, :address, :latitude, :longitude, :location_id
+    params.require(:venue).permit :name, :description, :address, :override_map_with_coordinates, :latitude, :longitude, :location_id
   end
 end
