@@ -25,6 +25,7 @@
                     i.fa.fa-google-plus Google Foro
 
 = render partial: 'speakers', locals: { event: @event } if @event.present? && @event.speakers.present?
+= render partial: 'sponsors'
 /= render 'schedule'
 /= render 'newsletter'
 /= render 'sponsors'
