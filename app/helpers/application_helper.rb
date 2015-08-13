@@ -1,7 +1,7 @@
 module ApplicationHelper
   SPONSORS = {
       item1: {
-        link: 'http://www.donchambitas.com',
+        link: 'https://www.facebook.com/CoCoWorkingMx',
         img: 'logo_1.jpg'
       },
       item2: {
@@ -9,12 +9,12 @@ module ApplicationHelper
         img: 'logo_2.jpg'
       },
       item3: {
-        link: "#",
+        link: "http://www.donchambitas.com",
         img: 'logo_3.jpg'
       },
       item4: {
         link: "#",
-        img: 'logo_3.jpg'
+        img: 'logo_4.jpg'
       }
   }
 
