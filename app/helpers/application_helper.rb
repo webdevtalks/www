@@ -18,7 +18,7 @@ module ApplicationHelper
       }
   }
 
-  def show_sponsor_randomly
+  def show_sponsors
     html = ''
     make_it_random.each do |key, value|
       html+= "<li>"
