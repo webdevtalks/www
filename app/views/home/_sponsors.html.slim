@@ -5,4 +5,7 @@
         h2 Patrocinadores
         div
           ul.small-block-grid-1.medium-block-grid-2.large-block-grid-4
-            = show_sponsors
+            - Sponsor.all.shuffle.each do |sponsor|
+                li
+                  = link_to sponsor[:website] do
+                    = image_tag sponsor[:image], height: 85, width: 200
