@@ -1,7 +1,7 @@
 tr
   td= talk.title
   td= truncate talk.description, length: 50
-  td= link_to talk.speaker.name, admin_speaker_path(talk.speaker)
+  td= talk.speaker.name
   /td
     /= link_to edit_admin_talk_path(talk) do
       /i.glyphicon.glyphicon-edit
