@@ -8,15 +8,16 @@ WDT::Application.routes.draw do
       get 'github/callback', to: 'sessions#create'
     end
 
-    get    '/',       to: 'dashboard#show'
+    get    '/',       to: redirect('/admin/events')
     get    '/login',  to: 'sessions#new'
     delete '/logout', to: 'sessions#destroy'
 
     resources :events
     resources :locations
-    resources :speakers, only: :show
+    #resources :speakers
     resources :talks
     resources :venues
+
 
   end
 
