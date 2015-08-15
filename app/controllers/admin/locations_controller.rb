@@ -17,7 +17,7 @@ class Admin::LocationsController < AdminController
     if @location.destroy
       redirect_to admin_locations_path, notice: 'Ubicación destruída con éxito.'
     else
-      flash[:error] = @location.errors.full_messages.join ', '
+      flash[:error] = @location.humanized_errors
       redirect_to admin_locations_path
     end
   end

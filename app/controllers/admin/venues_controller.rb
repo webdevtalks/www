@@ -36,7 +36,7 @@ class Admin::VenuesController < AdminController
     if @venue.destroy
       redirect_to admin_venues_path, notice: 'Lugar destruído con éxito.'
     else
-      flash[:error] = @venue.errors.full_messages.join ', '
+      flash[:error] = @venue.humanized_errors
       redirect_to admin_venues_path, error: 'Lugar no pudo ser destruído.'
     end
   end

@@ -16,7 +16,7 @@ gem 'jquery-validation-rails', '~> 1.13.1'
 gem 'uglifier',                '>= 2.7.1'
 
 gem 'activevalidators',              '~> 3.2.0'
-gem 'activerecord-humanized_errors', '~> 2.0.0'
+gem 'activerecord-humanized_errors', '~> 2.0.1'
 
 gem 'httparty',        '~> 0.13.3'
 gem 'omniauth-github', '~> 1.1.2'
