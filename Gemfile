@@ -15,6 +15,7 @@ gem 'jquery-rails',            '~> 4.0.3'
 gem 'jquery-validation-rails', '~> 1.13.1'
 gem 'uglifier',                '>= 2.7.1'
 
+gem 'aasm',                          '~> 4.2.0'
 gem 'activevalidators',              '~> 3.2.0'
 gem 'activerecord-humanized_errors', '~> 2.0.1'
 

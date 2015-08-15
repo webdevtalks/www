@@ -1,5 +1,21 @@
 class Talk < ActiveRecord::Base
 
+  include AASM
+
+  aasm column: :status do
+    state :draft,   initial: true
+    state :proposal
+    state :accepted
+
+    event :submit do
+      transitions from: :draft, to: :proposal
+    end
+
+    event :accept do
+      transitions from: :proposal, to: :accepted
+    end
+  end
+
   after_create :flag_speaker
 
   belongs_to :event

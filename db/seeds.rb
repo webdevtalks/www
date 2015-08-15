@@ -26,10 +26,14 @@ unless Rails.env.production?
     speakers << u
   end
 
-  puts 'Creating talks'
+  puts 'Creating event talk proposals'
   speakers.each do |speaker|
     speaker.talks.create! event:       event,
                           title:       "#{Faker::Hacker.ingverb.titleize} #{Faker::Hacker.adjective} #{Faker::Hacker.noun}",
-                          description: Faker::Lorem.paragraphs.join
+                          description: Faker::Lorem.paragraphs.join,
+                          status:      :proposal
   end
+
+  puts 'Accepting event talks'
+  event.talks.all.sample(2).each(&:accept!)
 end
