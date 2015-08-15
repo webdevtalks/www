@@ -22,6 +22,8 @@ class Admin::EventsController < AdminController
   end
 
   def edit
+    @accepted_talks  = @event.talks.select{|talk| talk.status == 'accepted' }
+    @proposed_talks  = @event.talks.select{|talk| talk.status == 'proposal' }
   end
 
   def index
@@ -48,7 +50,7 @@ class Admin::EventsController < AdminController
   end
 
   def find_event
-    @event = Event.find(params[:id])
+    @event = Event.includes(talks: :speaker).find(params[:id])
   end
 
 end

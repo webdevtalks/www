@@ -1,3 +1,20 @@
-h2 Editar Evento
+.row
+  .col-md-6
+    h2 Editar Evento
+    = render partial: 'form', locals: { event: @event }
 
-= render partial: 'form', locals: { event: @event }
+  .col-md-6
+    h2 Charlas
+
+    table.table.table-striped.table-hover
+      thead
+      tbody
+        = render partial: 'talk', collection: @accepted_talks
+
+
+    h2 Propuestas
+
+    table.table.table-stripped.table-hover
+      thead
+      tbody
+        = render partial: 'talk', collection: @proposed_talks

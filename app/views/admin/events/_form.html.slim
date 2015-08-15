@@ -1,25 +1,25 @@
 = form_for [:admin, event], html: { class: 'form-horizontal' } do |f|
 
   .form-group
-    = f.label :date, 'Fecha', class: 'col-md-1'
-    .col-md-4
+    = f.label :date, 'Fecha', class: 'col-md-2'
+    .col-md-8
       = f.date_field :date, class: 'form-control '
 
   .form-group
-    = f.label :location_id, 'Ubicación', class: 'col-md-1'
-    .col-md-4
+    = f.label :location_id, 'Ubicación', class: 'col-md-2'
+    .col-md-8
       = f.collection_select :venue_id, Venue.all, :id, :detailed_name, { include_blank: true }, { class: 'form-control' }
 
   .form-group
-    = f.label :theme, 'Tema', class: 'col-md-1'
-    .col-md-4
+    = f.label :theme, 'Tema', class: 'col-md-2'
+    .col-md-8
       = f.text_field :theme, class: 'form-control'
 
   .form-group
-    = f.label :description, 'Descripción', class: 'col-md-1'
-    .col-md-4
+    = f.label :description, 'Descripción', class: 'col-md-2'
+    .col-md-8
       = f.text_area :description, class: 'form-control'
 
   .form-group
-    .col-md-offset-1.col-md-2
+    .col-md-offset-2.col-md-2
       = f.submit "#{event.new_record? ? 'Crear' : 'Guardar'} evento", class: 'btn btn-primary'

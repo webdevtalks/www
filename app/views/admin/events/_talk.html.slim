@@ -1,0 +1,10 @@
+tr
+  td = talk.title
+  td = talk.speaker.name
+  td
+    - if talk.accepted?
+      = link_to admin_talk_path(talk, accept: false), method: :patch do
+        i.glyphicon.glyphicon-remove
+    - else talk.proposal?
+      = link_to admin_talk_path(talk, accept: true), method: :patch do
+        i.glyphicon.glyphicon-ok
