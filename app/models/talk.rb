@@ -14,6 +14,10 @@ class Talk < ActiveRecord::Base
     event :accept do
       transitions from: :proposal, to: :accepted
     end
+
+    event :reject do
+      transitions from: :accepted, to: :proposal
+    end
   end
 
   after_create :flag_speaker
