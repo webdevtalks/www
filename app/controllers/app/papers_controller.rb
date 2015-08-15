@@ -1,4 +1,5 @@
-class PapersController < ApplicationController
+class App::PapersController < AppController
+
   before_filter :protect_from_forgery, :except => [:create, :new]
 
   def create
