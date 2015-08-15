@@ -17,7 +17,7 @@ class AdminController < ActionController::Base
   private
 
   def authorize!
-    if session[:user_id]
+    if session[:user_id] && User.exists?(session[:user_id])
       @current_user = User.find(session[:user_id])
     else
       redirect_to admin_login_path
