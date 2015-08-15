@@ -1,6 +1,6 @@
 WDT::Application.routes.draw do
 
-  root to: 'app/home#index'
+  root to: 'app/home#show'
 
   namespace :admin do
 
@@ -21,6 +21,8 @@ WDT::Application.routes.draw do
 
   end
 
-  resources 'papers', only: [:create, :new]
+  scope module: :app do
+    resources :papers, only: [:create, :new]
+  end
 
 end

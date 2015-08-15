@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe PapersController do
+describe App::PapersController do
   describe '#create' do
     let :valid_attributes do
       {
