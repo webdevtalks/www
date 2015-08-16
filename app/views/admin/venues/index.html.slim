@@ -1,14 +1,16 @@
-h2 Lugares
+.row
+  .col-md-12
+    h2 Lugares
 
-table.table.table-hover.table-stripped
-  thead
-    tr
-      th Nombre
-      th Ubicación
-      th
-      th
+    table.table.table-hover.table-stripped
+      thead
+        tr
+          th Nombre
+          th Ubicación
+          th
+          th
 
-  tbody
-    = render @venues
+      tbody
+        = render @venues
 
-= link_to 'Nuevo lugar', new_admin_venue_path, class: 'btn btn-default'
+    = link_to 'Nuevo lugar', new_admin_venue_path, class: 'btn btn-default'
