@@ -1,6 +1,6 @@
 class App::HomeController < AppController
 
-  def index
+  def show
     @event = Event.current
   end
 
