@@ -1,0 +1,30 @@
+.row
+  .col-md-6
+
+    h2 Detalle de charla
+    h3
+      = @talk.title
+      br
+      small
+        | (
+        = @talk.status
+        = " - "
+        = link_to @talk.event.theme, edit_admin_event_path(@talk.event)
+        | )
+    h4
+      small = @talk.speaker.name
+
+    p = @talk.description
+
+
+    - if @talk.proposal?
+      = link_to admin_talk_path(@talk, accept: true), method: :patch, class: 'btn btn-success' do
+        i.glyphicon.glyphicon-ok
+        |  Aceptar charla
+    - else
+      = link_to admin_talk_path(@talk, accept: false), method: :patch, class: 'btn btn-danger' do
+        i.glyphicon.glyphicon-remove
+        |  Cancelar charla
+
+
+

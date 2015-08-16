@@ -1,9 +1,12 @@
 class Admin::TalksController < AdminController
 
-  before_action :find_talk, only: :update
+  before_action :find_talk, only: [:show, :update]
 
   def index
     @talks = Talk.all
+  end
+
+  def show
   end
 
   def update
