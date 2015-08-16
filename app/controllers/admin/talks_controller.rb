@@ -7,11 +7,11 @@ class Admin::TalksController < AdminController
   end
 
   def update
-    @talk.send(params[:accept] == 'true' ? :accept! : :reject!)
+    @talk.send(params[:accept] == 'true' ? :accept! : :cancel!)
   rescue AASM::InvalidTransition => e
     flash[:error] = e.message
   ensure
-    redirect_to edit_admin_event_path(@talk.event)
+    redirect_to :back
   end
 
   private

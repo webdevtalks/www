@@ -15,7 +15,7 @@ class Talk < ActiveRecord::Base
       transitions from: :proposal, to: :accepted
     end
 
-    event :reject do
+    event :cancel do
       transitions from: :accepted, to: :proposal
     end
   end
