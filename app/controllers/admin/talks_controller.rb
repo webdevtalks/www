@@ -3,7 +3,7 @@ class Admin::TalksController < AdminController
   before_action :find_talk, only: [:show, :update]
 
   def index
-    @talks = Talk.all
+    @talks = Talk.includes(:speaker).all
   end
 
   def show
