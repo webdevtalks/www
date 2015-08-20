@@ -1,15 +1,28 @@
 WDT::Application.routes.draw do
 
-  root to: 'home#index'
+  root to: 'app/home#show'
 
   namespace :admin do
+
     scope :auth do
       get 'github/callback', to: 'sessions#create'
     end
 
-    get 'login', to: 'sessions#new'
+    get    '/',       to: redirect('/admin/events')
+    get    '/login',  to: 'sessions#new'
+    delete '/logout', to: 'sessions#destroy'
+
+    resources :events
+    resources :locations
+    #resources :speakers
+    resources :talks
+    resources :venues
+
+
   end
 
-  resources 'papers', only: [:create, :new]
+  scope module: :app do
+    resources :papers, only: [:create, :new]
+  end
 
 end

@@ -2,7 +2,9 @@ class Authorization < ActiveRecord::Base
 
   belongs_to :user, autosave: true
 
-  [:credentials, :extra, :info].each { |attr| serialize attr, HashWithIndifferentAccess }
+  serialize :credentials, HashWithIndifferentAccess
+  serialize :extra,       HashWithIndifferentAccess
+  serialize :info,        HashWithIndifferentAccess
 
   validate              :github_authorization
   validates_presence_of :provider, :uid
@@ -19,6 +21,10 @@ class Authorization < ActiveRecord::Base
 
   def self.find_or_create_by_omniauth(hash)
     find_by_omniauth(hash) || create_by_omniauth(hash)
+  end
+
+  def photo_url(size = 200)
+    "#{info[:image]}?size=#{size}"
   end
 
   private

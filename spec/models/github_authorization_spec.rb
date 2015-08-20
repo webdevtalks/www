@@ -2,21 +2,21 @@ require 'rails_helper'
 
 describe GithubAuthorization do
 
-  let(:token) { 'zzz'}
-  let(:nickname) { 'aaa' }
+  let(:access_token) { 'zzz'}
+  let(:username) { 'aaa' }
 
-  subject { GithubAuthorization.new(token, nickname) }
+  subject { GithubAuthorization.new(access_token, username) }
 
   describe 'new' do
-    it 'sets token in Authorization header' do
-      expect(subject.class.headers['Authorization']).to include("token #{token}")
+    it 'sets access token in Authorization header' do
+      expect(subject.class.headers['Authorization']).to include("token #{access_token}")
     end
   end
 
   describe 'organization_membership' do
 
     let(:check_membership_uri) do
-      "#{subject.class.base_uri}/orgs/#{subject.organization}/members/#{subject.nickname}"
+      "#{subject.class.base_uri}/orgs/#{subject.organization}/members/#{subject.username}"
     end
 
     context 'when request response returns a 204 HTTP Status' do

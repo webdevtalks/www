@@ -1,0 +1,45 @@
+= form_for [:admin, venue], html: { class: 'form-horizontal' } do |f|
+
+  .form-group
+    = f.label :name, 'Nombre', class: 'col-md-2'
+    .col-md-8
+      = f.text_field :name, class: 'form-control'
+
+  .form-group
+    = f.label :description, 'Descripción', class: 'col-md-2'
+    .col-md-8
+      = f.text_area :description, class: 'form-control'
+
+  .form-group
+    = f.label :address, 'Dirección', class: 'col-md-2'
+    .col-md-8
+      = f.text_field :address, class: 'form-control'
+
+  .form-group
+    .col-md-offset-2.col-md-10
+      .checkbox
+        = f.label :override_map_with_coordinates  do
+          = f.check_box :override_map_with_coordinates
+          | Forzar el uso de coordenadas para el mapa.
+
+  #venue_coordinates class="#{ venue.override_map_with_coordinates? ? '' : 'hidden' }"
+    .form-group
+      .col-md-offset-2
+        = f.label :latitude, 'Latitud', class: 'col-md-2'
+      .col-md-2
+        = f.number_field :latitude, class: 'form-control'
+
+      .col-md-offset-2
+        = f.label :longitude, 'Longitud', class: 'col-md-2'
+      .col-md-2
+        = f.number_field :longitude, class: 'form-control'
+
+  .form-group
+    = f.label :location_id, 'Ubicación', class: 'col-md-2'
+    .col-md-8
+      = f.collection_select :location_id, Location.all, :id, :name, { include_blank: true }, class: 'form-control'
+
+  .form-group
+    .col-md-2
+    .col-md-2
+      = f.submit "#{venue.new_record? ? 'Crear' : 'Guardar'} lugar", class: 'btn btn-primary'

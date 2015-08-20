@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require vendors
-//= require base
+//= require app/vendors
+//= require app/base

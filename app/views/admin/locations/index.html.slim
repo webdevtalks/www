@@ -1,0 +1,16 @@
+.row
+  .col-md-12
+    h2 Ubicaciones
+
+    table.table.table-hover.table-stripped
+      thead
+        tr
+          th Ciudad
+          th Estado
+          th País
+          th
+          th
+      tbody
+        = render @locations
+
+    = link_to 'Nueva ubicación', new_admin_location_path, class: 'btn btn-default'

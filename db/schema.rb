@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418004755) do
+ActiveRecord::Schema.define(version: 20150814181531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +34,9 @@ ActiveRecord::Schema.define(version: 20150418004755) do
     t.string   "theme"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "location_id"
     t.text     "description"
+    t.integer  "venue_id"
+    t.integer  "location_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -62,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150418004755) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "status"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,6 +73,19 @@ ActiveRecord::Schema.define(version: 20150418004755) do
     t.datetime "updated_at"
     t.string   "twitter"
     t.string   "profile_photo_url"
+    t.boolean  "is_speaker",        default: false
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.integer  "location_id"
+    t.string   "address"
+    t.boolean  "override_map_with_coordinates", default: false
   end
 
 end

@@ -10,12 +10,14 @@ gem 'sass-rails',     '~> 5.0.1'
 gem 'slim-rails',     '~> 3.0.1'
 
 gem 'bootstrap-sass',          '~> 3.3.3'
+gem 'font-awesome-rails',      '~> 4.3.0.0'
 gem 'jquery-rails',            '~> 4.0.3'
 gem 'jquery-validation-rails', '~> 1.13.1'
 gem 'uglifier',                '>= 2.7.1'
 
+gem 'aasm',                          '~> 4.2.0'
 gem 'activevalidators',              '~> 3.2.0'
-gem 'activerecord-humanized_errors', '~> 2.0.0'
+gem 'activerecord-humanized_errors', '~> 2.0.1'
 
 gem 'httparty',        '~> 0.13.3'
 gem 'omniauth-github', '~> 1.1.2'

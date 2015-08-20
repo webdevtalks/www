@@ -1,0 +1,9 @@
+.row
+  .col-md-6
+    h2 Editar lugar
+    = render partial: 'form', locals: { venue: @venue }
+
+  - if render_map_available?(@venue)
+    .col-md-6
+      h2 Mapa
+      = render_map @venue, height: 295

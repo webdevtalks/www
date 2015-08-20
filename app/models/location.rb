@@ -1,5 +1,6 @@
 class Location < ActiveRecord::Base
-  has_many :events
+
+  has_many :venues, dependent: :restrict_with_error
 
   validates_presence_of :city, :country, :state
 
@@ -10,4 +11,5 @@ class Location < ActiveRecord::Base
       [city, state, country].join(', ')
     end
   end
+
 end

@@ -1,0 +1,17 @@
+.row
+  .col-md-12
+    h2 Charlas
+
+    table.table.table-hover.table-stripped
+      thead
+        tr
+          th Título
+          th Descripción
+          th Ponente
+          th Estado
+          th
+
+      tbody
+        = render @talks
+
+    /= link_to 'Nueva charla', new_admin_talk_path, class: 'btn btn-default'

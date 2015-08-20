@@ -1,0 +1,15 @@
+tr
+  td= talk.title
+  td= truncate talk.description, length: 50
+  td= talk.speaker.name
+  td= talk.status
+  td
+    = link_to admin_talk_path(talk) do
+      i.glyphicon.glyphicon-eye-open
+  td
+    - if talk.accepted?
+      = link_to admin_talk_path(talk, accept: false), method: :patch do
+        i.glyphicon.glyphicon-remove
+    - else talk.proposal?
+      = link_to admin_talk_path(talk, accept: true), method: :patch do
+        i.glyphicon.glyphicon-ok

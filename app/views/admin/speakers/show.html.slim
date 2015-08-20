@@ -1,0 +1,14 @@
+h2= @speaker.name
+
+.row
+  .col-sm-3.col-md-3
+    .thumbnail
+      img src=@speaker.profile_photo_url
+
+  .col-sm-4.col-md-4
+    h3= link_to "https://twitter.com/#{@speaker.twitter}" do
+      i.fa.fa-twitter
+      = " #{@speaker.twitter}"
+    h4= link_to "mailto:#{@speaker.email}" do
+      i.fa.fa-envelope-o
+      = " #{@speaker.email}"
