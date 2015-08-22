@@ -1,7 +1,7 @@
 #home.banner
   .banner_bg data-stellar-background-ratio='0.2' style='background-image: url("assets/bg_banner.jpg");'
   .row
-    .colums.small-12.medium-12-large-12
+    .columns.small-12.medium-12-large-12
       .center-content
         .logo
           h1#site-title
@@ -9,7 +9,6 @@
         .sub-logo
           h2#site-description Aprendiendo y compartiendo
         = render 'event'
-        /! Social Links
         .row
           .large-6.small-centered.columns
             .event-social
@@ -24,10 +23,12 @@
                   a href='https://groups.google.com/forum/#!forum/webdevtalks'
                     i.fa.fa-google-plus Google Foro
 
-= render partial: 'speakers', locals: { event: @event } if @event.present? && @event.speakers.present?
-= render partial: 'sponsors'
+- if @event.present? && @event.speakers.present?
+  = render partial: 'speakers', locals: { event: @event }
+  = render partial: 'venue',    locals: { venue: @event.venue }
+
+= render 'sponsors'
+= render 'about'
+
 /= render 'schedule'
 /= render 'newsletter'
-/= render 'sponsors'
-/= render 'location'
-= render 'about'
