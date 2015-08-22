@@ -1,4 +1,4 @@
-#ponentes.speakers.widget-content
+#speakers.speakers.widget-content
   .row
     .columns.small-12.medium-12.large-12
       .center-content
@@ -8,7 +8,7 @@
             - event.talks.each do |talk|
               li
                 .avatar
-                  img alt='Avatar1' height='220' src="#{talk.speaker.avatar_url}" width='220' /
+                  img alt="Imágen de perfil de #{talk.speaker.name}" height='220' src="#{talk.speaker.avatar_url}" width='220'
                   .social
                     /! Speaker profile / blog url
                     /a href='#' target='_blank'
@@ -20,10 +20,8 @@
                     /a href='#'
                       /i.fa.fa-facebook
                 .name
-                  a href='#' target='_blank'
-                    = talk.speaker.name
-                .company
-                  = talk.title
+                  a[href='#' target='_blank'] = talk.speaker.name
+                .company = talk.title
                   /a href='http://tauziet.com/' target='_blank'  Facebook
         /! View all Speakers Button
         /.view-all-speakers
