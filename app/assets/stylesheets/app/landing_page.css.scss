@@ -134,6 +134,9 @@
           display: inline-block;
           margin-right: 15px;
         }
+        i.fa + span {
+          color: white;
+        }
         &:last-child {
           border: none;
           margin-right: 0;
