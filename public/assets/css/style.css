@@ -10,7 +10,7 @@ body {
 strong { font-weight: 700; }
 
 a, a:hover, a:focus {
-	color: #e75967;
+	color: #3da3e1;
 	text-decoration: none;
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
@@ -162,7 +162,6 @@ img { max-width: 100%; }
 
 .social a:hover, .social a:focus { outline: 0; background: #3da3e1; }
 
-
 /***** Media Queries *****/
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -171,7 +170,7 @@ img { max-width: 100%; }
     .timer .hours-wrapper,
     .timer .minutes-wrapper,
     .timer .seconds-wrapper { width: 140px; height: 140px; margin: 0 7px; }
-    
+
     .timer .days,
     .timer .hours,
     .timer .minutes,
@@ -197,9 +196,5 @@ img { max-width: 100%; }
     .timer .hours,
     .timer .minutes,
     .timer .seconds { font-size: 60px; line-height: 70px; }
-
-    .subscribe h3 { font-size: 28px; }
-    .subscribe form input.subscribe-email, .subscribe form button { width: 100%; }
-
 }
 
