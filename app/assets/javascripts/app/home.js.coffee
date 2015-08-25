@@ -1,4 +1,20 @@
 $ ->
+  goToSection = (id)->
+    $('body').animate
+      scrollTop: $(id).offset().top - 50,
+      500
+
+  $('body .nav-menu').on 'click', '.menuItem a', (e)->
+    e.preventDefault()
+    id = $(e.target).attr('href')
+    goToSection(id)
+
+
+  $('#home').on 'click', 'a[href="#venue"]', (e)->
+    e.preventDefault()
+    id = $(e.target).attr('href')
+    goToSection(id)
+
   $('#venue').on 'click', '.map', ->
     $(@).find('iframe').css('pointer-events', 'auto')
 

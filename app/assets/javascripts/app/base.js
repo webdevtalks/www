@@ -11,7 +11,6 @@
 			wplook.MobileMenuWpl();
 			wplook.AnimateCssWpl();
 			wplook.OwlSliderWpl();
-			wplook.MainMenuWpl();
 			wplook.DetectiOSWpl();
 		},
 
@@ -49,35 +48,6 @@
 			}
 		},
 
-
-		// Animate CSS and JS
-		AnimateCssWpl: function () {
-			//Animate titles
-			var aTitle = [".speakers", ".schedule", ".partners", ".buytickets", ".testimonials", ".widget_latestposts_homepage" ];
-			function animateTitle (val) {
-				$(val +' h2').waypoint(function(direction) {
-					$(val +' h2').toggleClass("animate_title");
-				}, { offset: 300 });
-			}
-			for (var i = aTitle.length - 1; i >= 0; i--) {
-				animateTitle(aTitle[i]);
-			}
-
-			//Animate Buy Tickets boxes
-			$( ".buytickets_item" ).each(function( index ) {
-				$( this ).waypoint(function(direction) {
-					$( this ).toggleClass("animateBuyTicketsBoxes-"+index);
-				}, { offset: 550 });
-			});
-
-			//Animate latest post home page
-			$( ".widget_latestposts_homepage li" ).each(function( index ) {
-				$( this ).waypoint(function(direction) {
-					$( this ).toggleClass("widget_latestpost_homepage-"+index);
-				}, { offset: 400 });
-			});
-		},
-
 		//
 		OwlSliderWpl: function () {
 			//Slider owl-testimonials
@@ -110,17 +80,6 @@
 			});
 		},
 
-		// Main menu
-		MainMenuWpl: function () {
-			$('.nav-menu').onePageNav({
-				currentClass: 'active',
-				changeHash: false,
-				scrollSpeed: 750,
-				scrollThreshold: 0.5,
-				filter: '',
-				easing: 'swing'
-			});
-		},
 		// iosDetect
 		DetectiOSWpl: function () {
 			Modernizr.addTest('ipad', function () {
