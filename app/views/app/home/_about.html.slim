@@ -1,14 +1,14 @@
 /! Footer
-#about.footer
+#about.footer.widget-content
   .footer_bg[style="background: url('assets/bg_buytikets.png') no-repeat"]
-  .footer_widgets
-    .row
-      .columns.small-12.medium-4.large-4
-        /! About us
-        aside#Widget-text1.widget.widget_text
-          h3 Acerca de WDT
-          .textwidget
-            iframe[allowfullscreen width="365" height="205" src="https://www.youtube.com/embed/3kLz1Q0myiM?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0"]
+  .row
+    .columns.small-12.medium-12.large-12
+      .center-content
+        h2 ¿ WDT ?
+  .row
+    .columns.small-12.medium-12.large-12
+      .center-content
+        iframe[allowfullscreen width="480" height="270" src="https://www.youtube.com/embed/3kLz1Q0myiM?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0"]
       /.columns.small-12.medium-4.large-4
         /aside#gallery-1.widget.widget_gallery
           /h3 Galeria
@@ -32,11 +32,9 @@
   /! Copyright
   .footer_copyright
     .row
-      .columns.small-12.medium-5.large-5
-        | © Copyright
-        a href='#'  webdevtalks.mx
-        | Todos los derechos reservados.
-      /.columns.small-12.medium-7.large-7
-        /ul.inline-list.right
-          /li
-            /a href='#' Terminos y Condiciones
+      .columns.small-12.medium-12.large-12
+        .center-content
+          = link_to root_url do
+            b webdevtalks.mx
+          |  ©
+          b  2013-2015
