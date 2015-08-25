@@ -8,7 +8,7 @@
             img src='assets/logo-curvas.png' alt='Web Dev Talks'
         .sub-logo
           h2#site-description Aprendiendo y compartiendo
-        = render 'event'
+        = render partial: 'event', locals: { event: @event }
         .row
           .large-6.small-centered.columns
             .event-social

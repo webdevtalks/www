@@ -1,6 +1,13 @@
 #home, #speakers, #venue, #sponsors, #about
   min-height: calc(100% - 50px)
 
+#home
+  a[href="#venue"]
+    color: white
+
+    &:hover
+      color: #3da3e1
+
 #venue
   iframe
     pointer-events: none
