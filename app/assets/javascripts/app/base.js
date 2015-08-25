@@ -9,7 +9,6 @@
 		startWpl: function () {
 			wplook.ParallaxBackgroundsWpl();
 			wplook.MobileMenuWpl();
-			wplook.AnimateCssWpl();
 			wplook.OwlSliderWpl();
 			wplook.DetectiOSWpl();
 		},
