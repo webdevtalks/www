@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require app/vendors
 //= require app/base
+//= require app/home
