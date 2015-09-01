@@ -4,8 +4,8 @@
       .center-content
         h2 Ponentes
         div
-          ul.small-block-grid-1.medium-block-grid-2 class="large-block-grid-#{event.speakers.count}"
-            - event.talks.each do |talk|
+          ul.small-block-grid-1.medium-block-grid-2 class="large-block-grid-#{talks.count}"
+            - talks.each do |talk|
               li
                 .avatar
                   img alt="Imágen de perfil de #{talk.speaker.name}" height='220' src="#{talk.speaker.avatar_url}" width='220'

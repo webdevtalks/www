@@ -24,7 +24,7 @@
                     i.fa.fa-google-plus Google Foro
 
 - if @event.present? && @event.speakers.present?
-  = render partial: 'speakers', locals: { event: @event }
+  = render partial: 'speakers', locals: { event: @event, talks: @talks }
   = render partial: 'venue',    locals: { venue: @event.venue }
 
 = render 'sponsors'
