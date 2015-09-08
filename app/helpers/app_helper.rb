@@ -1,4 +1,4 @@
-module ApplicationHelper
+module AppHelper
 
   def render_map_available?(object)
     object.address.present? || (object.latitude.present? && object.longitude.present?)
