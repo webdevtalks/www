@@ -23,5 +23,7 @@ module WDT
       g.test_framework      :rspec, fixture: true
       g.fixture_replacement :fabrication
     end
+
+    config.lograge.enabled = true
   end
 end
