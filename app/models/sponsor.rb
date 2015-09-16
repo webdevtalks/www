@@ -2,12 +2,6 @@ class Sponsor < ActiveRecord::Base
   def self.all
     [
       {
-        name: 'Crowd Interactive',
-        website: 'http://crowdint.com',
-        twitter: 'crowdint',
-        image: 'sponsors/crowdint.jpg'
-      },
-      {
         name: 'Cocoworking',
         website: 'https://www.facebook.com/CoCoWorkingMx',
         twitter: 'elcocoworking',
