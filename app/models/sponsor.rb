@@ -24,6 +24,12 @@ class Sponsor < ActiveRecord::Base
         website: "https://www.easybroker.com",
         twitter: 'EasyBroker',
         image: 'sponsors/eb.jpg'
+      },
+      {
+        name: 'vauxoo',
+        website: "https://www.vauxoo.com",
+        twitter: 'vauxoo',
+        image: 'sponsors/vauxoo.png'
       }
     ]
   end
