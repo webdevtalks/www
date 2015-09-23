@@ -30,6 +30,12 @@ class Sponsor < ActiveRecord::Base
         website: "http://www.magmalabs.io",
         twitter: 'weareMagmaLabs',
         image: 'sponsors/magmalabs.png'
+      },
+      {
+        name: 'netmask',
+        website: "http://devmask.net/",
+        twitter: 'netmask',
+        image: 'sponsors/netmask.jpg'
       }
     ]
   end
