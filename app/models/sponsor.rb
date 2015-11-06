@@ -36,6 +36,12 @@ class Sponsor < ActiveRecord::Base
         website: "http://devmask.net/",
         twitter: 'netmask',
         image: 'sponsors/netmask.jpg'
+      },
+      {
+        name: 'The Office',
+        website: "http://theofficecowork.com/",
+        twitter: 'TheOfficeCowork',
+        image: 'sponsors/theoffice.jpg'
       }
     ]
   end
