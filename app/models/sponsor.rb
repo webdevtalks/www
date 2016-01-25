@@ -45,6 +45,12 @@ class Sponsor < ActiveRecord::Base
         #image: 'sponsors/netmask.jpg'
       #},
       {
+        name: 'Tango.io',
+        website: 'http://tango.io',
+        twitter: 'tangosource',
+        image: 'sponsors/tangoio.svg'
+      },
+      {
         name: 'The Office',
         website: "http://theofficecowork.com/",
         twitter: 'TheOfficeCowork',
