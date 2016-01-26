@@ -26,12 +26,12 @@ class Sponsor < ActiveRecord::Base
         #twitter: 'vauxoo',
         #image: 'sponsors/vauxoo.png'
       #},
-      #{
-        #name: 'magmalabs',
-        #website: "http://www.magmalabs.io",
-        #twitter: 'weareMagmaLabs',
-        #image: 'sponsors/magmalabs.png'
-      #},
+      {
+        name: 'magmalabs',
+        website: "http://www.magmalabs.io",
+        twitter: 'weareMagmaLabs',
+        image: 'sponsors/magmalabs.png'
+      },
       {
         name: 'micheladaio',
         website: 'http://michelada.io',
