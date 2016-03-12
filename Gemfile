@@ -3,7 +3,7 @@ ruby   '2.3.0'
 
 gem 'rails',                         '~> 4.2.0'
 gem 'pg',                            '~> 0.18.1'
-gem 'puma',                          '~> 2.11.1'
+gem 'puma',                          '~> 3.1.0'
 
 gem 'coffee-rails',                  '~> 4.1.0'
 gem 'sass-rails',                    '~> 5.0.1'
