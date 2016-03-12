@@ -4,7 +4,7 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env)
+Bundler.require(*Rails.groups)
 
 module WDT
   class Application < Rails::Application
@@ -24,6 +24,7 @@ module WDT
       g.fixture_replacement :fabrication
     end
 
-    config.lograge.enabled = true
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end
