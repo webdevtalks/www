@@ -11,7 +11,7 @@ gem 'slim-rails',                    '~> 3.0.1'
 
 gem 'bootstrap-sass',                '~> 3.3.3'
 gem 'font-awesome-rails',            '~> 4.3.0.0'
-gem 'jquery-rails',                  '~> 4.0.3'
+gem 'jquery-rails',                  '~> 4.1.1'
 gem 'jquery-validation-rails',       '~> 1.13.1'
 gem 'uglifier',                      '>= 2.7.1'
 
