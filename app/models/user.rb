@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :talks
+  has_many :talks, foreign_key: 'speaker_id'
 
   has_one  :authorization
 

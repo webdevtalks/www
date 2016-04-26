@@ -1,0 +1,28 @@
+.modal-dialog[role="document"]
+  .modal-content
+    .modal-header
+      button.button.close[data-dismiss="modal" aria-label="Cerrar"]
+        i[aria-hidden="true"] &times;
+      .modal-title
+        h4 Nueva charla
+      .modal-body
+        = form_for [:admin, @event, @talk], html: { class: "form-horizontal" } do |f|
+
+          = hidden_field_tag :event_id, @event.id
+
+          .form-group
+            = f.label :speaker_id, 'Ponente', class: "col-md-2"
+            .col-md-8
+              = f.select :speaker_id, options_from_collection_for_select(User.all, :id, :name), {}, class: "form-control"
+          .form-group
+            = f.label :title, class: "col-md-2"
+            .col-md-8
+              = f.text_field :title, class: "form-control"
+          .form-group
+            = f.label :description, class: "col-md-2"
+            .col-md-8
+              = f.text_field :description, class: "form-control"
+
+          .form-group
+            .col-md-offset-2.col-md-2
+              = f.submit "Registrar charla", class: "btn btn-primary"

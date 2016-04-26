@@ -23,7 +23,7 @@ class Talk < ActiveRecord::Base
   after_create :flag_speaker
 
   belongs_to :event
-  belongs_to :speaker, class_name: 'User', foreign_key: :user_id
+  belongs_to :speaker, class_name: 'User'
 
   validates_presence_of :event, :speaker, :title, :description
 

@@ -24,6 +24,7 @@ class Admin::EventsController < AdminController
   def edit
     @accepted_talks  = @event.talks.select{|talk| talk.status == 'accepted' }
     @proposed_talks  = @event.talks.select{|talk| talk.status == 'proposal' }
+    @talk = @event.talks.new
   end
 
   def index
