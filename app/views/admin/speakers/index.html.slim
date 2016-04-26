@@ -1,0 +1,12 @@
+h2 Ponentes
+
+table.table.table-hover.table-stripped
+  thead
+    tr
+      th Nombre
+      th Correo
+
+  tbody
+    = render @speakers
+
+= link_to 'Nuevo ponente', new_admin_speaker_path, class: 'btn btn-default'

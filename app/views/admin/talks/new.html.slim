@@ -15,11 +15,11 @@
             .col-md-8
               = f.select :speaker_id, options_from_collection_for_select(User.all, :id, :name), {}, class: "form-control"
           .form-group
-            = f.label :title, class: "col-md-2"
+            = f.label :title, "Título", class: "col-md-2"
             .col-md-8
               = f.text_field :title, class: "form-control"
           .form-group
-            = f.label :description, class: "col-md-2"
+            = f.label :description, "Descripción", class: "col-md-2"
             .col-md-8
               = f.text_field :description, class: "form-control"
 

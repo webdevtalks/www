@@ -17,10 +17,9 @@ Rails.application.routes.draw do
     end
 
     resources :locations
-    #resources :speakers
+    resources :speakers
     resources :talks
     resources :venues
-
 
   end
 
