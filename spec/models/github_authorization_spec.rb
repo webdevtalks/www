@@ -1,44 +1,37 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe GithubAuthorization do
 
-  let(:access_token) { 'zzz'}
-  let(:username) { 'aaa' }
+  describe "validations" do
 
-  subject { GithubAuthorization.new(access_token, username) }
+    describe "membership" do
+      context "when user belongs to organization" do
+        it "returns true without registering errors" do
+          github_auth = GithubAuthorization.new("foo", "bar")
 
-  describe 'new' do
-    it 'sets access token in Authorization header' do
-      expect(subject.class.headers['Authorization']).to include("token #{access_token}")
-    end
-  end
+          FakeWeb.register_uri :get,
+                               %r{ /orgs/webdevtalks/members/bar }xi,
+                               status: ["204", "No Content"]
 
-  describe 'organization_membership' do
-
-    let(:check_membership_uri) do
-      "#{subject.class.base_uri}/orgs/#{subject.organization}/members/#{subject.username}"
-    end
-
-    context 'when request response returns a 204 HTTP Status' do
-      before do
-        FakeWeb.register_uri :get, check_membership_uri, status: ['204', 'No Content']
+          expect(github_auth.membership).to be_truthy
+          expect(github_auth.errors).to be_empty
+        end
       end
 
-      it { expect(subject.send(:organization_membership)).to eq(true) }
-    end
+      context "when user does not belong to organization" do
+        it "returns false and registers errors" do
+          github_auth = GithubAuthorization.new("foo", "bar")
 
-    context 'when request response status is other than 204' do
-      before do
-        FakeWeb.register_uri :get, check_membership_uri, status: ['404', 'Not Found']
-      end
+          FakeWeb.register_uri :get,
+                               %r{ /orgs/webdevtalks/members/bar }xi,
+                               status: ["404", "Not Found"]
 
-      it { expect(subject.send(:organization_membership)).to eq(false) }
-
-      it 'receives an error message' do
-        subject.send(:organization_membership)
-        expect(subject.errors[:base]).to include("You don't belong to the staff.")
+          expect(github_auth.membership).to be_falsy
+          expect(github_auth.errors[:base]).to include("You don't belong to the staff.")
+        end
       end
     end
+
   end
 
 end

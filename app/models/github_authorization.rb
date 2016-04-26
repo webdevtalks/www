@@ -2,26 +2,26 @@ class GithubAuthorization
 
   include ActiveRecord::HumanizedErrors
   include ActiveModel::Validations
-  include HTTParty
 
-  attr_reader :organization, :username
+  attr_reader :access_token, :organization, :username
 
-  base_uri 'https://api.github.com'
-  headers  'User-Agent' => Rails.application.secrets.github_app
-
-  validate :organization_membership
+  validate :membership
 
   def initialize(access_token, username)
-    self.class.headers['Authorization'] = "token #{access_token}"
-    @organization = Rails.application.secrets.github_organization
+    @access_token = access_token
     @username     = username
   end
 
-  private
+  def membership
+    request = Net::HTTP::Get.new("/orgs/webdevtalks/members/#{username}")
 
-  def organization_membership
-    request = self.class.get("/orgs/#{organization}/members/#{username}")
-    if request.response.class != Net::HTTPNoContent
+    response = Net::HTTP.start "api.github.com", use_ssl: true do |http|
+      request["Authorization"] = "token #{access_token}"
+      request["User-Agent"]    = Rails.application.secrets.github_app_name
+      http.request request
+    end
+
+    if response.class != Net::HTTPNoContent
       errors.add :base, "You don't belong to the staff."
       false
     else

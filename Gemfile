@@ -18,7 +18,6 @@ gem 'uglifier',                      '>= 2.7.1'
 gem 'aasm',                          '~> 4.2.0'
 gem 'activevalidators',              '~> 3.2.0'
 gem 'activerecord-humanized_errors', '~> 2.0.1'
-gem 'httparty',                      '~> 0.13.3'
 gem 'lograge',                       '~> 0.3.6'
 gem 'omniauth-github',               '~> 1.1.2'
 
