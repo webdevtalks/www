@@ -1,4 +1,4 @@
-class Sponsor < ActiveRecord::Base
+class Sponsor
 
   def self.all
     [
@@ -14,6 +14,12 @@ class Sponsor < ActiveRecord::Base
         #twitter: 'DonChambitas',
         #image: 'sponsors/chambitas.jpg'
       #},
+      {
+        name: 'densitylabs',
+        website:'https://twitter.com/densitylabs',
+        twitter: 'densitylabs',
+        image: 'sponsors/densitylabs.jpg'
+      },
       {
         name: 'easybroker',
         website: "https://www.easybroker.com",
