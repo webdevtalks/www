@@ -30,7 +30,7 @@ class Authorization < ActiveRecord::Base
   private
 
   def github_authorization
-    @github_auth = GithubAuthorization.new(credentials[:token], info[:nickname])
+    @github_auth = GithubAuthorization.new(info[:nickname])
     unless @github_auth.valid?
       errors.add :github_authorization, @github_auth.humanized_errors
     end
