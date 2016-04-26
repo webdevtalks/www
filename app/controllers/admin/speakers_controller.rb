@@ -3,7 +3,7 @@ class Admin::SpeakersController < AdminController
   before_action :find_speaker, only: [:edit, :show, :update]
 
   def create
-    @speaker = Speaker.create(speaker_params)
+    @speaker = Speaker.create(speaker_params.merge(is_speaker: true))
 
     if @speaker.persisted?
       flash[:success] = "Ponente registrado con éxito."
@@ -30,7 +30,8 @@ class Admin::SpeakersController < AdminController
 
   def update
     if @speaker.update_attributes(speaker_params)
-      redirect_to admin_speakers_path, success: "Ponente actualizado con éxito."
+      flash[:success] = 'Ponente actualizado con éxito.'
+      redirect_to admin_speakers_path
     else
       flash[:error] = "No se pudo actualizar ponente: #{@speaker.humanized_errors}"
       render :edit

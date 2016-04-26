@@ -10,7 +10,7 @@ class Admin::TalksController < AdminController
   end
 
   def update
-    @talk.send(params[:accept] == 'true' ? :accept! : :cancel!)
+    @talk.send(params[:accept] == "true" ? :accept! : :cancel!)
   rescue AASM::InvalidTransition => e
     flash[:error] = e.message
   ensure
