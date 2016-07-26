@@ -20,12 +20,12 @@ class Sponsor
         twitter: 'densitylabs',
         image: 'sponsors/densitylabs.jpg'
       },
-      {
-        name: 'easybroker',
-        website: "https://www.easybroker.com",
-        twitter: 'EasyBroker',
-        image: 'sponsors/eb.jpg'
-      },
+      # {
+      #   name: 'easybroker',
+      #   website: "https://www.easybroker.com",
+      #   twitter: 'EasyBroker',
+      #   image: 'sponsors/eb.jpg'
+      # },
       #{
         #name: 'vauxoo',
         #website: "https://www.vauxoo.com",
@@ -55,13 +55,13 @@ class Sponsor
         website: 'http://tango.io',
         twitter: 'tangosource',
         image: 'sponsors/tangoio.svg'
-      },
-      {
-        name: 'The Office',
-        website: "http://theofficecowork.com/",
-        twitter: 'TheOfficeCowork',
-        image: 'sponsors/theoffice.jpg'
       }
+      # {
+      #   name: 'The Office',
+      #   website: "http://theofficecowork.com/",
+      #   twitter: 'TheOfficeCowork',
+      #   image: 'sponsors/theoffice.jpg'
+      # }
     ]
   end
 
