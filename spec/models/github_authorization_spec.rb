@@ -7,10 +7,10 @@ describe GithubAuthorization do
     describe "membership" do
       context "when user belongs to organization" do
         it "returns true without registering errors" do
-          github_auth = GithubAuthorization.new("foo", "bar")
+          github_auth = GithubAuthorization.new("foo")
 
           FakeWeb.register_uri :get,
-                               %r{ /orgs/webdevtalks/members/bar }xi,
+                               %r{ /orgs/webdevtalks/members/foo }xi,
                                status: ["204", "No Content"]
 
           expect(github_auth.membership).to be_truthy
@@ -20,7 +20,7 @@ describe GithubAuthorization do
 
       context "when user does not belong to organization" do
         it "returns false and registers errors" do
-          github_auth = GithubAuthorization.new("foo", "bar")
+          github_auth = GithubAuthorization.new("bar")
 
           FakeWeb.register_uri :get,
                                %r{ /orgs/webdevtalks/members/bar }xi,

@@ -3,30 +3,36 @@ class GithubAuthorization
   include ActiveRecord::HumanizedErrors
   include ActiveModel::Validations
 
-  attr_reader :access_token, :organization, :username
+  attr_reader :username
 
   validate :membership
 
-  def initialize(access_token, username)
-    @access_token = access_token
+  def initialize(username)
     @username     = username
   end
 
   def membership
-    request = Net::HTTP::Get.new("/orgs/webdevtalks/members/#{username}")
+    request = Net::HTTP::Get.new("/orgs/webdevtalks/members/#{username}?#{credentials}")
 
     response = Net::HTTP.start "api.github.com", use_ssl: true do |http|
-      request["Authorization"] = "token #{access_token}"
       request["User-Agent"]    = Rails.application.secrets.github_app_name
       http.request request
     end
 
-    if response.class != Net::HTTPNoContent
+    if response.class.in?([Net::HTTPNoContent, Net::HTTPFound])
+      true
+    else
       errors.add :base, "You don't belong to the staff."
       false
-    else
-      true
     end
   end
 
+  private
+
+  def credentials
+    @credentials ||= %[
+      client_id=#{Rails.application.secrets.github_client_id}
+      client_secret=#{Rails.application.secrets.github_client_secret}
+    ].squish.split(" ").join('&')
+  end
 end

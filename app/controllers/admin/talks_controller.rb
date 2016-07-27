@@ -10,7 +10,7 @@ class Admin::TalksController < AdminController
   end
 
   def update
-    @talk.send(params[:accept] == 'true' ? :accept! : :cancel!)
+    @talk.send(params[:accept] == "true" ? :accept! : :cancel!)
   rescue AASM::InvalidTransition => e
     flash[:error] = e.message
   ensure
@@ -21,7 +21,8 @@ class Admin::TalksController < AdminController
     @event =  Event.find(params[:event_id])
     @talk  = @event.talks.create(talk_params.merge(status: :accepted))
     if @talk.persisted?
-      redirect_to edit_admin_event_path(@event), success: 'Charla registrada con éxito.'
+      flash[:success] = "Charla registrada con éxito."
+      redirect_to edit_admin_event_path(@event)
     else
       flash[:error] = "No se pudo registrar charla: #{@talk.humanized_errors}"
       redirect_to edit_admin_event_path(@event)
