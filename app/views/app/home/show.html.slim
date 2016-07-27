@@ -27,7 +27,7 @@
   = render partial: 'speakers', locals: { event: @event, talks: @talks }
   = render partial: 'venue',    locals: { venue: @event.venue }
 
-= render 'sponsors'
+= render partial: 'sponsors', locals: { sponsors: @sponsors }
 = render 'about'
 
 /= render 'schedule'
