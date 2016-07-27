@@ -34,6 +34,7 @@ end
 
 group :development do
   gem 'dotenv-rails',                '~> 2.0.0'
+  gem 'powder',                      '~> 0.3.0'
   gem 'rails_best_practices',        '~> 1.16.0'
 end
 
