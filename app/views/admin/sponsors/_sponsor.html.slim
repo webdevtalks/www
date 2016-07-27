@@ -1,0 +1,14 @@
+tr
+  td= sponsor.name
+  td= sponsor.website
+  td= sponsor.twitter
+  td
+    - if sponsor.active
+      = link_to admin_sponsor_path(sponsor, sponsor: { active: false} ), method: :patch do
+        i.glyphicon.glyphicon-remove
+    - else
+      = link_to admin_sponsor_path(sponsor, sponsor: { active: true} ), method: :patch do
+        i.glyphicon.glyphicon-ok
+  td
+    = link_to edit_admin_sponsor_path(sponsor) do
+      i.glyphicon.glyphicon-edit

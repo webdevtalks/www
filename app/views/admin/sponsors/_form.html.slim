@@ -1,0 +1,25 @@
+= form_for [:admin, sponsor], html: { class: "form-horizontal" } do |f|
+
+  .form-group
+    = f.label :name, "Nombre", class: "col-md-2"
+    .col-md-8
+      = f.text_field :name, class: "form-control"
+
+  .form-group
+    = f.label :website, "Website", class: "col-md-2"
+    .col-md-8
+      = f.text_field :website, class: "form-control"
+
+  .form-group
+    = f.label :twitter, "Twitter", class: "col-md-2"
+    .col-md-8
+      = f.text_field :twitter, class: "form-control"
+
+  .form-group
+    = f.label :image, "Image", class: "col-md-2"
+    .col-md-8
+      = f.text_field :image, class: "form-control"
+
+  .form-group
+    .col-md-offset-2.col-md-2
+      = f.submit "#{sponsor.new_record? ? "Crear" : "Guardar"} patrocinador", class: "btn btn-primary"

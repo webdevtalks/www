@@ -1,0 +1,14 @@
+h2 Ponentes
+
+table.table.table-hover.table-stripped
+  thead
+    tr
+      th Nombre
+      th Website
+      th Twitter
+      th Active
+
+  tbody
+    = render @sponsors
+
+= link_to 'Nuevo patrocinador', new_admin_sponsor_path, class: 'btn btn-default'
