@@ -1,0 +1,14 @@
+h2= @sponsor.name
+
+.row
+  .col-sm-3.col-md-3
+    .thumbnail
+      img src=@sponsor.image
+
+  .col-sm-4.col-md-4
+    h3= link_to "https://twitter.com/#{@sponsor.twitter}" do
+      i.fa.fa-twitter
+      = " #{@sponsor.twitter}"
+    h4= link_to "mailto:#{@sponsor.website}" do
+      i.fa.fa-envelope-o
+      = " #{@sponsor.website}"

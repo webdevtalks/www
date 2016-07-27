@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :speakers
     resources :talks
     resources :venues
-
+    resources :sponsors
   end
 
   scope module: :app do

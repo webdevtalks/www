@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-describe Sponsor do
-  pending
+RSpec.describe Sponsor, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
