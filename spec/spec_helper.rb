@@ -1,14 +1,15 @@
 require 'fakeweb'
-FakeWeb.allow_net_connect = %r[^https?://codecov.io]
 
-if ENV['COVER'] || ENV['CI']
+if ENV['COVER']
   require 'simplecov'
-  SimpleCov.start 'rails'
+  SimpleCov.start('rails')
 end
 
 if ENV['CI']
-  require 'codecov'
-  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+  require 'coveralls'
+  FakeWeb.allow_net_connect = %r[^https?://coveralls.io]
+  Coveralls.wear!('rails')
+  SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 end
 
 RSpec.configure do |config|
