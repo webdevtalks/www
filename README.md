@@ -47,3 +47,7 @@ You should be ready to go.
 Start the app by running:
 
     $ powder up
+
+Stop powder:
+
+    $ powder down
