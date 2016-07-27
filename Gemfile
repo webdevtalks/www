@@ -43,8 +43,8 @@ group :production do
 end
 
 group :test do
-  gem 'codecov',                     '~> 0.0.2', require: false
+  gem 'coveralls',                   '~> 0.8.14', require: false
   gem 'fakeweb',                     '~> 1.3.0'
   gem 'poltergeist',                 '~> 1.6.0'
-  gem 'simplecov',                   '~> 0.9.2', require: false
+  gem 'simplecov',                   '~> 0.12.0', require: false
 end
