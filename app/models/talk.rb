@@ -27,6 +27,8 @@ class Talk < ActiveRecord::Base
 
   validates_presence_of :event, :speaker, :title, :description
 
+  default_scope { order('id DESC') }
+
   private
 
   def flag_speaker
