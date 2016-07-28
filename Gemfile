@@ -43,6 +43,7 @@ group :development do
 end
 
 group :production do
+  gem 'airbrake',                    '~> 5.4.3'
   gem 'rails_12factor',              '~> 0.0.3'
 end
 
