@@ -10,9 +10,9 @@ $ ->
     goToSection(id)
 
 
-  $('#home').on 'click', 'a[href="#venue"]', (e)->
+  $('#home').on 'click', '.event-info a', (e)->
     e.preventDefault()
-    id = $(e.target).attr('href')
+    id = $(this).attr('href')
     goToSection(id)
 
   $('#venue').on 'click', '.map', ->
