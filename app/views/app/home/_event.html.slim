@@ -1,5 +1,5 @@
-.event-info
-  - if event.present?
+- if event
+  .event-info
     ul.small-block-grid-1.medium-block-grid-4.large-block-grid-4
       li
         i.fa.fa-calendar
@@ -14,7 +14,7 @@
         = link_to '#speakers' do
           i.fa.fa-microphone
           span
-            = event.speakers.count
+            = event.speakers.size
             |  Ponentes
       /li
         /i.fa.fa-ticket 50 tickets

@@ -48,6 +48,7 @@ describe Admin::SessionsController do
     end
 
     context 'when omniauth hash is invalid' do
+      before { request.env['omniauth.auth'] = {} }
       it { expect { get :create }.to raise_error(ActionController::ParameterMissing) }
     end
   end

@@ -1,29 +1,30 @@
-#speakers.speakers.widget-content
-  .row
-    .columns.small-12.medium-12.large-12
-      .center-content
-        h2 Ponentes
-        div
-          ul.small-block-grid-1.medium-block-grid-2 class="large-block-grid-#{talks.count}"
-            - talks.each do |talk|
-              li
-                .avatar
-                  img alt="Imágen de perfil de #{talk.speaker.name}" height='220' src="#{talk.speaker.avatar_url}" width='220'
-                  .social
-                    /! Speaker profile / blog url
-                    /a href='#' target='_blank'
-                      /i.fa.fa-user
-                    /! Speaker Twitter URL
-                    a href="https://twitter.com/#{talk.speaker.twitter}"
-                      i.fa.fa-twitter
-                    /! Speaker Facebook URL
-                    /a href='#'
-                      /i.fa.fa-facebook
-                .name
-                  a[href='#' target='_blank'] = talk.speaker.name
-                .company = talk.title
-                  /a href='http://tauziet.com/' target='_blank'  Facebook
-        /! View all Speakers Button
-        /.view-all-speakers
-          /a.btn-default href='speakers.html'  VE A TODOS LOS PONENTES
+- if event.speakers.present?
+  #speakers.speakers.widget-content
+    .row
+      .columns.small-12.medium-12.large-12
+        .center-content
+          h2 Ponentes
+          div
+            ul.small-block-grid-1.medium-block-grid-2 class="large-block-grid-#{@speaker_count}"
+              - event.talks.each do |talk|
+                li
+                  .avatar
+                    img alt="Imágen de perfil de #{talk.speaker.name}" height='220' src="#{talk.speaker.avatar_url}" width='220'
+                    .social
+                      /! Speaker profile / blog url
+                      /a href='#' target='_blank'
+                        /i.fa.fa-user
+                      /! Speaker Twitter URL
+                      a href="https://twitter.com/#{talk.speaker.twitter}"
+                        i.fa.fa-twitter
+                      /! Speaker Facebook URL
+                      /a href='#'
+                        /i.fa.fa-facebook
+                  .name
+                    a[href='#' target='_blank'] = talk.speaker.name
+                  .company = talk.title
+                    /a href='http://tauziet.com/' target='_blank'  Facebook
+          /! View all Speakers Button
+          /.view-all-speakers
+            /a.btn-default href='speakers.html'  VE A TODOS LOS PONENTES
 
