@@ -10,7 +10,21 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   def avatar_url
-    profile_photo_url || authorization.try(:photo_url) || "assets/#{twitter}.jpeg"
+    photo_url || network_photo_url || authorization_photo_url
   end
+
+  private
+
+    def asset_user_photo_url(nickname)
+      Dir.glob("app/assets/images/speakers/**/#{nickname}.{jpg,jpeg,png}").first
+    end
+
+    def authorization_photo_url
+      authorization.photo_url if authorization
+    end
+
+    def network_photo_url
+      asset_user_photo_url(twitter)
+    end
 
 end
