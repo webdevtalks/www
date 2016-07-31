@@ -24,7 +24,7 @@ class Authorization < ActiveRecord::Base
   end
 
   def photo_url(size = 200)
-    "#{info[:image]}?size=#{size}"
+    "#{info[:image]}?size=#{size}" if info && info[:image]
   end
 
   private

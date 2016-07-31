@@ -137,4 +137,30 @@ describe Authorization do
       end
     end
   end
+
+  describe '#photo_url' do
+    context 'when provider info hash has no image' do
+      it 'returns nil' do
+        expect(subject.photo_url).to be_nil
+      end
+    end
+
+    context 'when provider info hash has an image' do
+      it 'returns image url with default size' do
+        authorization = Fabricate(
+          :authorization,
+          { info: { image: 'foo.jpg' }}.with_indifferent_access
+        )
+        expect(authorization.photo_url).to eq('foo.jpg?size=200')
+      end
+
+      it 'returns imae url with given size' do
+        authorization = Fabricate(
+          :authorization,
+          { info: { image: 'foo.jpg' }}.with_indifferent_access
+        )
+        expect(authorization.photo_url(300)).to eq('foo.jpg?size=300')
+      end
+    end
+  end
 end
