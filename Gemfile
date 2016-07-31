@@ -31,15 +31,15 @@ group :development, :test do
   gem 'faker',                       '~> 1.4.3'
   gem 'fabrication',                 '~> 2.12.2'
   gem 'pry-byebug',                  '~> 3.3.0'
+  gem 'rails-controller-testing',    '~> 0.1.1'
   gem 'rspec-rails',                 '~> 3.5.1', require: false
-  gem 'rails-controller-testing'
 end
 
 group :development do
   gem 'dotenv-rails',                '~> 2.0.0'
   gem 'powder',                      '~> 0.3.0'
   gem 'rails_best_practices',        '~> 1.16.0'
-  gem 'spring'
+  gem 'spring',                      '~> 1.7.2'
 end
 
 group :production do
