@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   def avatar_url
-    photo_url || network_photo_url || authorization_photo_url
+    photo_url || network_photo_url || authorization_photo_url || placeholder_photo_url
   end
 
   private
@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
 
     def network_photo_url
       asset_user_photo_url(twitter)
+    end
+
+    def placeholder_photo_url
+      Faker::Avatar.image(twitter || name.delete(' ')).gsub('http', 'https')
     end
 
 end

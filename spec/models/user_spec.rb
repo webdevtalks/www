@@ -80,13 +80,16 @@ describe User do
       it 'fallbacks to authorization_photo_url' do
         user = Fabricate.build(:user_with_authorization, photo_url: nil, twitter: nil)
 
-        allow(user.authorization).to receive(:github_authorization) { true }
-
-        user.save
-
         allow(user.authorization).to receive(:photo_url) { 'baz.jpg' }
 
         expect(user.avatar_url).to eq('baz.jpg')
+      end
+    end
+
+    context 'when all photo_url fallbacks are nil' do
+      it 'fallbacks to a placeholder_photo_url' do
+        user = Fabricate(:user, photo_url: nil, twitter: nil)
+        expect(user.avatar_url).to match(/robohash.org/)
       end
     end
   end
