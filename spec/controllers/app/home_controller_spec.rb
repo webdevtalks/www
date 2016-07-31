@@ -4,19 +4,12 @@ describe App::HomeController do
 
   describe 'show' do
 
-    before do
-      Fabricate :event, date: 1.day.from_now
-    end
-
     it 'assigns the current event' do
+      latest_event = Fabricate(:event, date: 1.day.from_now)
       get :show
-      expect(assigns[:event]).to eq(Event.current)
-    end
-
-    it 'assigns only the accepted talks' do
-      get :show
-      expect(assigns[:talks]).to eq(Event.current.talks.accepted)
+      expect(assigns[:event]).to eq(latest_event)
     end
 
   end
+
 end
