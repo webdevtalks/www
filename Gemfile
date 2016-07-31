@@ -30,6 +30,7 @@ group :development, :test do
   gem 'capybara-webkit',             '~> 1.4.1'
   gem 'faker',                       '~> 1.4.3'
   gem 'fabrication',                 '~> 2.12.2'
+  gem 'guard-rspec',                 '~> 4.7.3', require: false
   gem 'pry-byebug',                  '~> 3.3.0'
   gem 'rails-controller-testing',    '~> 0.1.1'
   gem 'rspec-rails',                 '~> 3.5.1', require: false
@@ -40,6 +41,7 @@ group :development do
   gem 'powder',                      '~> 0.3.0'
   gem 'rails_best_practices',        '~> 1.16.0'
   gem 'spring',                      '~> 1.7.2'
+  gem 'spring-commands-rspec',       '~> 1.0.4'
 end
 
 group :production do
