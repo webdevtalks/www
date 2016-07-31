@@ -1,12 +1,12 @@
-- if event.speakers.present?
+- if event.confirmed_speakers.present?
   #speakers.speakers.widget-content
     .row
       .columns.small-12.medium-12.large-12
         .center-content
           h2 Ponentes
           div
-            ul.small-block-grid-1.medium-block-grid-2 class="large-block-grid-#{@speaker_count}"
-              - event.talks.each do |talk|
+            ul.small-block-grid-1.medium-block-grid-2 class="large-block-grid-#{event.confirmed_speakers.size}"
+              - event.accepted_talks.each do |talk|
                 li
                   .avatar
                     img alt="Imágen de perfil de #{talk.speaker.name}" height='220' src="#{talk.speaker.avatar_url}" width='220'

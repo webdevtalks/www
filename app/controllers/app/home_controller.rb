@@ -8,7 +8,7 @@ class App::HomeController < AppController
   private
 
     def event_associations
-      return :speakers, { talks: :speaker, venue: :location }
+      return { accepted_talks: :speaker, venue: :location }, :confirmed_speakers
     end
 
 end
