@@ -11,8 +11,8 @@ class Authorization < ActiveRecord::Base
   validates_presence_of :user, on: :update
 
   def self.create_by_omniauth(hash)
-    user = User.new(hash[:info].slice(:name, :email))
-    create hash.merge(user: user).with_indifferent_access
+    user = User.find_or_initialize_by(hash[:info].slice(:name, :email))
+    create(hash.merge(user: user).with_indifferent_access)
   end
 
   def self.find_by_omniauth(hash)
