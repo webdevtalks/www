@@ -58,7 +58,7 @@ describe User do
   end
 
   describe 'avatar_url' do
-    context 'when photo_url is nil' do
+    context 'when photo_url is present' do
       it 'returns photo_url' do
         user = Fabricate(:user, photo_url: 'foo.jpg')
 
@@ -67,17 +67,17 @@ describe User do
     end
 
     context 'when photo_url is nil' do
-      it 'fallbacks to network_photo_url' do
+      it 'fallbacks to local_photo_path' do
         user =  Fabricate(:user, photo_url: nil, twitter: 'bar')
 
-        allow(user).to receive(:asset_user_photo_url).with('bar') { 'bar.jpg' }
+        allow(user).to receive(:full_user_photo_path).with('bar') { 'bar.jpg' }
 
         expect(user.avatar_url).to eq('bar.jpg')
       end
     end
 
-    context 'when photo_url and network_photo_url are nil' do
-      it 'fallbacks to authorization_photo_url' do
+    context 'when photo_url and network_photo_path are nil' do
+      it 'fallbacks to auth_photo_url' do
         user = Fabricate.build(:user_with_authorization, photo_url: nil, twitter: nil)
 
         allow(user.authorization).to receive(:photo_url) { 'baz.jpg' }
