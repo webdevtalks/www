@@ -3,7 +3,7 @@ class Admin::SpeakersController < AdminController
   before_action :find_speaker, only: [:edit, :show, :update]
 
   def create
-    @speaker = Speaker.create(speaker_params.merge(is_speaker: true))
+    @speaker = Speaker.create(speaker_params)
 
     if @speaker.persisted?
       flash[:success] = "Ponente registrado con éxito."
