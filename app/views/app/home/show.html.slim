@@ -23,9 +23,8 @@
                   a href='https://groups.google.com/forum/#!forum/webdevtalks'
                     i.fa.fa-google-plus Google Foro
 
-- if @event.present? && @event.speakers.present?
-  = render partial: 'speakers', locals: { event: @event, talks: @talks }
-  = render partial: 'venue',    locals: { venue: @event.venue }
+= render partial: 'speakers', locals: { event: @event }
+= render partial: 'venue',    locals: { event: @event }
 
 = render partial: 'sponsors', locals: { sponsors: @sponsors }
 = render 'about'

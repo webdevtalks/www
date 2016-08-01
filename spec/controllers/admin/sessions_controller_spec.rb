@@ -48,7 +48,19 @@ describe Admin::SessionsController do
     end
 
     context 'when omniauth hash is invalid' do
+      before { request.env['omniauth.auth'] = {} }
       it { expect { get :create }.to raise_error(ActionController::ParameterMissing) }
+    end
+  end
+
+  describe '#destroy' do
+    it 'deletes session and redirects to admin_login_path' do
+      session[:user_id] = 1
+
+      delete :destroy
+
+      expect(response).to redirect_to(admin_login_path)
+      expect(session[:user_id]).to be_nil
     end
   end
 

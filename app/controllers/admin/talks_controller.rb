@@ -1,5 +1,6 @@
 class Admin::TalksController < AdminController
 
+  before_action :find_event, only: :create
   before_action :find_talk, only: [:show, :update]
 
   def index
@@ -18,8 +19,8 @@ class Admin::TalksController < AdminController
   end
 
   def create
-    @event =  Event.find(params[:event_id])
     @talk  = @event.talks.create(talk_params.merge(status: :accepted))
+
     if @talk.persisted?
       flash[:success] = "Charla registrada con éxito."
       redirect_to edit_admin_event_path(@event)
@@ -31,12 +32,16 @@ class Admin::TalksController < AdminController
 
   private
 
-  def talk_params
-    params.require(:talk).permit :title, :description, :speaker_id
-  end
+    def find_event
+      @event =  Event.find(params[:event_id])
+    end
 
-  def find_talk
-    @talk = Talk.find(params[:id])
-  end
+    def find_talk
+      @talk = Talk.find(params[:id])
+    end
+
+    def talk_params
+      params.require(:talk).permit(:title, :description, :speaker_id)
+    end
 
 end

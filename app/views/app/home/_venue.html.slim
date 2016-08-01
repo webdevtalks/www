@@ -2,9 +2,9 @@
   .row
     .columns.small-12.medium-12.large-12
       .center-content
-        h2 Lugar: #{venue.name}
+        h2 Lugar: #{event.venue.name}
   .row
     .columns.small-12.medium-12.large-12
       .center-content
         .map
-          = render_map(venue, width: '100%', height: '365px')
+          = render_map(event.venue, width: '100%', height: '365px')

@@ -1,5 +1,5 @@
 class Speaker < User
 
-  default_scope -> { where is_speaker: true }
+  default_scope -> { joins(:talks).having('count(*) > 0').group(:id) }
 
 end

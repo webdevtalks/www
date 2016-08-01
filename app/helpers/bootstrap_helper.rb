@@ -11,19 +11,18 @@ module BootstrapHelper
     html = ''
 
     dismiss_button_options = {
-      class: 'close',
+      'class'        => 'close',
       'data-dismiss' => 'alert',
-      'aria-hidden' => true
+      'aria-hidden'  => true
     }
 
-    dismiss_button = content_tag :button, raw('&times;'), dismiss_button_options
+    dismiss_button = content_tag(:button, raw('&times;'), dismiss_button_options)
 
-    flash.each do |type, message|
-      if message.present?
-        alert_content = dismiss_button + message
-        alert_classes = %W{ alert alert-#{ALERT_MAPPINGS[type] || type} alert-dismissible }
-        html << content_tag(:div, alert_content, class: alert_classes.join(' '))
-      end
+    flash.each do |type, alert_message|
+      next if alert_message.blank? || ALERT_MAPPINGS[type].nil?
+      alert_content = dismiss_button + alert_message
+      alert_classes = %W{alert alert-#{ALERT_MAPPINGS[type]} alert-dismissible}.join(' ')
+      html << content_tag(:div, alert_content, class: alert_classes)
     end
 
     html.html_safe

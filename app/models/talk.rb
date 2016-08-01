@@ -20,19 +20,11 @@ class Talk < ActiveRecord::Base
     end
   end
 
-  after_create :flag_speaker
+  default_scope { order('id DESC') }
 
   belongs_to :event
   belongs_to :speaker, class_name: 'User'
 
   validates_presence_of :event, :speaker, :title, :description
-
-  default_scope { order('id DESC') }
-
-  private
-
-  def flag_speaker
-    speaker.update_attribute :is_speaker, true
-  end
 
 end

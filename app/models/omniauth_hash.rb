@@ -6,7 +6,7 @@ class OmniauthHash
 
   def permit!
     require_keys
-    permit_keys
+    permit_keys.to_h.with_indifferent_access
   end
 
   def permit_keys
