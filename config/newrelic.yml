@@ -1,0 +1,5 @@
+---
+production:
+  app_name:    <%= ENV['NEW_RELIC_APP_NAME'] %>
+  license_key: <%= ENV['NEW_RELIC_LICENSE_KEY'] %>
+  log_level:   info

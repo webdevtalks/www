@@ -13,6 +13,7 @@ gem 'uglifier',                      '>= 2.7.1'
 # Services
 gem 'pg',                            '~> 0.18.4'
 gem 'puma',                          '~> 3.6.0'
+
 # Assets
 gem 'bootstrap-sass',                '~> 3.3.3'
 gem 'font-awesome-rails',            '~> 4.6.3.1'
@@ -46,6 +47,7 @@ end
 
 group :production do
   gem 'airbrake',                    '~> 5.4.3'
+  gem 'newrelic_rpm',                '~> 3.16.0.318'
   gem 'rails_12factor',              '~> 0.0.3'
 end
 
