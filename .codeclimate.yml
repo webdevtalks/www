@@ -26,7 +26,8 @@ engines:
       - "**.js"
       - "**.rb"
 exclude_paths:
-  - app/assets/javascripts/{app,admin}.js
+  - app/assets/javascripts/admin.js
+  - app/assets/javascripts/app.js
   - bin/**
   - db/**
   - public/assets/**
