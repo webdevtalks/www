@@ -100,4 +100,4 @@
 		wplook.startWpl();
 	});
 
-})(jQuery);
+}(jQuery));
