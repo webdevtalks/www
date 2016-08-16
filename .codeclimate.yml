@@ -28,6 +28,7 @@ engines:
 exclude_paths:
   - bin/**
   - db/**
+  - public/assets/**
   - spec/**
   - UI/**
   - vendor/**
