@@ -27,6 +27,14 @@ gem 'lograge',                       '~> 0.4.1'
 gem 'omniauth-github',               '~> 1.1.2'
 gem 'rake',                          '~> 10.5.0 '
 
+group :development do
+  gem 'dotenv-rails',                '~> 2.0.0'
+  gem 'powder',                      '~> 0.3.0'
+  gem 'rails_best_practices',        '~> 1.16.0'
+  gem 'spring',                      '~> 1.7.2'
+  gem 'spring-commands-rspec',       '~> 1.0.4'
+end
+
 group :development, :test do
   gem 'capybara',                    '~> 2.4.4'
   gem 'capybara-webkit',             '~> 1.4.1'
@@ -37,17 +45,13 @@ group :development, :test do
   gem 'rspec-rails',                 '~> 3.5.1', require: false
 end
 
-group :development do
-  gem 'dotenv-rails',                '~> 2.0.0'
-  gem 'powder',                      '~> 0.3.0'
-  gem 'rails_best_practices',        '~> 1.16.0'
-  gem 'spring',                      '~> 1.7.2'
-  gem 'spring-commands-rspec',       '~> 1.0.4'
-end
 
 group :production do
   gem 'airbrake',                    '~> 5.4.3'
   gem 'newrelic_rpm',                '~> 3.16.0.318'
+end
+
+group :production, :review do
   gem 'rails_12factor',              '~> 0.0.3'
 end
 

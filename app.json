@@ -1,0 +1,55 @@
+{
+  "name": "wdt-stage",
+  "description": "",
+  "scripts": {
+    "postdeploy": "rake db:setup"
+  },
+  "env": {
+    "DATABASE_URL": {
+      "required": true
+    },
+    "GITHUB_APP_NAME": {
+      "required": true
+    },
+    "GITHUB_CLIENT_ID": {
+      "required": true
+    },
+    "GITHUB_CLIENT_SECRET": {
+      "required": true
+    },
+    "GOOGLE_MAPS_API_KEY": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "MAINTENANCE_PAGE_URL": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": "review"
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
