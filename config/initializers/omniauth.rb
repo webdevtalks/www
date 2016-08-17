@@ -1,4 +1,4 @@
-WDT::Application.config.middleware.use OmniAuth::Builder do
+Rails.application.config.middleware.use OmniAuth::Builder do
 
   configure do |config|
     config.path_prefix = '/admin/auth'
@@ -9,7 +9,7 @@ WDT::Application.config.middleware.use OmniAuth::Builder do
   }
 
   if Rails.env.review?
-    options[:redirect_uri] = "#{Rails.application.routes.url_helpers.root_url}/admin/auth/github/callback"
+    options[:redirect_uri] = "https://#{ENV.fetch('HEROKU_APP_NAME')}.herokuapp.com/admin/auth/github/callback"
   end
 
   provider :github,

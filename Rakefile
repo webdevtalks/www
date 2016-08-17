@@ -3,6 +3,6 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-require 'rspec-rails' unless Rails.env.production?
+require 'rspec-rails' unless Rails.env.in?(%w{production review})
 
 Rails.application.load_tasks

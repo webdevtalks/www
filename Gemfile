@@ -45,7 +45,6 @@ group :development, :test do
   gem 'rspec-rails',                 '~> 3.5.1', require: false
 end
 
-
 group :production do
   gem 'airbrake',                    '~> 5.4.3'
   gem 'newrelic_rpm',                '~> 3.16.0.318'
