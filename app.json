@@ -29,9 +29,7 @@
     "RACK_ENV": {
       "required": true
     },
-    "RAILS_ENV": {
-      "required": "review"
-    },
+    "RAILS_ENV": "review",
     "RAILS_SERVE_STATIC_FILES": {
       "required": true
     },
