@@ -30,6 +30,7 @@ exclude_paths:
   - app/assets/javascripts/app.js
   - bin/**
   - db/**
+  - config/**
   - public/assets/**
   - spec/**
   - UI/**
