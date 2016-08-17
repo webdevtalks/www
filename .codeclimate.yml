@@ -1,0 +1,36 @@
+---
+engines:
+  bundler-audit:
+    enabled: true
+  coffelint:
+    enabled: true
+  csslint:
+    enabled: true
+  eslint:
+    enabled: true
+    channel: eslint-2
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - ruby
+        - javascript
+  rubocop:
+    enabled: true
+  ratings:
+    enabled: true
+    paths:
+      - Gemfile.lock
+      - app/**
+      - lib/**
+      - "**.js"
+      - "**.rb"
+exclude_paths:
+  - app/assets/javascripts/admin.js
+  - app/assets/javascripts/app.js
+  - bin/**
+  - db/**
+  - public/assets/**
+  - spec/**
+  - UI/**
+  - vendor/**

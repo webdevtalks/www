@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require app/vendors
+//= require theme
 //= require app/base
 //= require app/home

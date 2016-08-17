@@ -1,7 +1,8 @@
 # About
 
 [![travis](https://img.shields.io/travis/webdevtalks/www.svg)](https://travis-ci.org/webdevtalks/www)
-[![coveralls](https://img.shields.io/coveralls/webdevtalks/www.svg?maxAge=2592000)](https://coveralls.io/github/webdevtalks/www)
+[![codeclimate](https://codeclimate.com/github/webdevtalks/www/badges/gpa.svg)](https://codeclimate.com/github/webdevtalks/www)
+[![coveralls](https://img.shields.io/coveralls/webdevtalks/www.svg)](https://coveralls.io/github/webdevtalks/www)
 
 # Setup
 
