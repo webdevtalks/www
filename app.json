@@ -1,0 +1,41 @@
+{
+  "name": "wdt-stage",
+  "description": "",
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "env": {
+    "GOOGLE_MAPS_API_KEY": {
+      "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "MAINTENANCE_PAGE_URL": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": "review",
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "scripts": {
+    "postdeploy": "rake db:migrate db:seed"
+  }
+}
