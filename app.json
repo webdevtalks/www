@@ -10,15 +10,6 @@
     }
   ],
   "env": {
-    "GITHUB_APP_NAME": {
-      "required": true
-    },
-    "GITHUB_CLIENT_ID": {
-      "required": true
-    },
-    "GITHUB_CLIENT_SECRET": {
-      "required": true
-    },
     "GOOGLE_MAPS_API_KEY": {
       "required": true
     },
