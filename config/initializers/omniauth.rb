@@ -13,4 +13,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     )
   end
 
+  unless Rails.env.production?
+    provider(:developer)
+  end
 end
