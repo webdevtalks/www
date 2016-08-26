@@ -6,7 +6,7 @@ class Authorization < ActiveRecord::Base
   serialize :extra,       HashWithIndifferentAccess
   serialize :info,        HashWithIndifferentAccess
 
-  validate              :github_authorization
+  validate              :github_authorization, if: -> { provider == 'github' }
   validates_presence_of :provider, :uid
   validates_presence_of :user, on: :update
 

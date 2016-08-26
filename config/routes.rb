@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
     scope :auth do
       get 'github/callback', to: 'sessions#create'
+      post 'developer/callback', to: 'sessions#create'
     end
 
     get    '/',       to: redirect('/admin/events')
