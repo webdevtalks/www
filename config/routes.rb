@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   end
 
   scope module: :app do
-    resources :papers, only: [:create, :new]
   end
 
 end
