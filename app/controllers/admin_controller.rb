@@ -1,6 +1,9 @@
 class AdminController < ActionController::Base
 
+
   before_action :authorize!
+
+  force_ssl if: :ssl_enabled?
 
   helper_method :authorized?, :current_user
 
@@ -22,6 +25,10 @@ class AdminController < ActionController::Base
     else
       redirect_to admin_login_path
     end
+  end
+
+  def ssl_enabled?
+    ENV.fetch('SSL_ENABLED', false)
   end
 
 end
