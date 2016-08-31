@@ -1,10 +1,10 @@
-.row
-  .col-md-offset-4.col-md-4 style='margin-top: 15%'
+#sessions.new
+  .row
     .panel.panel-default
       .panel-heading
-        h3 style='text-align: center'
-          = image_tag 'favicon.png', width: 35
+        h3
+          = image_tag('favicon.png', width: 35)
           |  Iniciar sesión
       .panel-body
-        .col-md-offset-4.col-md-2
+        .oauth-providers
           = render_login_links
