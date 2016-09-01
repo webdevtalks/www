@@ -2,7 +2,7 @@
 engines:
   bundler-audit:
     enabled: true
-  coffelint:
+  coffeelint:
     enabled: true
   csslint:
     enabled: true
@@ -22,6 +22,10 @@ engines:
     paths:
       - app/**
       - lib/**
+      - "**.rb"
+      - "**.js"
+      - "**.css"
+      - "**.coffee"
 exclude_paths:
   - app/assets/javascripts/admin.js
   - app/assets/javascripts/app.js
