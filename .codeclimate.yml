@@ -20,11 +20,8 @@ engines:
   ratings:
     enabled: true
     paths:
-      - Gemfile.lock
       - app/**
       - lib/**
-      - "**.js"
-      - "**.rb"
 exclude_paths:
   - app/assets/javascripts/admin.js
   - app/assets/javascripts/app.js
