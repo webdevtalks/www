@@ -15,17 +15,14 @@ engines:
       languages:
         - ruby
         - javascript
-  rubocop:
-    enabled: true
   ratings:
     enabled: true
     paths:
-      - app/**
-      - lib/**
+      - "app/**/*"
+      - "lib/**/*"
       - "**.rb"
-      - "**.js"
-      - "**.css"
-      - "**.coffee"
+  rubocop:
+    enabled: true
 exclude_paths:
   - app/assets/javascripts/admin.js
   - app/assets/javascripts/app.js
