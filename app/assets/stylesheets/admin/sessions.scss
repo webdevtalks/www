@@ -1,0 +1,29 @@
+#sessions {
+
+  &.new {
+
+    .panel {
+      margin: 15% auto 0 auto;
+      width: 350px;
+
+      .panel-heading {
+        h3 {
+          text-align: center;
+        }
+      }
+
+      .panel-body {
+        .oauth-providers {
+          display: flex;
+
+          a {
+            flex-grow: 1;
+            margin: 0 15px;
+            width: 100px;
+          }
+        }
+      }
+    }
+
+  }
+}

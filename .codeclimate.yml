@@ -2,7 +2,7 @@
 engines:
   bundler-audit:
     enabled: true
-  coffelint:
+  coffeelint:
     enabled: true
   csslint:
     enabled: true
@@ -15,16 +15,14 @@ engines:
       languages:
         - ruby
         - javascript
-  rubocop:
-    enabled: true
   ratings:
     enabled: true
     paths:
-      - Gemfile.lock
-      - app/**
-      - lib/**
-      - "**.js"
+      - "app/**/*"
+      - "lib/**/*"
       - "**.rb"
+  rubocop:
+    enabled: true
 exclude_paths:
   - app/assets/javascripts/admin.js
   - app/assets/javascripts/app.js
