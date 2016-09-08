@@ -20,10 +20,10 @@ class Talk < ActiveRecord::Base
     end
   end
 
-  default_scope { order('id DESC') }
-
   belongs_to :event
-  belongs_to :speaker, class_name: 'User'
+  belongs_to :speaker, counter_cache: true
+
+  default_scope { order('id DESC') }
 
   validates_presence_of :event, :speaker, :title, :description
 

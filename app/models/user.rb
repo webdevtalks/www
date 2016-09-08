@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
 
-  has_many :talks, foreign_key: 'speaker_id'
-
   has_one  :authorization
 
   validates               :email, email: { strict: true, message: 'is invalid' }
@@ -15,12 +13,12 @@ class User < ActiveRecord::Base
 
   private
 
-    def full_user_photo_path(nickname)
-      Dir.glob("app/assets/images/speakers/**/#{nickname}.{jpg,jpeg,png}").first
-    end
-
     def auth_photo_url
       authorization.photo_url if authorization
+    end
+
+    def full_user_photo_path(nickname)
+      Dir.glob("app/assets/images/speakers/**/#{nickname}.{jpg,jpeg,png}").first
     end
 
     def local_photo_path
