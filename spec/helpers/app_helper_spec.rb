@@ -3,9 +3,11 @@ require 'rails_helper'
 describe AppHelper do
 
   describe '#link_to_social' do
-    it 'returns nothing when resource does not respond to link and is not a string' do
-      speaker = Fabricate(:speaker)
-      expect(helper.link_to_social(speaker, 'nope')).to be_nil
+    context 'when resource does not respond to link or isnt a string' do
+      it 'returns nothing' do
+        speaker = Fabricate(:speaker)
+        expect(helper.link_to_social(speaker, 'nope')).to be_nil
+      end
     end
 
     it 'returns link for given profile when link is a social network' do
@@ -19,7 +21,7 @@ describe AppHelper do
       expect(helper.link_to_social(speaker, 'url')).to be_nil
     end
 
-    context 'when link is known a social network'  do
+    context 'when link is known a social network' do
       it 'returns twiter link for resource' do
         speaker = Fabricate(:speaker, twitter: 'foo')
         result  = helper.link_to_social(speaker, :twitter)

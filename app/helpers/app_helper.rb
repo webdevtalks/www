@@ -6,23 +6,18 @@ module AppHelper
     twitter:      'twitter.com'
   }
 
-  def link_to_social(resource_or_profile, link, options = {})
-    target = if resource_or_profile.respond_to?(link)
-               resource_or_profile.send(link)
-             elsif resource_or_profile.is_a?(String)
-               resource_or_profile
-             end
-
-    return unless target
+  def link_to_social(resource, link, options = {})
+    target = resource.respond_to?(link) ? resource.send(link) : resource
 
     url = SOCIAL_URLS[link] ? "https://#{SOCIAL_URLS[link]}/#{target}" : target
 
+    return unless url.is_a?(String)
+
+    options[:icon]  ||= link
+    options[:title] ||= ''
+
     link_to(url, target: '_blank') do
-      content_tag(
-        :i,
-        nil,
-        class: "fa fa-#{options[:icon] || link}"
-      ) << options[:title] || ''
+      content_tag(:i, nil, class: "fa fa-#{options[:icon]}") << options[:title]
     end
   end
 
@@ -57,11 +52,11 @@ module AppHelper
   end
 
   def render_affiliation(title, org, url = nil)
-    return if title.blank? && org.blank?
+    return unless [title, org].reject(&:blank?).any?
 
     org = org && url ? link_to(org, url, target: '_blank') : org
 
-    (title && org ?  [title, org].join(' en ') : title || org).try(:html_safe)
+    [title, org].reject(&:blank?).join(' en ').try(:html_safe)
   end
 
   def render_login_links

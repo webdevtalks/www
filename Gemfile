@@ -31,6 +31,7 @@ group :development do
   gem 'dotenv-rails',                '~> 2.0.0'
   gem 'powder',                      '~> 0.3.0'
   gem 'rails_best_practices',        '~> 1.16.0'
+  gem 'rubocop',                     '~> 0.42.0'
   gem 'spring',                      '~> 1.7.2'
   gem 'spring-commands-rspec',       '~> 1.0.4'
 end
