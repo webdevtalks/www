@@ -39,7 +39,7 @@ describe AppHelper do
 
     context 'when link is not a social network' do
       it "returns link pointing to link resource's value" do
-        speaker = Fabricate(:speaker, link: 'http://me.example.org')
+        speaker = Fabricate(:speaker, url: 'http://me.example.org')
         result  = helper.link_to_social(speaker, :link)
 
         expect(result).to have_selector('a[href="http://me.example.org"]')
