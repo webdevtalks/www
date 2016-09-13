@@ -25,6 +25,6 @@ class Talk < ActiveRecord::Base
 
   default_scope { order('id DESC') }
 
-  validates_presence_of :event, :speaker, :title, :description
+  validates_presence_of :event, :speaker, :title
 
 end
