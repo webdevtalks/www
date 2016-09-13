@@ -19,8 +19,8 @@ gem 'bootstrap-sass',                '~> 3.3.3'
 gem 'font-awesome-rails',            '~> 4.6.3.1'
 
 gem 'aasm',                          '~> 4.2.0'
-gem 'activevalidators',              '~> 4.0.0'
 gem 'activerecord-humanized_errors', '~> 2.0.1'
+gem 'activevalidators',              '~> 4.0.0'
 gem 'awesome_print',                 '~> 1.6.1'
 gem 'faker',                         '~> 1.4.3'
 gem 'lograge',                       '~> 0.4.1'
@@ -31,6 +31,7 @@ group :development do
   gem 'dotenv-rails',                '~> 2.0.0'
   gem 'powder',                      '~> 0.3.0'
   gem 'rails_best_practices',        '~> 1.16.0'
+  gem 'rubocop',                     '~> 0.42.0'
   gem 'spring',                      '~> 1.7.2'
   gem 'spring-commands-rspec',       '~> 1.0.4'
 end
@@ -38,11 +39,15 @@ end
 group :development, :test do
   gem 'capybara',                    '~> 2.4.4'
   gem 'capybara-webkit',             '~> 1.4.1'
-  gem 'fabrication',                 '~> 2.12.2'
   gem 'guard-rspec',                 '~> 4.7.3', require: false
   gem 'pry-byebug',                  '~> 3.3.0'
+  gem 'pry-rails',                   '~> 0.3.4'
   gem 'rails-controller-testing',    '~> 0.1.1'
   gem 'rspec-rails',                 '~> 3.5.1', require: false
+end
+
+group :development, :review, :test do
+  gem 'fabrication',                 '~> 2.12.2'
 end
 
 group :production do

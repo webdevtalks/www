@@ -1,5 +1,9 @@
 class Speaker < User
 
-  default_scope -> { joins(:talks).having('count(*) > 0').group(:id) }
+  alias_attribute :link, :url
+
+  has_many :talks
+
+  default_scope -> { where('talks_count > 0') }
 
 end

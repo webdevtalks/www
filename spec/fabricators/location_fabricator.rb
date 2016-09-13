@@ -1,5 +1,5 @@
 Fabricator :location  do
   city     { Faker::Address.city    }
-  country  { Faker::Address.country }
+  country  'México'
   state    { Faker::Address.state   }
 end

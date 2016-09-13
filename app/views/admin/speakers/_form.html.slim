@@ -1,20 +1,51 @@
-= form_for [:admin, speaker], html: { class: "form-horizontal" } do |f|
+= form_for [:admin, speaker], html: { class: 'form-horizontal' } do |f|
 
   .form-group
-    = f.label :name, "Nombre", class: "col-md-2"
+    = f.label :name, 'Nombre', class: 'col-md-2'
     .col-md-8
-      = f.text_field :name, class: "form-control"
+      = f.text_field :name, class: 'form-control'
 
   .form-group
-    = f.label :email, "Correo", class: "col-md-2"
+    = f.label :email, 'Correo', class: 'col-md-2'
     .col-md-8
-      = f.email_field :email, class: "form-control"
+      = f.email_field :email, class: 'form-control'
 
   .form-group
-    = f.label :twitter, "Twitter", class: "col-md-2"
+    = f.label :url, 'Sitio Web', class: 'col-md-2'
     .col-md-8
-      = f.text_field :twitter, class: "form-control"
+      = f.text_field :url, class: 'form-control'
+
+  .form-group
+    = f.label :facebook, 'Facebook', class: 'col-md-2'
+    .col-md-8
+      = f.text_field :facebook, class: 'form-control'
+
+  .form-group
+    = f.label :twitter, 'Twitter', class: 'col-md-2'
+    .col-md-8
+      = f.text_field :twitter, class: 'form-control'
+
+  fieldset
+    legend.col-md-10 Organización
+
+    .clearfix
+
+    .form-group
+      = f.label :title, 'Rol', class: 'col-md-2'
+      .col-md-8
+        = f.text_field :title, class: 'form-control'
+
+    .form-group
+      = f.label :organization_name, 'Nombre', class: 'col-md-2'
+      .col-md-8
+        = f.text_field :organization_name, class: 'form-control'
+
+    .form-group
+      = f.label :organization_url, 'Sitio Web', class: 'col-md-2'
+      .col-md-8
+        = f.text_field :organization_url, class: 'form-control'
+
 
   .form-group
     .col-md-offset-2.col-md-2
-      = f.submit "#{speaker.new_record? ? "Crear" : "Guardar"} ponente", class: "btn btn-primary"
+      = f.submit "#{speaker.new_record? ? 'Crear' : 'Guardar'} ponente", class: 'btn btn-primary'

@@ -1,6 +1,6 @@
 Fabricator(:sponsor) do
-  name    "MyString"
-  website "MyString"
-  twitter "MyString"
-  image   "MyString"
+  name    { Faker::Company.name }
+  image   { Faker::Company.logo }
+  website {|f| "http://example.org/#{f[:name].downcase.strip}" }
+  twitter {|f| "https://twitter.com/#{f[:name].strip}" }
 end

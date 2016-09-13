@@ -18,9 +18,13 @@ engines:
   ratings:
     enabled: true
     paths:
-      - "app/**/*"
-      - "lib/**/*"
+      - app/**
+      - lib/**
       - "**.rb"
+      - "**.css"
+      - "**.scss"
+      - "**.js"
+      - "**.coffee"
   rubocop:
     enabled: true
 exclude_paths:
@@ -29,6 +33,7 @@ exclude_paths:
   - bin/**
   - db/**
   - config/**
+  - coverage/**
   - public/assets/**
   - spec/**
   - UI/**

@@ -5,7 +5,7 @@
       .center-content
         .logo
           h1#site-title
-            img src='assets/logo-curvas.png' alt='Web Dev Talks'
+            = image_tag('logo-curvas', alt: 'WebDevTalks Logo')
         .sub-logo
           h2#site-description Aprendiendo y compartiendo
         = render partial: 'event', locals: { event: @event }
@@ -13,18 +13,12 @@
           .large-6.small-centered.columns
             .event-social
               ul.small-block-grid-1.medium-block-grid-3.large-block-grid-3
-                li
-                  a href='https://twitter.com/webdevtalksmx'
-                    i.fa.fa-twitter Twitter
-                li
-                  a href='https://www.facebook.com/ColimaWebDevTalks'
-                    i.fa.fa-facebook Facebook
-                li
-                  a href='https://groups.google.com/forum/#!forum/webdevtalks'
-                    i.fa.fa-google-plus Google Foro
+                li= link_to_social('webdevtalksmx', :twitter, title: 'Twitter')
+                li= link_to_social('ColimaWebDevTalks', :facebook, title: 'Facebook')
+                li= link_to_social('webdevtalks', :googlegroups, icon: 'google-plus', title: 'Foro')
 
-= render partial: 'speakers', locals: { event: @event }
-= render partial: 'venue',    locals: { event: @event }
+= render partial: 'speakers', locals: { talks: @event.accepted_talks }
+= render partial: 'venue',    locals: { venue: @event.venue }
 
 = render partial: 'sponsors', locals: { sponsors: @sponsors }
 = render 'about'

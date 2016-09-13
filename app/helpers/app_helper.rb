@@ -1,5 +1,26 @@
 module AppHelper
 
+  SOCIAL_URLS = {
+    facebook:     'facebook.com',
+    googlegroups: 'groups.google.com/forum/#!forum',
+    twitter:      'twitter.com'
+  }
+
+  def link_to_social(resource, link, options = {})
+    target = resource.respond_to?(link) ? resource.send(link) : resource
+
+    url = SOCIAL_URLS[link] ? "https://#{SOCIAL_URLS[link]}/#{target}" : target
+
+    return unless url.is_a?(String)
+
+    options[:icon]  ||= link
+    options[:title] ||= ''
+
+    link_to(url, target: '_blank') do
+      content_tag(:i, nil, class: "fa fa-#{options[:icon]}") << options[:title]
+    end
+  end
+
   def oauth_providers
     [
       {
@@ -28,6 +49,14 @@ module AppHelper
                 end
 
     oauth_providers.select{|provider| provider[:name].in?(providers) }
+  end
+
+  def render_affiliation(title, org, url = nil)
+    return unless [title, org].reject(&:blank?).any?
+
+    org = org && url ? link_to(org, url, target: '_blank') : org
+
+    [title, org].reject(&:blank?).join(' en ').try(:html_safe)
   end
 
   def render_login_links
