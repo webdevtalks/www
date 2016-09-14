@@ -11,4 +11,8 @@ class Venue < ActiveRecord::Base
     "#{name} (#{location.name})"
   end
 
+  def map
+    override_map_with_coordinates ? [latitude, longitude].join(',') : address
+  end
+
 end

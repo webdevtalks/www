@@ -13,4 +13,25 @@ describe Venue do
     end
   end
 
+  describe '#map' do
+    context 'when map override is active' do
+      it 'returns the venue coordinates' do
+        venue  = Fabricate.build(:venue, override_map_with_coordinates: true)
+
+        result = venue.map
+
+        expect(result).to include(venue.latitude.to_s)
+        expect(result).to include(venue.longitude.to_s)
+      end
+    end
+
+    context 'when map override is inactive' do
+      it 'returns the venue address' do
+        venue  = Fabricate.build(:venue, override_map_with_coordinates: false)
+
+        expect(venue.map).to include(venue.address)
+      end
+    end
+  end
+
 end
