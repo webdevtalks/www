@@ -1,5 +1,27 @@
 module AppHelper
 
+  MAP_OPTIONS = {
+    fameborder: 0,
+    height:     280,
+    style:      'border: 0',
+    width:      420
+  }
+
+  OAUTH_PROVIDERS = [
+    {
+      name: :developer,
+      href: '/admin/auth/developer',
+      icon: 'gear',
+      text: 'Developer'
+    },
+    {
+      name: :github,
+      href: '/admin/auth/github',
+      icon: 'github',
+      text: 'GitHub'
+    }
+  ]
+
   SOCIAL_URLS = {
     facebook:     'facebook.com',
     googlegroups: 'groups.google.com/forum/#!forum',
@@ -21,34 +43,17 @@ module AppHelper
     end
   end
 
-  def oauth_providers
-    [
-      {
-        name: :developer,
-        href: '/admin/auth/developer',
-        icon: 'gear',
-        text: 'Developer'
-      },
-      {
-        name: :github,
-        href: '/admin/auth/github',
-        icon: 'github',
-        text: 'GitHub'
-      }
-    ]
-  end
-
   def oauth_providers_for_environment
     providers = case Rails.env
                 when 'production'
-                  %i{ github }
+                  %i(github)
                 when 'review'
-                  %i{ developer }
+                  %i(developer)
                 else
-                  %i{ developer github }
+                  %i(developer github)
                 end
 
-    oauth_providers.select{|provider| provider[:name].in?(providers) }
+    OAUTH_PROVIDERS.select{|provider| provider[:name].in?(providers) }
   end
 
   def render_affiliation(title, org, url = nil)
@@ -71,22 +76,14 @@ module AppHelper
     links.join.html_safe
   end
 
-  def render_map_available?(object)
-    object.address.present? || (object.latitude.present? && object.longitude.present?)
-  end
-
   def render_map(object, options = {})
-    query = if object.override_map_with_coordinates
-              "#{object.latitude},#{object.longitude}"
-            else
-              object.address
-            end
+    options = MAP_OPTIONS.merge(options)
 
-    content_tag :iframe, nil, height:      options[:height] || 280,
-                              width:       options[:width]  || 420,
-                              frameborder: 0,
-                              style:       'border: 0',
-                              src:         "https://www.google.com/maps/embed/v1/place?key=#{ENV['GOOGLE_MAPS_API_KEY']}&q=#{CGI.escape(query)}"
+    key     = ENV['GOOGLE_MAPS_API_KEY']
+    query   = CGI.escape(object.map)
+    source  = "https://www.google.com/maps/embed/v1/place?key=#{key}&q=#{query}"
 
+    content_tag :iframe, nil, options.merge(src: source)
   end
+
 end

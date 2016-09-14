@@ -47,14 +47,6 @@ describe AppHelper do
     end
   end
 
-  describe '#oauth_providers' do
-    it 'returns all oauth providers metadata' do
-      helper.oauth_providers.each do |provider|
-        expect(provider.keys).to include(:href, :icon, :text)
-      end
-    end
-  end
-
   describe '#oauth_providers_for_environment' do
     context 'when production' do
       it 'returns metadatada for github provider' do
@@ -120,11 +112,20 @@ describe AppHelper do
 
   describe '#render_login_links' do
     it 'returns links targeting login paths to oauth providers' do
-      helper.oauth_providers.each do |provider|
+      AppHelper::OAUTH_PROVIDERS.each do |provider|
         expect(helper.render_login_links).to have_selector(
           "a[href='#{provider[:href]}'].btn .fa-#{provider[:icon]}"
         )
       end
+    end
+  end
+
+  describe '#render_map' do
+    it 'returns google maps iframe containing object map' do
+      venue = Fabricate(:venue)
+      expect(helper.render_map(venue)).to have_selector(
+        'iframe[src^="https://www.google.com/maps"]'
+      )
     end
   end
 
