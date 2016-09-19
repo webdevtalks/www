@@ -1,8 +1,8 @@
 Fabricator :talk  do
   title       { "#{Faker::Hacker.ingverb.titleize} #{Faker::Hacker.adjective} #{Faker::Hacker.noun}" }
   description { Faker::Lorem.paragraphs.join }
-  status      { %i{ accepted proposal rejected }.sample }
+  status      { %i(draft proposal accepted).sample }
 
-  event
-  speaker
+  event   inverse_of: :talks
+  speaker inverse_of: :talks
 end

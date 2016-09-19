@@ -5,8 +5,10 @@ Fabricator :speaker do
   facebook          { |f| "fake_#{f[:name].parameterize}" }
   twitter           { |f| "fake_#{f[:name].parameterize}" }
 
+
   title             { [Faker::Name.title, nil].sample }
   organization_name { [Faker::Company.name, nil].sample }
+
   organization_url  do |f|
     if f[:organization_name]
       ["https://#{f[:organization_name].parameterize}.example.com", nil].sample

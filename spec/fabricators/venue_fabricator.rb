@@ -8,5 +8,5 @@ Fabricator :venue do
 
   override_map_with_coordinates true
 
-  location
+  location inverse_of: :venues
 end

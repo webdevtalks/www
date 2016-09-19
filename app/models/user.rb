@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_one  :authorization
+  has_one  :authorization, inverse_of: :user
 
   validates               :email, email: { strict: true, message: 'is invalid' }
   validates_presence_of   :email, :name

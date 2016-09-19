@@ -20,8 +20,8 @@ class Talk < ActiveRecord::Base
     end
   end
 
-  belongs_to :event
-  belongs_to :speaker, counter_cache: true
+  belongs_to :event, inverse_of: :talks
+  belongs_to :speaker, counter_cache: true, inverse_of: :talks
 
   default_scope { order('id DESC') }
 
