@@ -1,14 +1,24 @@
 h2= @speaker.name
 
 .row
-  .col-sm-3.col-md-3
+  .avatar.col-sm-3.col-md-3
     .thumbnail
-      img src=@speaker.photo_url
+      = image_tag(@speaker.photo_url)
 
-  .col-sm-4.col-md-4
-    h3= link_to "https://twitter.com/#{@speaker.twitter}" do
-      i.fa.fa-twitter
-      = " #{@speaker.twitter}"
-    h4= link_to "mailto:#{@speaker.email}" do
+  .contact.col-sm-4.col-md-4
+    h3 Contacto
+
+    h5= link_to "mailto:#{@speaker.email}" do
       i.fa.fa-envelope-o
       = " #{@speaker.email}"
+
+    h5= link_to_social(@speaker, :link, title: " #{@speaker.url}")
+    h5= link_to_social(@speaker, :facebook, title: " #{@speaker.facebook}")
+    h5= link_to_social(@speaker, :twitter, title: " #{@speaker.twitter}")
+
+
+  .talks.col-sm-4.col-md-4
+    h3 Charlas
+
+    - @speaker.talks.each do |talk|
+      h5= link_to(talk.title, admin_talk_path(talk))
