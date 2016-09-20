@@ -1,4 +1,4 @@
-tr
+tr.talk
   td= talk.title
   td= truncate talk.description, length: 50
   td= talk.speaker.name
@@ -6,6 +6,9 @@ tr
   td
     = link_to admin_talk_path(talk) do
       i.glyphicon.glyphicon-eye-open
+  td
+    = link_to edit_admin_talk_path(talk), class: 'edit' do
+      i.glyphicon.glyphicon-pencil
   td
     - if talk.accepted?
       = link_to admin_talk_path(talk, accept: false), method: :patch do
