@@ -26,7 +26,7 @@ module BootstrapHelper
       html << content_tag(
         :div,
         content_tag(:button, raw('&times;'), ALERTS[:dismiss]) + message,
-        class: (ALERTS[:classes] << "alert-#{mapping}").join(' ')
+        class: (ALERTS[:classes] + ["alert-#{mapping}"]).join(' ')
       )
     end
 
