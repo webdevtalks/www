@@ -35,6 +35,13 @@ describe AppHelper do
 
         expect(result).to have_selector('a[href="https://facebook.com/foo"]')
       end
+
+      it 'returns nothing when resource social network attribute is blank' do
+        speaker = Fabricate(:speaker, facebook: nil)
+        result  = helper.link_to_social(speaker, :facebook)
+
+        expect(result).to be_nil
+      end
     end
 
     context 'when link is not a social network' do

@@ -5,7 +5,7 @@ module AppHelper
     height:     280,
     style:      'border: 0',
     width:      420
-  }
+  }.freeze
 
   OAUTH_PROVIDERS = [
     {
@@ -20,16 +20,18 @@ module AppHelper
       icon: 'github',
       text: 'GitHub'
     }
-  ]
+  ].freeze
 
   SOCIAL_URLS = {
     facebook:     'facebook.com',
     googlegroups: 'groups.google.com/forum/#!forum',
     twitter:      'twitter.com'
-  }
+  }.freeze
 
   def link_to_social(resource, link, options = {})
     target = resource.respond_to?(link) ? resource.send(link) : resource
+
+    return if target.blank?
 
     url = SOCIAL_URLS[link] ? "https://#{SOCIAL_URLS[link]}/#{target}" : target
 
@@ -53,7 +55,7 @@ module AppHelper
                   %i(developer github)
                 end
 
-    OAUTH_PROVIDERS.select{|provider| provider[:name].in?(providers) }
+    OAUTH_PROVIDERS.select { |provider| provider[:name].in?(providers) }
   end
 
   def render_affiliation(title, org, url = nil)

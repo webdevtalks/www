@@ -1,5 +1,15 @@
 ---
+Documentation:
+  Enabled: false
+
+Style/EmptyLinesAroundClassBody:
+  Enabled: false
+
 Style/EmptyLinesAroundBlockBody:
   Enabled: false
+
+Style/EmptyLinesAroundModuleBody:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
