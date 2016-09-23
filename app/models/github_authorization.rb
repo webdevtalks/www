@@ -22,7 +22,7 @@ class GithubAuthorization
     if response.class.in?([Net::HTTPNoContent, Net::HTTPFound])
       true
     else
-      errors.add :base, "You don't belong to the staff."
+      errors.add :base, 'No perteneces al grupo de organizadores'
       false
     end
   end

@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Admin::Speakers' do
 
   given :admin do
-    Fabricate(:user_with_dev_auth)
+    Fabricate(:user_with_authorization)
   end
 
   background do
@@ -11,7 +11,7 @@ feature 'Admin::Speakers' do
   end
 
   scenario 'Listing speakers' do
-    3.times { Fabricate(:speaker, talks: [Fabricate.build(:talk)]) }
+    speakers = Fabricate.times(3, :speaker)
 
     visit admin_speakers_path
 
@@ -105,7 +105,7 @@ feature 'Admin::Speakers' do
     click_on 'Guardar ponente'
 
     expect(page).to have_content(
-      "No se pudo actualizar ponente: #{speaker.humanized_errors}"
+      "Errores: #{speaker.humanized_errors}"
     )
   end
 

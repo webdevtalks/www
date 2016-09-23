@@ -1,6 +1,8 @@
-Fabricator(:sponsor) do
-  name    { Faker::Company.name }
+Fabricator :sponsor do
+
   image   { Faker::Company.logo }
-  website {|f| "http://example.org/#{f[:name].downcase.strip}" }
-  twitter {|f| "https://twitter.com/#{f[:name].strip}" }
+  name    { Faker::Company.name }
+  twitter { |f| f[:name].parameterize }
+  website { |f| "http://example.org/#{f[:name].parameterize}" }
+
 end

@@ -1,24 +1,24 @@
 .row
   .col-md-6
     h2 Editar evento
-    = render partial: "form", locals: { event: @event }
+    = render partial: 'form', locals: { event: @event }
 
   .col-md-6
     h2 Charlas
 
     table.table.table-striped.table-hover
       thead
-        th.text-right[colspan=4]
+        th.text-right[colspan="4"]
           a[data-toggle="modal" data-target="#new-talk" style="cursor: pointer"]
             i.glyphicon.glyphicon-plus
       tbody
-        = render partial: "talk", collection: @accepted_talks
+        = render partial: 'talk', collection: @talks
 
     h2 Propuestas
 
     table.table.table-stripped.table-hover
       tbody
-        = render partial: "talk", collection: @proposed_talks
+        = render partial: 'talk', collection: @proposals
 
     #new-talk.modal.fade[tab-index="-1" role="dialog"]
-      = render template: "admin/talks/new"
+      = render template: 'admin/talks/new'

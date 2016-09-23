@@ -4,10 +4,10 @@ class Event < ActiveRecord::Base
 
   delegate :location, to: :venue
 
-  has_many :accepted_talks, -> { accepted }, class_name: 'Talk', inverse_of: :event
-  has_many :confirmed_speakers, source: :speaker, through: :accepted_talks
-  has_many :speakers, dependent: :nullify, source: :speaker, through: :talks
-  has_many :talks, dependent: :nullify, inverse_of: :event
+  has_many :candidates, source: :speaker, through: :proposals
+  has_many :proposals, -> { proposal }, class_name: 'Talk'
+  has_many :speakers, source: :speaker, through: :talks
+  has_many :talks, -> { accepted }
 
   validates_presence_of :date, :venue
 
