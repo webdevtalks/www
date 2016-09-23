@@ -12,25 +12,28 @@ module BootstrapHelper
       success: 'success',
       error:   'danger',
       alert:   'warning'
-    },
+    }
   }.with_indifferent_access
 
-  def render_bootstrap_alerts
-    html = ''
+  def bootstrap_alert_classes(type)
+    ALERTS[:classes] | %W(alert-#{type})
+  end
 
-    flash.each do |type, message|
+  def bootstrap_close_button
+    content_tag(:button, raw('&times;'), ALERTS[:dismiss])
+  end
+
+  def render_bootstrap_alerts
+    flash.map do |type, message|
       mapping = ALERTS[:mappings][type]
 
       next if message.blank? || mapping.blank?
 
-      html << content_tag(
-        :div,
-        content_tag(:button, raw('&times;'), ALERTS[:dismiss]) + message,
-        class: (ALERTS[:classes] + ["alert-#{mapping}"]).join(' ')
-      )
-    end
+      content_tag :div, class: bootstrap_alert_classes(mapping).join(' ') do
+        bootstrap_close_button + message
+      end
 
-    html.html_safe
+    end.compact.join.html_safe
   end
 
 end
