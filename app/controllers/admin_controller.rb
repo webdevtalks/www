@@ -28,7 +28,7 @@ class AdminController < ActionController::Base
   end
 
   def ssl_enabled?
-    ENV.fetch('SSL_ENABLED', false)
+    ENV['SSL_ENABLED'] == 'true'
   end
 
 end

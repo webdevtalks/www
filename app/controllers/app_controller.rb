@@ -7,7 +7,7 @@ class AppController < ActionController::Base
   private
 
   def ssl_enabled?
-    ENV.fetch('SSL_ENABLED', false)
+    ENV['SSL_ENABLED'] == 'true'
   end
 
 end

@@ -1,4 +1,4 @@
-unless Rails.env.production?
+if ENV.fetch('SEEDS_ENABLED', !Rails.env.production?).in?(['true', true])
 
   Faker::Config.locale = 'es'
 
