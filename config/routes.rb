@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
     scope :auth do
       get 'github/callback', to: 'sessions#create'
-      post 'developer/callback', to: 'sessions#create'
+
+      unless Rails.env.production?
+        post 'developer/callback', to: 'sessions#create'
+      end
     end
 
     get    '/',       to: redirect('/admin/events')
@@ -18,10 +21,11 @@ Rails.application.routes.draw do
     end
 
     resources :locations
-    resources :speakers
+    resources :speakers, except: %i(create new)
+    resources :sponsors
     resources :talks
     resources :venues
-    resources :sponsors
+
   end
 
   scope module: :app do

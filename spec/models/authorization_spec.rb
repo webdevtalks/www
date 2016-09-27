@@ -12,19 +12,6 @@ describe Authorization do
           expect(subject.errors[attribute]).to include("can't be blank")
         end
       end
-
-      context 'on update' do
-        subject { Fabricate(:authorization) }
-
-        before { subject.touch }
-
-        specify "#{metadata[:associations][:update]} errors" do |example|
-          example.metadata[:associations][:update].each do |association|
-            expect(subject.errors[association]).to include("can't be blank")
-          end
-        end
-      end
-
     end
 
 

@@ -5,7 +5,7 @@
         .center-content
           h2 Ponentes
           div
-            ul.small-block-grid-1.medium-block-grid-2 class="large-block-grid-#{talks.size}"
+            ul.small-block-grid-1.medium-block-grid-2[class="large-block-grid-#{talks.size}"]
               - talks.map{|talk| [talk, talk.speaker] }.each do |talk, speaker|
                 li
                   .avatar

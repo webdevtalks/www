@@ -17,7 +17,7 @@
                 li= link_to_social('ColimaWebDevTalks', :facebook, title: 'Facebook')
                 li= link_to_social('webdevtalks', :googlegroups, icon: 'google-plus', title: 'Foro')
 
-= render partial: 'speakers', locals: { talks: @event.accepted_talks }
+= render partial: 'speakers', locals: { talks: @event.talks }
 = render partial: 'venue',    locals: { venue: @event.venue }
 
 = render partial: 'sponsors', locals: { sponsors: @sponsors }

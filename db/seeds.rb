@@ -1,4 +1,4 @@
-unless Rails.env.production?
+if ENV.fetch('SEEDS_ENABLED', !Rails.env.production?).in?(['true', true])
 
   Faker::Config.locale = 'es'
 
@@ -12,11 +12,9 @@ unless Rails.env.production?
   event = Fabricate(:event, date: 15.days.from_now, venue: venue)
 
   puts 'Creating sponsors'
+  Fabricate.times(4, :sponsor, active: true)
 
-  puts 'Creating sponsors, talks and speakers'
-  4.times do
-    Fabricate(:sponsor, active: true)
-    Fabricate(:talk, status: :accepted, event: event)
-  end
+  puts 'Creating talks/speakers'
+  Fabricate.times(4, :talk, status: :accepted, event: event)
 
 end

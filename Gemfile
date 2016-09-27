@@ -37,10 +37,10 @@ group :development do
 end
 
 group :development, :test do
-  gem 'capybara',                    '~> 2.4.4'
-  gem 'capybara-webkit',             '~> 1.4.1'
+  gem 'capybara',                    '~> 2.8.1'
   gem 'guard-rspec',                 '~> 4.7.3', require: false
   gem 'pry-byebug',                  '~> 3.3.0'
+  gem 'pry-doc',                     '~> 0.9.0'
   gem 'pry-rails',                   '~> 0.3.4'
   gem 'rails-controller-testing',    '~> 0.1.1'
   gem 'rspec-rails',                 '~> 3.5.1', require: false

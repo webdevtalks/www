@@ -1,5 +1,6 @@
 class AdminController < ActionController::Base
 
+  attr_reader :current_user
 
   before_action :authorize!
 
@@ -13,10 +14,6 @@ class AdminController < ActionController::Base
     @current_user != nil
   end
 
-  def current_user
-    @current_user
-  end
-
   private
 
   def authorize!
@@ -28,7 +25,7 @@ class AdminController < ActionController::Base
   end
 
   def ssl_enabled?
-    ENV.fetch('SSL_ENABLED', false)
+    ENV['SSL_ENABLED'] == 'true'
   end
 
 end

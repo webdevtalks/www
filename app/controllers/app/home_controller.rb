@@ -7,12 +7,12 @@ class App::HomeController < AppController
 
   private
 
-    def event_associations
-      {
-        accepted_talks:     :speaker,
-        confirmed_speakers: :authorization,
-        venue:              :location
-      }
-    end
+  def event_associations
+    {
+      speakers: :authorization,
+      talks:    :speaker,
+      venue:    :location
+    }
+  end
 
 end

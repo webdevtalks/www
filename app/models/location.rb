@@ -1,6 +1,6 @@
 class Location < ActiveRecord::Base
 
-  has_many :venues, dependent: :restrict_with_error
+  has_many :venues, dependent: :restrict_with_error, inverse_of: :location
 
   validates_presence_of :city, :country, :state
 

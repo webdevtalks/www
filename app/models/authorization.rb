@@ -1,6 +1,6 @@
 class Authorization < ActiveRecord::Base
 
-  belongs_to :user, autosave: true
+  belongs_to :user, autosave: true, inverse_of: :authorization
 
   serialize :credentials, HashWithIndifferentAccess
   serialize :extra,       HashWithIndifferentAccess

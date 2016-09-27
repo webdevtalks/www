@@ -6,23 +6,23 @@
       .modal-title
         h4 Nueva charla
       .modal-body
-        = form_for [:admin, @event, @talk], html: { class: "form-horizontal" } do |f|
+        = form_for [:admin, @event, @event.talks.new], html: { class: 'form-horizontal' } do |f|
 
           = hidden_field_tag :event_id, @event.id
 
           .form-group
-            = f.label :speaker_id, 'Ponente', class: "col-md-2"
+            = f.label :speaker_id, 'Ponente', class: 'col-md-2'
             .col-md-8
-              = f.select :speaker_id, options_from_collection_for_select(User.all, :id, :name), {}, class: "form-control"
+              = f.select :speaker_id, options_from_collection_for_select(User.all, :id, :name), {}, class: 'form-control'
           .form-group
-            = f.label :title, "Título", class: "col-md-2"
+            = f.label :title, 'Título', class: 'col-md-2'
             .col-md-8
-              = f.text_field :title, class: "form-control"
+              = f.text_field :title, class: 'form-control'
           .form-group
-            = f.label :description, "Descripción", class: "col-md-2"
+            = f.label :description, 'Descripción', class: 'col-md-2'
             .col-md-8
-              = f.text_field :description, class: "form-control"
+              = f.text_field :description, class: 'form-control'
 
           .form-group
             .col-md-offset-2.col-md-2
-              = f.submit "Registrar charla", class: "btn btn-primary"
+              = f.submit 'Registrar charla', class: 'btn btn-primary'

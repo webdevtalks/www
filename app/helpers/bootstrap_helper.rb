@@ -1,31 +1,39 @@
 module BootstrapHelper
 
-  ALERT_MAPPINGS = {
-    notice:  'info',
-    success: 'success',
-    error:   'danger',
-    alert:   'warning'
-  }.with_indifferent_access
-
-  def render_bootstrap_alerts
-    html = ''
-
-    dismiss_button_options = {
+  ALERTS = {
+    classes: %w(alert alert-dismissable),
+    dismiss: {
       'class'        => 'close',
       'data-dismiss' => 'alert',
       'aria-hidden'  => true
+    },
+    mappings: {
+      notice:  'info',
+      success: 'success',
+      error:   'danger',
+      alert:   'warning'
     }
+  }.with_indifferent_access
 
-    dismiss_button = content_tag(:button, raw('&times;'), dismiss_button_options)
+  def bootstrap_alert_classes(type)
+    ALERTS[:classes] | %W(alert-#{type})
+  end
 
-    flash.each do |type, alert_message|
-      next if alert_message.blank? || ALERT_MAPPINGS[type].nil?
-      alert_content = dismiss_button + alert_message
-      alert_classes = %W{alert alert-#{ALERT_MAPPINGS[type]} alert-dismissible}.join(' ')
-      html << content_tag(:div, alert_content, class: alert_classes)
-    end
+  def bootstrap_close_button
+    content_tag(:button, raw('&times;'), ALERTS[:dismiss])
+  end
 
-    html.html_safe
+  def render_bootstrap_alerts
+    flash.map do |type, message|
+      mapping = ALERTS[:mappings][type]
+
+      next if message.blank? || mapping.blank?
+
+      content_tag :div, class: bootstrap_alert_classes(mapping).join(' ') do
+        bootstrap_close_button + message
+      end
+
+    end.compact.join.html_safe
   end
 
 end

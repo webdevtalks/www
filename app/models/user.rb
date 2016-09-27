@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_one  :authorization
+  has_one  :authorization, dependent: :destroy, inverse_of: :user
 
   validates               :email, email: { strict: true, message: 'is invalid' }
   validates_presence_of   :email, :name
@@ -12,20 +12,20 @@ class User < ActiveRecord::Base
 
   private
 
-    def auth_photo_url
-      authorization.photo_url if authorization
-    end
+  def auth_photo_url
+    authorization.photo_url if authorization
+  end
 
-    def full_user_photo_path(nickname)
-      Dir.glob("app/assets/images/speakers/**/#{nickname}.{jpg,jpeg,png}").first
-    end
+  def full_user_photo_path(nickname)
+    Dir.glob("app/assets/images/speakers/**/#{nickname}.{jpg,jpeg,png}").first
+  end
 
-    def local_photo_path
-      full_user_photo_path(twitter).try(:sub, %r{.*(speakers)}, 'assets/\1')
-    end
+  def local_photo_path
+    full_user_photo_path(twitter).try(:sub, /.*(speakers)/, 'assets/\1')
+  end
 
-    def placeholder_photo_url
-      Faker::Avatar.image(twitter || name.delete(' ')).gsub('http', 'https')
-    end
+  def placeholder_photo_url
+    Faker::Avatar.image(twitter || name.delete(' ')).gsub('http', 'https')
+  end
 
 end

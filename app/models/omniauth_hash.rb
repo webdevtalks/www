@@ -9,15 +9,14 @@ class OmniauthHash
     permit_keys.to_h.with_indifferent_access
   end
 
-
   def info_keys
     keys = []
 
     info = @params['info']
 
     if info
-      keys.push(*info.keys)
-      keys.push({ urls: info['urls'].keys }) if info['urls']
+      keys.concat(info.keys)
+      keys.push(urls: info['urls'].keys) if info['urls']
     end
 
     keys
@@ -26,7 +25,6 @@ class OmniauthHash
   def credentials_keys
     @params['credentials'].keys if @params['credentials']
   end
-
 
   def extra_keys
     {
@@ -37,16 +35,16 @@ class OmniauthHash
   private
 
   def require_keys!
-    %i{provider uid info}.each{|key| @params.require(key) }
+    %i(provider uid info).each { |key| @params.require(key) }
   end
 
   def permit_keys
     @params.permit(
       :provider,
       :uid,
-      info: info_keys,
+      info:        info_keys,
       credentials: credentials_keys,
-      extra: extra_keys
+      extra:       extra_keys
     )
   end
 

@@ -1,13 +1,25 @@
 class Event < ActiveRecord::Base
 
-  belongs_to :venue
+  belongs_to :venue, inverse_of: :events
 
   delegate :location, to: :venue
 
-  has_many :accepted_talks, -> { accepted }, class_name: 'Talk'
-  has_many :confirmed_speakers, source: :speaker, through: :accepted_talks
-  has_many :speakers, dependent: :nullify, source: :speaker, through: :talks
-  has_many :talks, dependent: :nullify
+  has_many :candidates,
+           dependent: :restrict_with_error,
+           source:    :speaker,
+           through:   :proposals
+
+  has_many :proposals, -> { proposal },
+           class_name: 'Talk',
+           dependent:  :restrict_with_error
+
+  has_many :speakers,
+           dependent: :restrict_with_error,
+           source:    :speaker,
+           through:   :talks
+
+  has_many :talks, -> { accepted },
+           dependent: :restrict_with_error
 
   validates_presence_of :date, :venue
 

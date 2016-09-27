@@ -15,11 +15,11 @@ class Admin::SponsorsController < AdminController
 
   def create
     @sponsor = Sponsor.new(sponsor_params)
+
     if @sponsor.save
-      flash[:success] = "Patrocinador registrado con éxito."
-      redirect_to admin_sponsors_path
+      redirect_to admin_sponsors_path, notice: 'Patrocinador creado con éxito'
     else
-      flash[:error] = "No se pudo registrar patrocinador: #{@sponsor.humanized_errors}"
+      flash[:error] = "Errores: #{@sponsor.humanized_errors}"
       render :new
     end
   end
@@ -28,24 +28,21 @@ class Admin::SponsorsController < AdminController
   end
 
   def update
-    respond_to do |format|
-      if @sponsor.update(sponsor_params)
-        format.html { redirect_to admin_sponsors_path, notice:  'Patrocinador actualizado con éxito.' }
-        format.json { render :index, status: :ok, location: @sponsor }
-      else
-        format.html { render :edit, error: "No se pudo actualizar patrocinador: #{@sponsor.humanized_errors}" }
-        format.json { render json: @sponsor.errors, status: :unprocessable_entity }
-      end
+    if @sponsor.update(sponsor_params)
+      redirect_to admin_sponsors_path, notice: 'Patrocinador actualizado'
+    else
+      flash[:error] = "Errores: #{@sponsor.humanized_errors}"
+      render :edit
     end
   end
 
   private
 
-  def sponsor_params
-    params.require(:sponsor).permit :name, :website, :twitter, :image, :active
-  end
-
   def find_sponsor
     @sponsor = Sponsor.find(params[:id])
+  end
+
+  def sponsor_params
+    params.require(:sponsor).permit(:active, :image, :name, :twitter, :website)
   end
 end

@@ -1,31 +1,32 @@
 = form_for [:admin, speaker], html: { class: 'form-horizontal' } do |f|
 
-  .form-group
-    = f.label :name, 'Nombre', class: 'col-md-2'
-    .col-md-8
-      = f.text_field :name, class: 'form-control'
+  fieldset.personal
+    .form-group
+      = f.label :name, 'Nombre', class: 'col-md-2'
+      .col-md-8
+        = f.text_field :name, class: 'form-control'
 
-  .form-group
-    = f.label :email, 'Correo', class: 'col-md-2'
-    .col-md-8
-      = f.email_field :email, class: 'form-control'
+    .form-group
+      = f.label :email, 'Correo', class: 'col-md-2'
+      .col-md-8
+        = f.email_field :email, class: 'form-control'
 
-  .form-group
-    = f.label :url, 'Sitio Web', class: 'col-md-2'
-    .col-md-8
-      = f.text_field :url, class: 'form-control'
+    .form-group
+      = f.label :url, 'Sitio Web', class: 'col-md-2'
+      .col-md-8
+        = f.text_field :url, class: 'form-control'
 
-  .form-group
-    = f.label :facebook, 'Facebook', class: 'col-md-2'
-    .col-md-8
-      = f.text_field :facebook, class: 'form-control'
+    .form-group
+      = f.label :facebook, 'Facebook', class: 'col-md-2'
+      .col-md-8
+        = f.text_field :facebook, class: 'form-control'
 
-  .form-group
-    = f.label :twitter, 'Twitter', class: 'col-md-2'
-    .col-md-8
-      = f.text_field :twitter, class: 'form-control'
+    .form-group
+      = f.label :twitter, 'Twitter', class: 'col-md-2'
+      .col-md-8
+        = f.text_field :twitter, class: 'form-control'
 
-  fieldset
+  fieldset.organization
     legend.col-md-10 Organización
 
     .clearfix

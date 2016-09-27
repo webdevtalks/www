@@ -1,30 +1,30 @@
 class Admin::EventsController < AdminController
 
-  before_action :find_event, only: [:edit, :update]
+  before_action :find_event, only: [:edit, :destroy, :update]
 
   def create
-    @event = Event.create event_params
+    @event = Event.create(event_params)
 
     if @event.persisted?
-      redirect_to admin_events_path
+      redirect_to admin_events_path, notice: 'Evento creado'
     else
-      flash[:error] = @event.humanized_errors
+      flash[:error] = "Errores: #{@event.humanized_errors}"
       render :new
     end
   end
 
   def destroy
-    if Event.destroy(params[:id])
-      redirect_to admin_events_path, notice: 'Evento destruído con éxito.'
+    if @event.destroy
+      redirect_to admin_events_path, notice: 'Evento destruído'
     else
-      redirect_to admin_events_path, error: 'Evento no pudo ser destruído.'
+      flash[:error] = "Errores: #{@event.humanized_errors}"
+      redirect_to admin_events_path
     end
   end
 
   def edit
-    @accepted_talks  = @event.talks.select{|talk| talk.status == 'accepted' }
-    @proposed_talks  = @event.talks.select{|talk| talk.status == 'proposal' }
-    @talk = @event.talks.new
+    @talks     = @event.talks
+    @proposals = @event.proposals
   end
 
   def index
@@ -36,8 +36,8 @@ class Admin::EventsController < AdminController
   end
 
   def update
-    if @event.update_attributes event_params
-      redirect_to admin_events_path, notice: 'Evento actualizado con éxito.'
+    if @event.update_attributes(event_params)
+      redirect_to admin_events_path, notice: 'Evento actualizado'
     else
       flash[:error] = @event.humanized_errors
       render :edit
@@ -47,7 +47,7 @@ class Admin::EventsController < AdminController
   private
 
   def event_params
-    params.require(:event).permit :venue_id, :date, :description, :theme
+    params.require(:event).permit(:date, :description, :theme, :venue_id)
   end
 
   def find_event
