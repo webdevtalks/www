@@ -6,7 +6,7 @@ class Admin::VenuesController < AdminController
     @venue = Venue.create(venue_params)
 
     if @venue.persisted?
-      redirect_to admin_venues_path, notice: 'Lugar creado con éxito.'
+      redirect_to admin_venues_path, notice: 'Lugar creado'
     else
       flash[:error] = @venue.humanized_errors
       render :new
@@ -26,18 +26,19 @@ class Admin::VenuesController < AdminController
 
   def update
     if @venue.update(venue_params)
-      redirect_to admin_venues_path, notice: 'Lugar fue actualizado con éxito.'
+      redirect_to admin_venues_path, notice: 'Lugar fue actualizado'
     else
+      flash[:error] = "Errores: #{@venue.humanized_errors}"
       render :edit
     end
   end
 
   def destroy
     if @venue.destroy
-      redirect_to admin_venues_path, notice: 'Lugar destruído con éxito.'
+      redirect_to admin_venues_path, notice: 'Lugar destruído'
     else
-      flash[:error] = @venue.humanized_errors
-      redirect_to admin_venues_path, error: 'Lugar no pudo ser destruído.'
+      flash[:error] = "Errores #{@venue.humanized_errors}"
+      redirect_to admin_venues_path, error: 'Lugar no pudo ser destruído'
     end
   end
 
@@ -48,6 +49,14 @@ class Admin::VenuesController < AdminController
   end
 
   def venue_params
-    params.require(:venue).permit :name, :description, :address, :override_map_with_coordinates, :latitude, :longitude, :location_id
+    params.require(:venue).permit(
+      :address,
+      :description,
+      :latitude,
+      :location_id,
+      :longitude,
+      :name,
+      :override_map_with_coordinates
+    )
   end
 end

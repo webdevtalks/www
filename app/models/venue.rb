@@ -2,9 +2,10 @@ class Venue < ActiveRecord::Base
 
   belongs_to :location, inverse_of: :venues
 
-  has_many   :events, dependent: :restrict_with_error, inverse_of: :venue
+  has_many :events, dependent: :restrict_with_error, inverse_of: :venue
 
-  validates_presence_of :name, :description, :location
+  validates_presence_of :description, :location, :name
+
   validates_numericality_of :latitude, :longitude, allow_nil: true
 
   def detailed_name

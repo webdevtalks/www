@@ -3,13 +3,9 @@ class Talk < ActiveRecord::Base
   include AASM
 
   aasm column: :status do
-    state :draft,   initial: true
-    state :proposal
     state :accepted
-
-    event :submit do
-      transitions from: :draft, to: :proposal
-    end
+    state :draft, initial: true
+    state :proposal
 
     event :accept do
       transitions from: :proposal, to: :accepted
@@ -17,6 +13,10 @@ class Talk < ActiveRecord::Base
 
     event :cancel do
       transitions from: :accepted, to: :proposal
+    end
+
+    event :submit do
+      transitions from: :draft, to: :proposal
     end
   end
 

@@ -11,12 +11,12 @@ feature 'Admin::Speakers' do
   end
 
   scenario 'Listing speakers' do
-    speakers = Fabricate.times(3, :speaker)
+    speakers = Fabricate.times(3, :speaker).count
 
     visit admin_speakers_path
 
     expect(page).to have_selector(:css, :h2, text: 'Ponentes')
-    expect(page).to have_selector(:css, 'table tr.speaker', count: 3)
+    expect(page).to have_selector(:css, 'table tr.speaker', count: speakers)
   end
 
   scenario 'Viewing speaker' do
@@ -66,7 +66,7 @@ feature 'Admin::Speakers' do
 
     click_on 'Guardar ponente'
 
-    expect(page).to have_content('Ponente actualizado con éxito')
+    expect(page).to have_content('Ponente actualizado')
 
     speaker.reload
 

@@ -7,7 +7,7 @@ describe GithubAuthorization do
     describe 'membership' do
       context 'when user belongs to organization' do
         it 'returns true without registering errors' do
-          github_auth = GithubAuthorization.new('foo')
+          github_authorization = GithubAuthorization.new('foo')
 
           FakeWeb.register_uri(
             :get,
@@ -15,8 +15,8 @@ describe GithubAuthorization do
             status: ['204', 'No Content']
           )
 
-          expect(github_auth.membership).to be_truthy
-          expect(github_auth.errors).to be_empty
+          expect(github_authorization.membership).to be_truthy
+          expect(github_authorization.errors).to be_empty
         end
       end
 

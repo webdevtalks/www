@@ -1,5 +1,6 @@
 class AdminController < ActionController::Base
 
+  attr_reader :current_user
 
   before_action :authorize!
 
@@ -11,10 +12,6 @@ class AdminController < ActionController::Base
 
   def authorized?
     @current_user != nil
-  end
-
-  def current_user
-    @current_user
   end
 
   private

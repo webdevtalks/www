@@ -4,10 +4,22 @@ class Event < ActiveRecord::Base
 
   delegate :location, to: :venue
 
-  has_many :candidates, source: :speaker, through: :proposals
-  has_many :proposals, -> { proposal }, class_name: 'Talk'
-  has_many :speakers, source: :speaker, through: :talks
-  has_many :talks, -> { accepted }
+  has_many :candidates,
+           dependent: :restrict_with_error,
+           source:    :speaker,
+           through:   :proposals
+
+  has_many :proposals, -> { proposal },
+           class_name: 'Talk',
+           dependent:  :restrict_with_error
+
+  has_many :speakers,
+           dependent: :restrict_with_error,
+           source:    :speaker,
+           through:   :talks
+
+  has_many :talks, -> { accepted },
+           dependent: :restrict_with_error
 
   validates_presence_of :date, :venue
 

@@ -14,8 +14,7 @@ class Admin::SpeakersController < AdminController
 
   def update
     if @speaker.update_attributes(speaker_params)
-      flash[:success] = 'Ponente actualizado con éxito.'
-      redirect_to admin_speakers_path
+      redirect_to admin_speakers_path, notice: 'Ponente actualizado'
     else
       flash[:error] = "Errores: #{@speaker.humanized_errors}"
       render :edit

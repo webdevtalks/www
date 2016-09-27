@@ -1,23 +1,24 @@
 class Admin::EventsController < AdminController
 
-  before_action :find_event, only: [:edit, :update]
+  before_action :find_event, only: [:edit, :destroy, :update]
 
   def create
     @event = Event.create(event_params)
 
     if @event.persisted?
-      redirect_to admin_events_path, notice: 'Evento creado con éxito'
+      redirect_to admin_events_path, notice: 'Evento creado'
     else
-      flash[:error] = @event.humanized_errors
+      flash[:error] = "Errores: #{@event.humanized_errors}"
       render :new
     end
   end
 
   def destroy
-    if Event.destroy(params[:id])
-      redirect_to admin_events_path, notice: 'Evento destruído con éxito'
+    if @event.destroy
+      redirect_to admin_events_path, notice: 'Evento destruído'
     else
-      redirect_to admin_events_path, error: 'Evento no pudo ser destruído'
+      flash[:error] = "Errores: #{@event.humanized_errors}"
+      redirect_to admin_events_path
     end
   end
 
@@ -36,7 +37,7 @@ class Admin::EventsController < AdminController
 
   def update
     if @event.update_attributes(event_params)
-      redirect_to admin_events_path, notice: 'Evento actualizado con éxito'
+      redirect_to admin_events_path, notice: 'Evento actualizado'
     else
       flash[:error] = @event.humanized_errors
       render :edit
