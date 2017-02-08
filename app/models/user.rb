@@ -1,6 +1,16 @@
 class User < ActiveRecord::Base
 
+  alias_attribute :link, :url
+
   has_one  :authorization, dependent: :destroy, inverse_of: :user
+
+  has_many :events, dependent: :restrict_with_error, through: :talks
+
+  has_many :talks,
+           dependent:   :restrict_with_error,
+           inverse_of:  :speaker
+
+
 
   validates               :email, email: { strict: true, message: 'is invalid' }
   validates_presence_of   :email, :name

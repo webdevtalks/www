@@ -20,6 +20,9 @@ Fabricator :speaker do
     ["https://#{f[:name].parameterize}.example.org", nil].sample
   end
 
+end
+
+Fabricator :speaker_with_talks, from: :speaker do
   after_create do |speaker, _|
     speaker.talks << Fabricate(:talk, speaker: speaker, status: 'accepted')
   end

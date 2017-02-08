@@ -1,7 +1,22 @@
 class Admin::TalksController < AdminController
 
   before_action :find_event, only: :create
-  before_action :find_talk, only: [:show, :update]
+  before_action :find_talk, only: [ :edit, :show, :update]
+
+  def create
+    @talk = @event.talks.create(talk_params)
+
+    if @talk.persisted?
+      flash[:notice] = 'Charla registrada'
+    else
+      flash[:error] = "Errores: #{@talk.humanized_errors}"
+    end
+
+    redirect_to edit_admin_event_path(@event)
+  end
+
+  def edit
+  end
 
   def index
     @talks = Talk.includes(:speaker).all
@@ -11,23 +26,13 @@ class Admin::TalksController < AdminController
   end
 
   def update
-    @talk.send(params[:accept] == 'true' ? :accept! : :cancel!)
-  rescue AASM::InvalidTransition => e
-    flash[:error] = e.message
-  ensure
-    redirect_to :back
-  end
-
-  def create
-    @talk = @event.talks.create(talk_params.merge(status: :accepted))
-
-    if @talk.persisted?
-      flash[:notice] = 'Charla registrada'
+    if @talk.update(talk_params)
+      redirect_to admin_talks_path, notice: 'Charla actualizada'
     else
       flash[:error] = "Errores: #{@talk.humanized_errors}"
+      render :edit
     end
 
-    redirect_to edit_admin_event_path(@event)
   end
 
   private
@@ -41,7 +46,7 @@ class Admin::TalksController < AdminController
   end
 
   def talk_params
-    params.require(:talk).permit(:description, :speaker_id, :title)
+    params.require(:talk).permit(:description, :title, :user_id)
   end
 
 end
