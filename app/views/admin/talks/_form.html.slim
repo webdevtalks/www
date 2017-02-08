@@ -1,0 +1,20 @@
+= form_for [:admin, talk], html: { class: 'form-horizontal' } do |f|
+
+  .form-group
+    = f.label :title, 'Título', class: 'col-md-2'
+    .col-md-8
+      = f.text_field :title, class: 'form-control'
+
+  .form-group
+    = f.label :description, 'Descripción', class: 'col-md-2'
+    .col-md-8
+      = f.text_area :description, class: 'form-control'
+      
+  .form-group
+    = f.label :user_id, 'Ponente', class: 'col-md-2'
+    .col-md-8
+      = f.select :user_id, options_from_collection_for_select(User.all, :id, :name, talk.user_id), {}, class: 'form-control'
+
+  .form-group
+    .col-md-offset-2.col-md-2
+      = f.submit 'Guardar charla' , class: 'btn btn-primary'

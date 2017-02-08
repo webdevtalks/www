@@ -22,6 +22,7 @@ gem 'aasm',                          '~> 4.2.0'
 gem 'activerecord-humanized_errors', '~> 2.0.1'
 gem 'activevalidators',              '~> 4.0.0'
 gem 'awesome_print',                 '~> 1.6.1'
+gem 'fabrication',                   '~> 2.12.2'
 gem 'faker',                         '~> 1.4.3'
 gem 'lograge',                       '~> 0.4.1'
 gem 'omniauth-github',               '~> 1.1.2'
@@ -44,10 +45,6 @@ group :development, :test do
   gem 'pry-rails',                   '~> 0.3.4'
   gem 'rails-controller-testing',    '~> 0.1.1'
   gem 'rspec-rails',                 '~> 3.5.1', require: false
-end
-
-group :development, :review, :test do
-  gem 'fabrication',                 '~> 2.12.2'
 end
 
 group :production do

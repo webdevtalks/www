@@ -21,10 +21,14 @@ class Talk < ActiveRecord::Base
   end
 
   belongs_to :event
-  belongs_to :speaker, counter_cache: true, inverse_of: :talks
+  belongs_to :speaker,
+             counter_cache: true,
+             class_name:    User,
+             foreign_key:   :user_id,
+             inverse_of:    :talks
 
   default_scope { order('id DESC') }
 
-  validates_presence_of :event, :speaker, :title
+  validates_presence_of :event, :title, :user_id
 
 end

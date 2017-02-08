@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Admin::Talks' do
 
   given :admin do
-    Fabricate(:user_with_dev_auth)
+    Fabricate(:user_with_authorization)
   end
 
   background do
@@ -17,12 +17,30 @@ feature 'Admin::Talks' do
 
     expect(page).to have_selector(:css, :h2, text: 'Charlas')
 
-    talks.each do |t|
-      expect(page).to have_selector(:css, '.talks .talk', text: t.title)
-      expect(page).to have_selector(:css, '.talks .talk', text: t.speaker.name)
+    talks.each do |talk|
+      expect(page).to have_selector(:css, '.talk', text: talk.title)
+      expect(page).to have_selector(:css, '.talk', text: talk.speaker.name)
     end
 
-    expect(page).to have_selector(:css, '.talks .talk a.edit', count: talks.count)
+    expect(page).to have_selector(:css, '.talk a.edit', count: talks.count)
+  end
+
+  scenario 'edit talks' do
+    talk = Fabricate(:talk)
+
+    visit edit_admin_talk_path(talk)
+
+    expect(page).to have_selector(:css, :h2, text: 'Editar charla')
+
+    fill_in 'Título', with: 'Foo'
+    fill_in 'Descripción', with: 'Bar'
+
+    click_on 'Guardar charla'
+
+    talk.reload
+
+    expect(talk.title).to eq('Foo')
+    expect(talk.description).to eq('Bar')
   end
 
 end

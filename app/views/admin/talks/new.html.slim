@@ -11,9 +11,9 @@
           = hidden_field_tag :event_id, @event.id
 
           .form-group
-            = f.label :speaker_id, 'Ponente', class: 'col-md-2'
+            = f.label :user_id, 'Ponente', class: 'col-md-2'
             .col-md-8
-              = f.select :speaker_id, options_from_collection_for_select(User.all, :id, :name), {}, class: 'form-control'
+              = f.select :user_id, options_from_collection_for_select(User.all, :id, :name), {}, class: 'form-control'
           .form-group
             = f.label :title, 'Título', class: 'col-md-2'
             .col-md-8

@@ -11,7 +11,7 @@ feature 'Admin::Speakers' do
   end
 
   scenario 'Listing speakers' do
-    speakers = Fabricate.times(3, :speaker).count
+    speakers = Fabricate.times(3, :speaker_with_talks).count
 
     visit admin_speakers_path
 
@@ -20,7 +20,7 @@ feature 'Admin::Speakers' do
   end
 
   scenario 'Viewing speaker' do
-    speaker = Fabricate(:speaker, talks: [Fabricate.build(:talk)])
+    speaker = Fabricate(:speaker_with_talks)
 
     visit admin_speaker_path(speaker)
 
@@ -31,7 +31,7 @@ feature 'Admin::Speakers' do
     end
 
     within '.contact' do
-      %i(link facebook twitter).each do |url|
+      %i(facebook link twitter).each do |url|
         expect(page).to have_selector(:css, 'h5 a', text: speaker.send(url))
       end
     end
@@ -44,7 +44,7 @@ feature 'Admin::Speakers' do
   end
 
   scenario 'Editing/Updating speakers' do
-    speaker = Fabricate(:speaker, talks: [Fabricate.build(:talk)])
+    speaker = Fabricate(:speaker_with_talks)
 
     visit edit_admin_speaker_path(speaker)
 
@@ -82,7 +82,7 @@ feature 'Admin::Speakers' do
   end
 
   scenario 'Editing/Updating speakers: failure' do
-    speaker = Fabricate(:speaker, talks: [Fabricate.build(:talk)])
+    speaker = Fabricate(:speaker_with_talks)
 
     visit edit_admin_speaker_path(speaker)
 

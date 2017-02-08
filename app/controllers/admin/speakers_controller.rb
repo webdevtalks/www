@@ -6,7 +6,7 @@ class Admin::SpeakersController < AdminController
   end
 
   def index
-    @speakers = Speaker.all
+    @speakers = User.all
   end
 
   def show
